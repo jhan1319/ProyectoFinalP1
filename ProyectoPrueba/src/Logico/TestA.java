@@ -5,6 +5,8 @@ public class TestA {
 	private int numero;
 	private String hello;
 	
+	private boolean state;
+	
 	
 	public TestA(int numero, String hello) {
 		super();
