@@ -11,6 +11,26 @@ public class TestA {
 		this.numero = numero;
 		this.hello = hello;
 	}
+
+
+	public int getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+
+	public String getHello() {
+		return hello;
+	}
+
+
+	public void setHello(String hello) {
+		this.hello = hello;
+	}
 	
 	
 	
