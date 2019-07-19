@@ -32,7 +32,7 @@ public abstract class Prismas {
 		this.nombre = nombre;
 	}
 	
-	
+	public abstract float areaLateral();
 	
 	
 

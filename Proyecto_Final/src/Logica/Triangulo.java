@@ -66,6 +66,16 @@ public class Triangulo extends Prismas {
 	public void setY3(float y3) {
 		this.y3 = y3;
 	}
+
+	@Override
+	public float areaLateral() {
+		
+		float lado1 = Math.abs(x1 - x2);
+		float lado2 = Math.abs(x1 - x3);
+		float lado3 = Math.abs(x2 - x3);
+		
+		return 0;
+	}
 	
 	
 	
