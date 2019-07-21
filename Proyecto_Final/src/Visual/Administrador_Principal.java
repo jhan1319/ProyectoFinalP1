@@ -98,7 +98,7 @@ public class Administrador_Principal extends JDialog {
 					}
 				
 				});
-				lblCerrar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\cancelbutton_83661.png"));
+				lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
 				lblCerrar.setBounds(443, 11, 32, 25);
 				panel_windows.add(lblCerrar);
 			}

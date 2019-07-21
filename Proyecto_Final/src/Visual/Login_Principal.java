@@ -132,13 +132,13 @@ public class Login_Principal extends JDialog {
 
 				{
 					JLabel lblTema = new JLabel("");
-					lblTema.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\Idea_Portada.png"));
+					lblTema.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/Idea_Portada.png")));
 					lblTema.setBounds(112, 0, 307, 128);
 					panel_titulo.add(lblTema);
 				}
 				{
 					JLabel lblGif = new JLabel();
-					ImageIcon imagenIcon = new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\62997.gif");
+					ImageIcon imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
 					lblGif.setIcon(imagenIcon);
 					imagenIcon.setImageObserver(lblGif);
 					lblGif.setBounds(10, 11, 100, 106);
@@ -243,7 +243,7 @@ public class Login_Principal extends JDialog {
 
 					login_Button.setContentAreaFilled(false);
 					login_Button.setFocusable(false);
-					login_Button.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\businessapplication_accept_ok_male_man_you_negocio_2311.png"));
+					login_Button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/agregar_user.png")));
 					login_Button.setBounds(313, 11, 53, 52);
 					login_Button.setActionCommand("OK");
 					buttonPane.add(login_Button);
@@ -254,7 +254,7 @@ public class Login_Principal extends JDialog {
 					cancel_Button.setContentAreaFilled(false);
 					cancel_Button.setFocusable(false);
 					//	cancelButton.setBackground(Color.ORANGE);
-					cancel_Button.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\canceltheapplication_cancelar_2901.png"));
+					cancel_Button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
 					cancel_Button.setBounds(376, 11, 53, 52);
 					cancel_Button.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
