@@ -1,10 +1,29 @@
 package Logica;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class Main {
 
-	public static void main(String[] args) {
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+	public static void main(String[] args) throws NoSuchAlgorithmException{
+		////AGREGADO////
+		String original = new String("Admin");
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		md.update(original.getBytes());
+		byte[] digest = md.digest();
+		StringBuffer sb = new StringBuffer();
+		for (byte b : digest) {
+			sb.append(String.format("%02x", b & 0xff));
+		}
+
+		System.out.println("original:" + original);
+		System.out.println("digested(hex):" + sb.toString());
+	/////////////////////	
 		
-		
+	
 		PrismasLab controladora =  PrismasLab.getInstance();
 		
 		Cuadrado cuadradoPrueba = new Cuadrado(5, "Cuadrado 1", 0, 4, 0, 4);

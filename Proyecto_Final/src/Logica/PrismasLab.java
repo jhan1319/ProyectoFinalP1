@@ -1,27 +1,31 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PrismasLab {
-	
+
+
+public class PrismasLab implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Usuarios> misUsuarios;
-	private Usuarios login;
-	
+	private static Usuarios login;
+	private static PrismasLab prisma;
+	private static boolean firstTime; ////////
+
+
+
 	private PrismasLab() {
 		super();
 		this.misUsuarios = new ArrayList<Usuarios>();
 	}
 
-
-	private static PrismasLab prisma;
-	
-	
 	public static PrismasLab getInstance() {
-		
+
 		if(prisma == null) {
 			prisma = new PrismasLab();
 		}
-		
+
 		return prisma;
 	}
 
@@ -30,13 +34,12 @@ public class PrismasLab {
 		return misUsuarios;
 	}
 
-
 	public void setMisUsuarios(ArrayList<Usuarios> misUsuarios) {
 		this.misUsuarios = misUsuarios;
 	}
 
 
-	public Usuarios getLogin() {
+	public static Usuarios getLogin() {
 		return login;
 	}
 
@@ -54,7 +57,33 @@ public class PrismasLab {
 	public static void setPrisma(PrismasLab prisma) {
 		PrismasLab.prisma = prisma;
 	}
-	
+
+	/////////////////////
+	/////INSERTAR USUARIO
+	public void regUser(Usuarios user) {
+		misUsuarios.add(user);
+
+	}
+
+	/////
+	public static boolean isFirstTime() {
+		return firstTime;
+	}
+
+	public static void setFirsTime(boolean firsTime) {
+		PrismasLab.firstTime = firsTime;
+	}
+
+	public boolean login(String txtUser , String txtPassword) {
+		boolean log = false;
+		for (Usuarios usuario : misUsuarios) {
+			if ( (usuario.getUser().equalsIgnoreCase(txtUser)) && (usuario.getPassword().equalsIgnoreCase(txtPassword)) ) {
+				login = usuario;//////login = usuario registrado
+				log=true;
+			}
+		}
+		return log;
+	}
 
 
 }

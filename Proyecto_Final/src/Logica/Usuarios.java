@@ -1,9 +1,11 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Usuarios {
+public class Usuarios implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private String user;
 	private String password;
 	private String tipo;
@@ -49,6 +51,7 @@ public class Usuarios {
 		this.misFiguras = misFiguras;
 	}
 	
+	//////////INSERTAR FIGURAS
 	public void insertarFiguras(Prismas figura) {
 		
 		misFiguras.add(figura);
