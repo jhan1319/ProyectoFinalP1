@@ -32,8 +32,11 @@ public abstract class Prismas {
 		this.nombre = nombre;
 	}
 	
-	public abstract float areaLateral();
+	public  float areaLateral() {
+		
+		return  altura * perimetro();
+	}
 	
-	
+	public abstract float perimetro();
 
 }

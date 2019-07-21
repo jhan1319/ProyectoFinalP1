@@ -49,6 +49,12 @@ public class Usuarios {
 		this.misFiguras = misFiguras;
 	}
 	
+	public void insertarFiguras(Prismas figura) {
+		
+		misFiguras.add(figura);
+		
+	}
+	
 	
 	
 	

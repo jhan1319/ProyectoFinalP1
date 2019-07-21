@@ -47,12 +47,13 @@ public class Cuadrado extends Prismas {
 		this.y2 = y2;
 	}
 
-	@Override
-	public float areaLateral() {
+	public float perimetro() {
 		
 		float lado = Math.abs(x2 - x1);
+		
+		
 				
-		return (float) (Math.pow(lado, 2) * altura);
+		return (float) Math.pow(lado, 2) ;
 	}
 	
 	

@@ -67,14 +67,21 @@ public class Triangulo extends Prismas {
 		this.y3 = y3;
 	}
 
+
 	@Override
-	public float areaLateral() {
+	public float perimetro() {
 		
-		float lado1 = Math.abs(x1 - x2);
-		float lado2 = Math.abs(x1 - x3);
-		float lado3 = Math.abs(x2 - x3);
 		
-		return 0;
+		
+		
+		
+		float lado1 = (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+		
+		float lado2 = (float) Math.sqrt(Math.pow(x3-x2, 2) + Math.pow(y3-y2, 2));
+		
+		float lado3 = (float) Math.sqrt(Math.pow(x1-x3, 2) + Math.pow(y1-y3, 2));
+		
+		return lado1 + lado2 + lado3;
 	}
 	
 	
