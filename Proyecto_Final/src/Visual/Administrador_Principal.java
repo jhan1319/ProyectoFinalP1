@@ -113,7 +113,7 @@ public class Administrador_Principal extends JDialog {
 			panel_registrar_estu.setLayout(null);
 			
 			JButton btnRegistrarEstudiante = new JButton("");
-			btnRegistrarEstudiante.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\business_application_addmale_useradd_insert_add_user_client_2312 (1).png"));
+			btnRegistrarEstudiante.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/+usuario.png")));
 			btnRegistrarEstudiante.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Registrar_Usuario user = new Registrar_Usuario();
@@ -121,7 +121,7 @@ public class Administrador_Principal extends JDialog {
 					user.setVisible(true);
 				}
 			});
-			btnRegistrarEstudiante.setBounds(22, 11, 124, 73);
+			btnRegistrarEstudiante.setBounds(22, 13, 124, 107);
 			panel_registrar_estu.add(btnRegistrarEstudiante);
 			
 			JButton button = new JButton("");
@@ -133,14 +133,14 @@ public class Administrador_Principal extends JDialog {
 
 				}
 			});
-			button.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\contactlist_theuser_802 (1).png"));
+			button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/lista_user_admin.png")));
 			button.setBounds(22, 152, 124, 73);
 			panel_registrar_estu.add(button);
 			
 			JFormattedTextField frmtdtxtfldR = new JFormattedTextField();
 			frmtdtxtfldR.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 			frmtdtxtfldR.setText("Registrar ");
-			frmtdtxtfldR.setBounds(54, 80, 61, 20);
+			frmtdtxtfldR.setBounds(50, 120, 61, 20);
 			panel_registrar_estu.add(frmtdtxtfldR);
 			
 			JFormattedTextField frmtdtxtfldLista = new JFormattedTextField();
@@ -157,27 +157,27 @@ public class Administrador_Principal extends JDialog {
 		panel_informacion.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\triangle-shape_icon-icons.com_53860.png"));
+		label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/triangulo.png")));
 		label.setBounds(10, 5, 64, 64);
 		panel_informacion.add(label);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\squareroundedemptyoutlinedbuttonshape_80680.png"));
+		label_1.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cuadrado.png")));
 		label_1.setBounds(10, 75, 64, 64);
 		panel_informacion.add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\diamond_icon-icons.com_70991.png"));
-		label_2.setBounds(10, 196, 52, 76);
+		label_2.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/trapecio.png")));
+		label_2.setBounds(10, 196, 64, 76);
 		panel_informacion.add(label_2);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\trapezeinvertedoutlinedshape_80761.png"));
-		lblNewLabel.setBounds(10, 150, 64, 53);
+		lblNewLabel.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/rombo.png")));
+		lblNewLabel.setBounds(10, 139, 64, 64);
 		panel_informacion.add(lblNewLabel);
 		
 		JLabel label_3 = new JLabel("");
-		label_3.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\Irectangle_4718.png"));
+		label_3.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/rectangulo.png")));
 		label_3.setBounds(10, 265, 70, 55);
 		panel_informacion.add(label_3);
 		{
@@ -211,7 +211,7 @@ public class Administrador_Principal extends JDialog {
 						
 					}
 				});
-				okButton.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\log_logout_door_1563.png"));
+				okButton.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/log_out.png")));
 				okButton.setBounds(394, 11, 80, 68);
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);

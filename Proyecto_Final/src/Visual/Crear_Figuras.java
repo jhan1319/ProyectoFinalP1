@@ -100,8 +100,8 @@ public class Crear_Figuras extends JDialog {
 						dispose();
 					}
 				});
-				lblCerrar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\cancelbutton_83661.png"));
-				lblCerrar.setBounds(408, 11, 32, 24);
+				lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
+				lblCerrar.setBounds(550, 13, 32, 24);
 				panel_windows.add(lblCerrar);
 			}
 		}
@@ -196,7 +196,7 @@ public class Crear_Figuras extends JDialog {
 			}
 			{
 				JLabel lblDfreffvvf = new JLabel("");
-				lblDfreffvvf.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\1562682-build-idea-pencil-service_107050.png"));
+				lblDfreffvvf.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/crear_figura.png")));
 				lblDfreffvvf.setBounds(75, 11, 67, 64);
 				panel_datos.add(lblDfreffvvf);
 			}

@@ -56,7 +56,7 @@ public class Lista_Figura_User extends JDialog {
 						dispose();
 					}
 				});
-				label.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\cancelbutton_83661.png"));
+				label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
 				label.setBounds(408, 11, 32, 29);
 				panel.add(label);
 			}
@@ -74,7 +74,7 @@ public class Lista_Figura_User extends JDialog {
 					}
 				});
 				button.setContentAreaFilled(false);
-				button.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\canceltheapplication_cancelar_2901.png"));
+				button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_the_application.png")));
 				button.setBounds(387, 11, 53, 50);
 				buttonPane.add(button);
 			}

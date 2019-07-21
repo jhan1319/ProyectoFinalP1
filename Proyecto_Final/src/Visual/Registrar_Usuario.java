@@ -102,7 +102,7 @@ public class Registrar_Usuario extends JDialog {
 		txtConfirmar.setColumns(10);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\user_group_14955.png"));
+		label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/registrar_user.png")));
 		label.setBounds(107, 11, 151, 129);
 		contentPanel.add(label);
 		
@@ -118,7 +118,7 @@ public class Registrar_Usuario extends JDialog {
 			}
 		});
 		btnCancelar.setContentAreaFilled(false);
-		btnCancelar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\canceltheapplication_cancelar_2901.png"));
+		btnCancelar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_the_application.png")));
 		btnCancelar.setBounds(305, 11, 49, 52);
 		buttonPane.add(btnCancelar);
 		
@@ -142,7 +142,7 @@ public class Registrar_Usuario extends JDialog {
 			
 		});
 		btnRegistrar.setContentAreaFilled(false);
-		btnRegistrar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\businessapplication_accept_ok_male_man_you_negocio_2311.png"));
+		btnRegistrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/agregar_user.png")));
 		btnRegistrar.setBounds(229, 14, 66, 49);
 		buttonPane.add(btnRegistrar);
 	}

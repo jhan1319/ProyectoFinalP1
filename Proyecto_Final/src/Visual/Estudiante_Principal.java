@@ -71,7 +71,7 @@ public class Estudiante_Principal extends JDialog {
 				dispose();
 			}
 		});
-		lblCerrar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\cancelbutton_83661.png"));
+		lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
 		lblCerrar.setBounds(555, 11, 32, 25);
 		panel_windows.add(lblCerrar);
 		
@@ -89,7 +89,7 @@ public class Estudiante_Principal extends JDialog {
 				figura.setModal(true);
 			}
 		});
-		btnCrearFigura.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\bluefigures_azules_12493.png"));
+		btnCrearFigura.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/crear_figura_principal.png")));
 		btnCrearFigura.setBounds(40, 61, 107, 77);
 		panel_crear_figuras.add(btnCrearFigura);
 		
@@ -101,7 +101,7 @@ public class Estudiante_Principal extends JDialog {
 				list.setModal(true);
 			}
 		});
-		btnLista.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\1486504338-check-check-marks-list-checklist-documents-todo-list_81298.png"));
+		btnLista.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/lista.png")));
 		btnLista.setBounds(40, 169, 107, 108);
 		panel_crear_figuras.add(btnLista);
 		
@@ -183,8 +183,8 @@ public class Estudiante_Principal extends JDialog {
 			}
 		});
 		btnCerrar.setContentAreaFilled(false);
-		btnCerrar.setIcon(new ImageIcon("C:\\Users\\Wendily\\Desktop\\Proyecto P1 ;3\\icons\\log_logout_door_1563.png"));
-		btnCerrar.setBounds(523, 11, 64, 64);
+		btnCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/log_out.png")));
+		btnCerrar.setBounds(521, 0, 64, 64);
 		buttonPane.add(btnCerrar);
 	}
 }
