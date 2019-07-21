@@ -51,14 +51,13 @@ public class Cuadrado extends Prismas {
 		
 		float lado = Math.abs(x2 - x1);
 		
-		
+		if (lado == 0) {
+			
+			lado = Math.abs(y2-y1);
+			
+		}
 				
 		return (float) Math.pow(lado, 2) ;
 	}
-	
-	
-	
-	
-	
 
 }

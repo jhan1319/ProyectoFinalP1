@@ -79,6 +79,32 @@ public class Rectangulo extends Prismas {
 	public void setY3(float y3) {
 		this.y3 = y3;
 	}
+
+
+	@Override
+	public float perimetro() {
+		
+		float lado1 = 0;
+		float lado2 = 0;
+		
+		lado1 = Math.abs(x1 - x2);
+		
+		if (lado1 == 0) {
+			
+			lado1 = Math.abs(y1 - y2);
+			
+		}
+		
+		lado2 = Math.abs(x1 - x3);
+		
+		if (lado2 == 0) {
+			
+			lado2 = y1 - y3;
+			
+		}
+
+		return (2*lado1) + (2*lado2);
+	}
 	
 	
 	
