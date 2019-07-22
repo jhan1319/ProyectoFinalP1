@@ -8,6 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Logica.Prismas;
 import Logica.PrismasLab;
 
 import java.awt.event.ActionListener;
@@ -31,6 +32,7 @@ public class Estudiante_Principal extends JDialog {
 	private JTextField txtArea;
 	private JTextField txtVolumen;
 	private JTextField txtUser;
+	private static JComboBox<String> cbxMisFormas;
 
 	/**
 	 * Launch the application.
@@ -49,6 +51,9 @@ public class Estudiante_Principal extends JDialog {
 	 * Create the dialog.
 	 */
 	public Estudiante_Principal() {
+		
+		PrismasLab controladora = PrismasLab.getInstance();
+		
 		setUndecorated(true);
 		setBounds(100, 100, 597, 475);
 		getContentPane().setLayout(new BorderLayout());
@@ -87,6 +92,12 @@ public class Estudiante_Principal extends JDialog {
 				Crear_Figuras figura= new Crear_Figuras();
 				figura.setVisible(true);
 				figura.setModal(true);
+				
+				PrismasLab.pantallaVacia();
+				
+				
+				
+				
 			}
 		});
 		btnCrearFigura.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/crear_figura_principal.png")));
@@ -111,7 +122,20 @@ public class Estudiante_Principal extends JDialog {
 		frmtdtxtfldMisFormas.setBounds(10, 288, 74, 20);
 		panel_crear_figuras.add(frmtdtxtfldMisFormas);
 		
-		JComboBox cbxMisFormas = new JComboBox();
+		cbxMisFormas = new JComboBox<String>();
+		cbxMisFormas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				cargarFiguras();
+				
+	
+				
+			}
+		});
+		
+
+		
+
 		cbxMisFormas.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>"}));
 		cbxMisFormas.setBounds(89, 289, 113, 20);
 		panel_crear_figuras.add(cbxMisFormas);
@@ -186,5 +210,19 @@ public class Estudiante_Principal extends JDialog {
 		btnCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/log_out.png")));
 		btnCerrar.setBounds(521, 0, 64, 64);
 		buttonPane.add(btnCerrar);
+		cargarFiguras();
+	}
+	
+	public static void cargarFiguras(){
+
+		cbxMisFormas.removeAllItems();
+
+		for (Prismas figuras : PrismasLab.getLogin().getMisFiguras()) {
+			cbxMisFormas.addItem(figuras.getNombre());
+
+		}
+
+		cbxMisFormas.insertItemAt(new String("<Seleccionar>"), 0);
+		cbxMisFormas.setSelectedIndex(0);
 	}
 }

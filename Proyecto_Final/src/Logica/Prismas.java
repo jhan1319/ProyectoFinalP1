@@ -2,18 +2,18 @@ package Logica;
 
 public abstract class Prismas {
 	
-	protected float altura;
+	protected double altura;
 	protected String nombre;
 	
 	
-	public Prismas(float altura, String nombre) {
+	public Prismas(double altura2, String nombre) {
 		super();
-		this.altura = altura;
+		this.altura = altura2;
 		this.nombre = nombre;
 	}
 
 
-	public float getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
@@ -32,11 +32,11 @@ public abstract class Prismas {
 		this.nombre = nombre;
 	}
 	
-	public  float areaLateral() {
+	public  double areaLateral() {
 		
 		return  altura * perimetro();
 	}
 	
-	public abstract float perimetro();
+	public abstract double perimetro();
 
 }

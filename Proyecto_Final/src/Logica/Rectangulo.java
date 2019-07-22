@@ -82,7 +82,7 @@ public class Rectangulo extends Prismas {
 
 
 	@Override
-	public float perimetro() {
+	public double perimetro() {
 		
 		float lado1 = 0;
 		float lado2 = 0;

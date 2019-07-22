@@ -7,7 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logica.Cuadrado;
+import Logica.PrismasLab;
+import Logica.StdDraw3D;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
 import java.awt.Font;
@@ -20,11 +26,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.border.TitledBorder;
 
 public class Crear_Figuras extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
+	private JTextField txt_altura;
 	private JComboBox cbxTipo;
 	private JPanel panel_triangulo;
 	private JPanel panel_cuadrado;
@@ -51,16 +58,45 @@ public class Crear_Figuras extends JDialog {
 	private JTextField txtY_3_trapecio;
 	private JTextField txtY_4_trapecio;
 	private JFormattedTextField frmtdtxtfldY_1_trapecio;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
+	private JTextField txtX_1_rombo;
+	private JTextField txt_d_horizontal;
+	private JTextField txtY_1_rombo;
+	private JTextField txt_d_vertical;
+	private JTextField txtX_1_rectangulo;
+	private JTextField txtY_1_rectangulo;
+	private JTextField txtX_2_rectangulo;
+	private JTextField txtX_3_rectangulo;
+	private JTextField txtY_2_rectangulo;
+	private JTextField txtY_3_rectangulo;
+	private JFormattedTextField frmtdtxtfldX_1_cuadrado;
+	private JFormattedTextField frmtdtxtfldY_1_cuadrado;
+	private JFormattedTextField frmtdtxtfldX_2_cuadrado;
+	private JFormattedTextField frmtdtxtfldY_2_cuadrado;
+	private JTextField txt_nombre;
+	private JFormattedTextField frmtdtxtfldX_1_triangulo;
+	private JFormattedTextField frmtdtxtfldY_1_triangulo;
+	private JFormattedTextField frmtdtxtfldX_2_triangulo;
+	private JFormattedTextField frmtdtxtfldY_2_triangulo;
+	private JFormattedTextField frmtdtxtfldX_3_triangulo;
+	private JFormattedTextField frmtdtxtfldY_3_triangulo;
+	private JFormattedTextField frmtdtxtfldX_1_trapecio;
+	private JFormattedTextField frmtdtxtfldX_2_trapecio;
+	private JFormattedTextField frmtdtxtfldY_2_trapecio;
+	private JFormattedTextField frmtdtxtfldX_3_trapecio;
+	private JFormattedTextField frmtdtxtfldX_4_trapecio;
+	private JFormattedTextField frmtdtxtfldY_3_trapecio;
+	private JFormattedTextField frmtdtxtfldY_4_trapecio;
+	private JFormattedTextField frmtdtxtfldX_1_rombo;
+	private JFormattedTextField frmtdtxtfldY_1_rombo;
+	private JFormattedTextField frmtdtxtfldDVertical;
+	private JFormattedTextField frmtdtxtfldDHorizontal;
+	private JFormattedTextField frmtdtxtfldX_1_rectangulo;
+	private JFormattedTextField frmtdtxtfldY_1_rectangulo;
+	private JFormattedTextField frmtdtxtfldX_2_rectangulo;
+	private JFormattedTextField frmtdtxtfldY_2_rectangulo;
+	private JFormattedTextField frmtdtxtfldX_3_rectangulo;
+	private JFormattedTextField frmtdtxtfldY_3_rectangulo;
+	private JPanel panel_vista_previa;
 
 	/**
 	 * Launch the application.
@@ -79,8 +115,11 @@ public class Crear_Figuras extends JDialog {
 	 * Create the dialog.
 	 */
 	public Crear_Figuras() {
+
+		PrismasLab controladora = PrismasLab.getInstance();
+
 		setUndecorated(true);
-		setBounds(100, 100, 620, 540);
+		setBounds(100, 100, 981, 888);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -89,7 +128,7 @@ public class Crear_Figuras extends JDialog {
 
 		{
 			JPanel panel_windows = new JPanel();
-			panel_windows.setBounds(0, 0, 594, 35);
+			panel_windows.setBounds(0, 0, 981, 35);
 			contentPanel.add(panel_windows);
 			panel_windows.setLayout(null);
 			{
@@ -101,17 +140,18 @@ public class Crear_Figuras extends JDialog {
 					}
 				});
 				lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
-				lblCerrar.setBounds(550, 13, 32, 24);
+				lblCerrar.setBounds(940, 5, 32, 24);
 				panel_windows.add(lblCerrar);
 			}
 		}
 		{
 			JPanel panel_datos = new JPanel();
-			panel_datos.setBounds(10, 43, 222, 145);
+			panel_datos.setBounds(10, 43, 325, 145);
 			contentPanel.add(panel_datos);
 			panel_datos.setLayout(null);
 			{
 				JFormattedTextField frmtdtxtfldTipo = new JFormattedTextField();
+				frmtdtxtfldTipo.setEditable(false);
 				frmtdtxtfldTipo.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 				frmtdtxtfldTipo.setText("Tipo de figura:");
 				frmtdtxtfldTipo.setBounds(9, 80, 89, 23);
@@ -121,6 +161,9 @@ public class Crear_Figuras extends JDialog {
 				cbxTipo = new JComboBox();
 				cbxTipo.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						
+						PrismasLab.pantallaVacia();
+						
 						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Triangulo")) {
 							panel_triangulo.setVisible(true);
 							panel_cuadrado.setVisible(false);
@@ -128,15 +171,17 @@ public class Crear_Figuras extends JDialog {
 							panel_trapecio.setVisible(false);
 							panel_rombo.setVisible(false);
 							panel_vacio.setVisible(false);
-						
+							PrismasLab.pantallaVacia();
+
 						}
-						 if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
 							panel_triangulo.setVisible(false);
 							panel_cuadrado.setVisible(true);
 							panel_rectangulo.setVisible(false);
 							panel_trapecio.setVisible(false);
 							panel_rombo.setVisible(false);
 							panel_vacio.setVisible(false);
+							PrismasLab.pantallaVacia();
 						}
 						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Trapecio")) {
 							panel_triangulo.setVisible(false);
@@ -145,41 +190,45 @@ public class Crear_Figuras extends JDialog {
 							panel_trapecio.setVisible(true);
 							panel_rombo.setVisible(false);
 							panel_vacio.setVisible(false);
+							PrismasLab.pantallaVacia();
 						}
-						 if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rombo")) {
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rombo")) {
 							panel_triangulo.setVisible(false);
 							panel_cuadrado.setVisible(false);
 							panel_rectangulo.setVisible(false);
 							panel_trapecio.setVisible(false);
 							panel_rombo.setVisible(true);
 							panel_vacio.setVisible(false);
+							PrismasLab.pantallaVacia();
 						}
-						 if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rectangulo")) {
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rectangulo")) {
 							panel_triangulo.setVisible(false);
 							panel_cuadrado.setVisible(false);
 							panel_rectangulo.setVisible(true);
 							panel_trapecio.setVisible(false);
 							panel_rombo.setVisible(false);
 							panel_vacio.setVisible(false);
+							PrismasLab.pantallaVacia();
 						}
-						 if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("<Seleccione>")){
-							    panel_triangulo.setVisible(false);
-								panel_cuadrado.setVisible(false);
-								panel_rectangulo.setVisible(false);
-								panel_trapecio.setVisible(false);
-								panel_rombo.setVisible(false);
-								panel_vacio.setVisible(true);
-						 }
-							 
-						
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("<Seleccione>")){
+							panel_triangulo.setVisible(false);
+							panel_cuadrado.setVisible(false);
+							panel_rectangulo.setVisible(false);
+							panel_trapecio.setVisible(false);
+							panel_rombo.setVisible(false);
+							panel_vacio.setVisible(true);
+							PrismasLab.pantallaVacia();
+						}
+
+
 					}
 				});
 				cbxTipo.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Triangulo", "Cuadrado", "Trapecio", "Rombo", "Rectangulo"}));
 				cbxTipo.setBounds(110, 83, 102, 20);
 				panel_datos.add(cbxTipo);
-				
-				
-				
+
+
+
 			}
 			{
 				JFormattedTextField frmtdtxtfldAltura = new JFormattedTextField();
@@ -189,10 +238,10 @@ public class Crear_Figuras extends JDialog {
 				panel_datos.add(frmtdtxtfldAltura);
 			}
 			{
-				textField = new JTextField();
-				textField.setBounds(108, 114, 86, 20);
-				panel_datos.add(textField);
-				textField.setColumns(10);
+				txt_altura = new JTextField();
+				txt_altura.setBounds(108, 114, 86, 20);
+				panel_datos.add(txt_altura);
+				txt_altura.setColumns(10);
 			}
 			{
 				JLabel lblDfreffvvf = new JLabel("");
@@ -200,16 +249,31 @@ public class Crear_Figuras extends JDialog {
 				lblDfreffvvf.setBounds(75, 11, 67, 64);
 				panel_datos.add(lblDfreffvvf);
 			}
+
+			JFormattedTextField frmtdtxtfldNombre = new JFormattedTextField();
+			frmtdtxtfldNombre.setText("Nombre:");
+			frmtdtxtfldNombre.setBounds(224, 80, 67, 22);
+			panel_datos.add(frmtdtxtfldNombre);
+
+			txt_nombre = new JTextField();
+			txt_nombre.setBounds(224, 113, 79, 22);
+			panel_datos.add(txt_nombre);
+			txt_nombre.setColumns(10);
 		}
 		{
-			JPanel panel_vista_previa = new JPanel();
-			panel_vista_previa.setBounds(242, 46, 342, 394);
+			panel_vista_previa = new JPanel();
+			panel_vista_previa.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel_vista_previa.setBounds(347, 48, 610, 610);
 			contentPanel.add(panel_vista_previa);
-			panel_vista_previa.setLayout(null);
+			panel_vista_previa.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+			
+			panel_vista_previa.add(StdDraw3D.frame);
+			
+			//StdDraw3D.frame.setVisible(true);
 		}
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBounds(0, 483, 594, 57);
+			buttonPane.setBounds(12, 818, 945, 57);
 			contentPanel.add(buttonPane);
 			buttonPane.setLayout(null);
 			{
@@ -217,19 +281,151 @@ public class Crear_Figuras extends JDialog {
 				btnCancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
+						
+						Estudiante_Principal estu = new Estudiante_Principal();
+						
+						estu.setVisible(true);
 					}
 				});
-				btnCancelar.setBounds(351, 21, 89, 23);
+				btnCancelar.setBounds(692, 21, 89, 23);
 				buttonPane.add(btnCancelar);
 			}
 			{
 				JButton btnCrear = new JButton("Crear");
-				btnCrear.setBounds(258, 21, 89, 23);
+				btnCrear.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+				
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
+
+							double x1 = Double.valueOf(txtX_1_cuadrado.getText());
+							double y1 = Double.valueOf(txtY_1_cuadrado.getText());
+							double x2 = Double.valueOf(txtX_2_cuadrado.getText());
+							double y2 = Double.valueOf(txtY_2_cuadrado.getText());
+							double altura = Double.valueOf(txt_altura.getText());
+							String nombre = txt_nombre.getText();
+
+							Cuadrado figura = new Cuadrado(altura, nombre, x1, x2, y1, y2);
+							
+							PrismasLab.getLogin().getMisFiguras().add(figura);
+							
+							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
+							
+							Estudiante_Principal.cargarFiguras();
+							
+						}
+						
+						
+						
+							
+						
+							
+						
+							
+					}
+				});
+				btnCrear.setBounds(439, 21, 89, 23);
 				buttonPane.add(btnCrear);
 			}
 			{
 				JButton btnVistaPrevia = new JButton("Vista Previa");
-				btnVistaPrevia.setBounds(159, 21, 89, 23);
+				btnVistaPrevia.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+
+
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Triangulo")) {
+
+							double tx1 = Double.valueOf(txtX_1_triangulo.getText());
+							double ty1 = Double.valueOf(txtY_1_triangulo.getText());
+							double tx2 = Double.valueOf(txtX_2_triangulo.getText());
+							double ty2 = Double.valueOf(txtY_2_triangulo.getText());
+							double tx3 = Double.valueOf(txtX_3_triangulo.getText());
+							double ty3 = Double.valueOf(txtY_3_triangulo.getText());
+							double taltura = Double.valueOf(txt_altura.getText());
+							String tnombre = txt_nombre.getText();
+
+							PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre);
+							
+							 	
+						}
+
+
+
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
+
+							double x1c = Double.valueOf(txtX_1_cuadrado.getText());
+							double y1c = Double.valueOf(txtY_1_cuadrado.getText());
+							double x2c = Double.valueOf(txtX_2_cuadrado.getText());
+							double y2c = Double.valueOf(txtY_2_cuadrado.getText());
+							double alturac = Double.valueOf(txt_altura.getText());
+							String nombrec = txt_nombre.getText();
+
+							PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec);
+
+						}
+
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Trapecio")) {
+
+							double x1t = Double.valueOf(txtX_1_trapecio.getText());
+							double y1t = Double.valueOf(txtY_1_trapecio.getText());
+							double x2t = Double.valueOf(txtX_2_trapecio.getText());
+							double y2t = Double.valueOf(txtY_2_trapecio.getText());
+							double x3t = Double.valueOf(txtX_3_trapecio.getText());
+							double y3t = Double.valueOf(txtY_3_trapecio.getText());
+							double x4t = Double.valueOf(txtX_4_trapecio.getText());
+							double y4t = Double.valueOf(txtY_4_trapecio.getText());
+							double alturat = Double.valueOf(txt_altura.getText());
+							String nombret = txt_nombre.getText();
+
+							PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret);
+
+						}
+
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rombo")) {
+
+							double x1 = Double.valueOf(txtX_1_rombo.getText());
+							double y1 = Double.valueOf(txtY_1_rombo.getText());
+							double D = Double.valueOf(txt_d_vertical.getText());
+							double d = Double.valueOf(txt_d_horizontal.getText());
+							double altura = Double.valueOf(txt_altura.getText());
+							String nombre = txt_nombre.getText();
+
+							PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre);
+
+						}
+
+						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rectangulo")) {
+
+							double x1 = Double.valueOf(txtX_1_rectangulo.getText());
+							double y1 = Double.valueOf(txtY_1_rectangulo.getText());
+							double x2 = Double.valueOf(txtX_2_rectangulo.getText());
+							double y2 = Double.valueOf(txtY_2_rectangulo.getText());
+							double x3 = Double.valueOf(txtX_3_rectangulo.getText());
+							double y3 = Double.valueOf(txtY_3_rectangulo.getText());
+							double altura = Double.valueOf(txt_altura.getText());
+							String nombre = txt_nombre.getText();
+
+							PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre);
+
+
+
+						}
+
+
+
+						///DAOEHFIJNFIJBSEIAOJLBFKJEABLFKN
+
+
+
+						///EAFAEFAEFEASfE
+
+
+
+
+					}
+				});
+				btnVistaPrevia.setBounds(164, 21, 111, 23);
 				buttonPane.add(btnVistaPrevia);
 			}
 		}
@@ -239,7 +435,7 @@ public class Crear_Figuras extends JDialog {
 			contentPanel.add(CARD);
 			CARD.setLayout(new CardLayout(0, 0));
 			{
-			    panel_vacio = new JPanel();
+				panel_vacio = new JPanel();
 				panel_vacio.setBackground(new Color(0, 0, 102));
 				CARD.add(panel_vacio, "name_3534528306112726");
 				panel_vacio.setLayout(null);
@@ -257,37 +453,37 @@ public class Crear_Figuras extends JDialog {
 				CARD.add(panel_triangulo, "name_3534587133413675");
 				panel_triangulo.setLayout(null);
 				{
-					JFormattedTextField frmtdtxtfldX_1_triangulo = new JFormattedTextField();
+					frmtdtxtfldX_1_triangulo = new JFormattedTextField();
 					frmtdtxtfldX_1_triangulo.setText("X1: ");
 					frmtdtxtfldX_1_triangulo.setBounds(10, 5, 32, 20);
 					panel_triangulo.add(frmtdtxtfldX_1_triangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_1_triangulo = new JFormattedTextField();
+					frmtdtxtfldY_1_triangulo = new JFormattedTextField();
 					frmtdtxtfldY_1_triangulo.setText("Y1:");
 					frmtdtxtfldY_1_triangulo.setBounds(135, 5, 32, 20);
 					panel_triangulo.add(frmtdtxtfldY_1_triangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_2_triangulo = new JFormattedTextField();
+					frmtdtxtfldX_2_triangulo = new JFormattedTextField();
 					frmtdtxtfldX_2_triangulo.setText("X2:");
 					frmtdtxtfldX_2_triangulo.setBounds(10, 36, 32, 20);
 					panel_triangulo.add(frmtdtxtfldX_2_triangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_2_triangulo = new JFormattedTextField();
+					frmtdtxtfldY_2_triangulo = new JFormattedTextField();
 					frmtdtxtfldY_2_triangulo.setText("Y2:");
 					frmtdtxtfldY_2_triangulo.setBounds(135, 36, 32, 20);
 					panel_triangulo.add(frmtdtxtfldY_2_triangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_3_triangulo = new JFormattedTextField();
+					frmtdtxtfldX_3_triangulo = new JFormattedTextField();
 					frmtdtxtfldX_3_triangulo.setText("X3:");
 					frmtdtxtfldX_3_triangulo.setBounds(10, 67, 32, 20);
 					panel_triangulo.add(frmtdtxtfldX_3_triangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_3_triangulo = new JFormattedTextField();
+					frmtdtxtfldY_3_triangulo = new JFormattedTextField();
 					frmtdtxtfldY_3_triangulo.setText("Y3:");
 					frmtdtxtfldY_3_triangulo.setBounds(135, 67, 32, 20);
 					panel_triangulo.add(frmtdtxtfldY_3_triangulo);
@@ -335,25 +531,25 @@ public class Crear_Figuras extends JDialog {
 				CARD.add(panel_cuadrado, "name_3534603057838194");
 				panel_cuadrado.setLayout(null);
 				{
-					JFormattedTextField frmtdtxtfldX_1_cuadrado = new JFormattedTextField();
+					frmtdtxtfldX_1_cuadrado = new JFormattedTextField();
 					frmtdtxtfldX_1_cuadrado.setText("X1:");
 					frmtdtxtfldX_1_cuadrado.setBounds(10, 11, 31, 20);
 					panel_cuadrado.add(frmtdtxtfldX_1_cuadrado);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_1_cuadrado = new JFormattedTextField();
+					frmtdtxtfldY_1_cuadrado = new JFormattedTextField();
 					frmtdtxtfldY_1_cuadrado.setText("Y1:");
 					frmtdtxtfldY_1_cuadrado.setBounds(131, 11, 31, 20);
 					panel_cuadrado.add(frmtdtxtfldY_1_cuadrado);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_2_cuadrado = new JFormattedTextField();
+					frmtdtxtfldX_2_cuadrado = new JFormattedTextField();
 					frmtdtxtfldX_2_cuadrado.setText("X2:");
 					frmtdtxtfldX_2_cuadrado.setBounds(10, 42, 31, 20);
 					panel_cuadrado.add(frmtdtxtfldX_2_cuadrado);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_2_cuadrado = new JFormattedTextField();
+					frmtdtxtfldY_2_cuadrado = new JFormattedTextField();
 					frmtdtxtfldY_2_cuadrado.setText("Y2:");
 					frmtdtxtfldY_2_cuadrado.setBounds(131, 42, 31, 20);
 					panel_cuadrado.add(frmtdtxtfldY_2_cuadrado);
@@ -389,7 +585,7 @@ public class Crear_Figuras extends JDialog {
 				CARD.add(panel_trapecio, "name_3534608440743926");
 				panel_trapecio.setLayout(null);
 				{
-					JFormattedTextField frmtdtxtfldX_1_trapecio = new JFormattedTextField();
+					frmtdtxtfldX_1_trapecio = new JFormattedTextField();
 					frmtdtxtfldX_1_trapecio.setText("X1:");
 					frmtdtxtfldX_1_trapecio.setBounds(10, 11, 29, 20);
 					panel_trapecio.add(frmtdtxtfldX_1_trapecio);
@@ -401,13 +597,13 @@ public class Crear_Figuras extends JDialog {
 					panel_trapecio.add(frmtdtxtfldY_1_trapecio);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_2_trapecio = new JFormattedTextField();
+					frmtdtxtfldX_2_trapecio = new JFormattedTextField();
 					frmtdtxtfldX_2_trapecio.setText("X2:");
 					frmtdtxtfldX_2_trapecio.setBounds(10, 42, 29, 20);
 					panel_trapecio.add(frmtdtxtfldX_2_trapecio);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_2_trapecio = new JFormattedTextField();
+					frmtdtxtfldY_2_trapecio = new JFormattedTextField();
 					frmtdtxtfldY_2_trapecio.setText("Y2:");
 					frmtdtxtfldY_2_trapecio.setBounds(127, 42, 35, 20);
 					panel_trapecio.add(frmtdtxtfldY_2_trapecio);
@@ -425,25 +621,25 @@ public class Crear_Figuras extends JDialog {
 					txtY_1_trapecio.setColumns(10);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_3_trapecio = new JFormattedTextField();
+					frmtdtxtfldX_3_trapecio = new JFormattedTextField();
 					frmtdtxtfldX_3_trapecio.setText("X3:");
 					frmtdtxtfldX_3_trapecio.setBounds(10, 73, 29, 20);
 					panel_trapecio.add(frmtdtxtfldX_3_trapecio);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_4_trapecio = new JFormattedTextField();
+					frmtdtxtfldX_4_trapecio = new JFormattedTextField();
 					frmtdtxtfldX_4_trapecio.setText("X4:");
 					frmtdtxtfldX_4_trapecio.setBounds(10, 104, 29, 20);
 					panel_trapecio.add(frmtdtxtfldX_4_trapecio);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_3_trapecio = new JFormattedTextField();
+					frmtdtxtfldY_3_trapecio = new JFormattedTextField();
 					frmtdtxtfldY_3_trapecio.setText("Y3:");
 					frmtdtxtfldY_3_trapecio.setBounds(127, 73, 35, 20);
 					panel_trapecio.add(frmtdtxtfldY_3_trapecio);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_4_trapecio = new JFormattedTextField();
+					frmtdtxtfldY_4_trapecio = new JFormattedTextField();
 					frmtdtxtfldY_4_trapecio.setText("Y4:");
 					frmtdtxtfldY_4_trapecio.setBounds(127, 104, 35, 20);
 					panel_trapecio.add(frmtdtxtfldY_4_trapecio);
@@ -491,52 +687,52 @@ public class Crear_Figuras extends JDialog {
 				CARD.add(panel_rombo, "name_3534611105430280");
 				panel_rombo.setLayout(null);
 				{
-					JFormattedTextField frmtdtxtfldX_1_rombo = new JFormattedTextField();
+					frmtdtxtfldX_1_rombo = new JFormattedTextField();
 					frmtdtxtfldX_1_rombo.setText("X1:");
 					frmtdtxtfldX_1_rombo.setBounds(10, 11, 29, 20);
 					panel_rombo.add(frmtdtxtfldX_1_rombo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_1_rombo = new JFormattedTextField();
+					frmtdtxtfldY_1_rombo = new JFormattedTextField();
 					frmtdtxtfldY_1_rombo.setText("Y1:");
 					frmtdtxtfldY_1_rombo.setBounds(133, 11, 29, 20);
 					panel_rombo.add(frmtdtxtfldY_1_rombo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldDVertical = new JFormattedTextField();
+					frmtdtxtfldDVertical = new JFormattedTextField();
 					frmtdtxtfldDVertical.setText("D Vertical:");
 					frmtdtxtfldDVertical.setBounds(10, 42, 69, 20);
 					panel_rombo.add(frmtdtxtfldDVertical);
 				}
 				{
-					JFormattedTextField frmtdtxtfldDHorizontal = new JFormattedTextField();
+					frmtdtxtfldDHorizontal = new JFormattedTextField();
 					frmtdtxtfldDHorizontal.setText("D Horizontal:");
 					frmtdtxtfldDHorizontal.setBounds(10, 73, 69, 20);
 					panel_rombo.add(frmtdtxtfldDHorizontal);
 				}
 				{
-					textField_1 = new JTextField();
-					textField_1.setBounds(49, 11, 40, 20);
-					panel_rombo.add(textField_1);
-					textField_1.setColumns(10);
+					txtX_1_rombo = new JTextField();
+					txtX_1_rombo.setBounds(49, 11, 40, 20);
+					panel_rombo.add(txtX_1_rombo);
+					txtX_1_rombo.setColumns(10);
 				}
 				{
-					textField_2 = new JTextField();
-					textField_2.setBounds(89, 73, 123, 20);
-					panel_rombo.add(textField_2);
-					textField_2.setColumns(10);
+					txt_d_horizontal = new JTextField();
+					txt_d_horizontal.setBounds(89, 73, 123, 20);
+					panel_rombo.add(txt_d_horizontal);
+					txt_d_horizontal.setColumns(10);
 				}
 				{
-					textField_3 = new JTextField();
-					textField_3.setBounds(172, 11, 40, 20);
-					panel_rombo.add(textField_3);
-					textField_3.setColumns(10);
+					txtY_1_rombo = new JTextField();
+					txtY_1_rombo.setBounds(172, 11, 40, 20);
+					panel_rombo.add(txtY_1_rombo);
+					txtY_1_rombo.setColumns(10);
 				}
 				{
-					textField_4 = new JTextField();
-					textField_4.setBounds(89, 42, 123, 20);
-					panel_rombo.add(textField_4);
-					textField_4.setColumns(10);
+					txt_d_vertical = new JTextField();
+					txt_d_vertical.setBounds(89, 42, 123, 20);
+					panel_rombo.add(txt_d_vertical);
+					txt_d_vertical.setColumns(10);
 				}
 			}
 			{
@@ -545,79 +741,78 @@ public class Crear_Figuras extends JDialog {
 				CARD.add(panel_rectangulo, "name_3534615514417211");
 				panel_rectangulo.setLayout(null);
 				{
-					JFormattedTextField frmtdtxtfldX_1_rectangulo = new JFormattedTextField();
+					frmtdtxtfldX_1_rectangulo = new JFormattedTextField();
 					frmtdtxtfldX_1_rectangulo.setText("X1:");
 					frmtdtxtfldX_1_rectangulo.setBounds(10, 11, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldX_1_rectangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_1_rectangulo = new JFormattedTextField();
+					frmtdtxtfldY_1_rectangulo = new JFormattedTextField();
 					frmtdtxtfldY_1_rectangulo.setText("Y1:");
 					frmtdtxtfldY_1_rectangulo.setBounds(131, 11, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldY_1_rectangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_2_rectangulo = new JFormattedTextField();
+					frmtdtxtfldX_2_rectangulo = new JFormattedTextField();
 					frmtdtxtfldX_2_rectangulo.setText("X2:");
 					frmtdtxtfldX_2_rectangulo.setBounds(10, 42, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldX_2_rectangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_2_rectangulo = new JFormattedTextField();
+					frmtdtxtfldY_2_rectangulo = new JFormattedTextField();
 					frmtdtxtfldY_2_rectangulo.setText("Y2:");
 					frmtdtxtfldY_2_rectangulo.setBounds(131, 42, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldY_2_rectangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldX_3_rectangulo = new JFormattedTextField();
+					frmtdtxtfldX_3_rectangulo = new JFormattedTextField();
 					frmtdtxtfldX_3_rectangulo.setText("X3:");
 					frmtdtxtfldX_3_rectangulo.setBounds(10, 73, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldX_3_rectangulo);
 				}
 				{
-					JFormattedTextField frmtdtxtfldY_3_rectangulo = new JFormattedTextField();
+					frmtdtxtfldY_3_rectangulo = new JFormattedTextField();
 					frmtdtxtfldY_3_rectangulo.setText("Y3:");
 					frmtdtxtfldY_3_rectangulo.setBounds(131, 73, 31, 20);
 					panel_rectangulo.add(frmtdtxtfldY_3_rectangulo);
 				}
 				{
-					textField_5 = new JTextField();
-					textField_5.setBounds(51, 11, 40, 20);
-					panel_rectangulo.add(textField_5);
-					textField_5.setColumns(10);
+					txtX_1_rectangulo = new JTextField();
+					txtX_1_rectangulo.setBounds(51, 11, 40, 20);
+					panel_rectangulo.add(txtX_1_rectangulo);
+					txtX_1_rectangulo.setColumns(10);
 				}
 				{
-					textField_6 = new JTextField();
-					textField_6.setBounds(172, 11, 40, 20);
-					panel_rectangulo.add(textField_6);
-					textField_6.setColumns(10);
+					txtY_1_rectangulo = new JTextField();
+					txtY_1_rectangulo.setBounds(172, 11, 40, 20);
+					panel_rectangulo.add(txtY_1_rectangulo);
+					txtY_1_rectangulo.setColumns(10);
 				}
 				{
-					textField_7 = new JTextField();
-					textField_7.setBounds(51, 42, 40, 20);
-					panel_rectangulo.add(textField_7);
-					textField_7.setColumns(10);
+					txtX_2_rectangulo = new JTextField();
+					txtX_2_rectangulo.setBounds(51, 42, 40, 20);
+					panel_rectangulo.add(txtX_2_rectangulo);
+					txtX_2_rectangulo.setColumns(10);
 				}
 				{
-					textField_8 = new JTextField();
-					textField_8.setBounds(51, 73, 40, 20);
-					panel_rectangulo.add(textField_8);
-					textField_8.setColumns(10);
+					txtX_3_rectangulo = new JTextField();
+					txtX_3_rectangulo.setBounds(51, 73, 40, 20);
+					panel_rectangulo.add(txtX_3_rectangulo);
+					txtX_3_rectangulo.setColumns(10);
 				}
 				{
-					textField_9 = new JTextField();
-					textField_9.setBounds(172, 42, 40, 20);
-					panel_rectangulo.add(textField_9);
-					textField_9.setColumns(10);
+					txtY_2_rectangulo = new JTextField();
+					txtY_2_rectangulo.setBounds(172, 42, 40, 20);
+					panel_rectangulo.add(txtY_2_rectangulo);
+					txtY_2_rectangulo.setColumns(10);
 				}
 				{
-					textField_10 = new JTextField();
-					textField_10.setBounds(172, 73, 40, 20);
-					panel_rectangulo.add(textField_10);
-					textField_10.setColumns(10);
+					txtY_3_rectangulo = new JTextField();
+					txtY_3_rectangulo.setBounds(172, 73, 40, 20);
+					panel_rectangulo.add(txtY_3_rectangulo);
+					txtY_3_rectangulo.setColumns(10);
 				}
 			}
 		}
 	}
-
 }

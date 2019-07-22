@@ -35,6 +35,7 @@ import javax.swing.border.LineBorder;
 
 import Logica.PrismasLab;
 import Logica.Usuarios;
+import javax.swing.JPasswordField;
 
 
 
@@ -181,7 +182,7 @@ public class Login_Principal extends JDialog {
 				txtpnContrase.setBounds(88, 73, 97, 20);
 				panel_ingresar.add(txtpnContrase);
 
-				txtContrasena = new JTextField();
+				txtContrasena = new JPasswordField();
 				txtContrasena.setColumns(10);
 				txtContrasena.setBackground(Color.ORANGE);
 				txtContrasena.setBounds(10, 98, 253, 20);

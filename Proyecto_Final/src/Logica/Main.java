@@ -39,6 +39,8 @@ public class Main {
 		System.out.println(cuadradoPrueba.areaLateral());
 		System.out.println(trianguloPrueba.areaLateral());
 		
+		//controladora.graficarCuadrado(x1, y1, x2, y2, altura, name);
+		
 		
 	}
 

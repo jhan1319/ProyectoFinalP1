@@ -19,6 +19,9 @@ import javax.media.j3d.*;
 import com.sun.j3d.utils.image.*;
 import com.sun.j3d.utils.geometry.*;
 import com.sun.j3d.utils.universe.*;
+
+import Visual.Crear_Figuras;
+
 import com.sun.j3d.utils.behaviors.vp.OrbitBehavior;
 import com.sun.j3d.utils.scenegraph.io.*;
 import com.sun.j3d.loaders.objectfile.ObjectFile;
@@ -74,7 +77,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
     //-------------------------------------------------------------------------
  
     // GUI Components
-    private static JFrame frame;
+    public static  JInternalFrame frame;
     private static Panel canvasPanel;
     private static JMenuBar menuBar;
     private static JMenu fileMenu, cameraMenu, graphicsMenu;
@@ -229,7 +232,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
     /**
      * Initializes the 3D engine.
      */
-    private static void initialize () {
+    public static void initialize () {
  
         numDivisions = DEFAULT_NUM_DIVISIONS;
  
@@ -240,15 +243,18 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         initializeCanvas();
  
         if (frame != null) frame.setVisible(false);
-        frame = new JFrame();
+        frame = new JInternalFrame();
         frame.setVisible(false);
+        //frame.setUndecorated(true);
         frame.setResizable(fullscreen);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Standard Draw 3D");
         frame.add(canvasPanel);
+        frame.setLocation(823, 123);
         frame.setJMenuBar(createMenuBar()); 
+        frame.setJMenuBar(null);
         frame.addComponentListener(std);
-        frame.addWindowFocusListener(std);
+       // frame.addWindowFocusListener(std);
         //frame.getContentPane().setCursor(new Cursor(Cursor.MOVE_CURSOR));
         frame.pack();
  
@@ -318,7 +324,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
          
         frame.setVisible(true);
         frame.toFront();
-        frame.setState(Frame.NORMAL);
+     //   frame.setState(Frame.NORMAL);
         initialized = true;
  
     }
@@ -591,7 +597,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
     public void actionPerformed (ActionEvent e) {
         Object source = e.getSource();
  
-        if (source == saveButton)      
+       /* if (source == saveButton)      
             saveAction();
         else if (source == loadButton)
             loadAction();
@@ -599,7 +605,8 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
             save3DAction();
         else if (source == quitButton)      
             quitAction();
-        else if (source == orbitModeButton) 
+            */
+        if (source == orbitModeButton) 
             setCameraMode(ORBIT_MODE);
         else if (source == fpsModeButton)   
             setCameraMode(FPS_MODE);
@@ -922,7 +929,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         setCanvasSize(w, h, false);
     }
  
-    private static void setCanvasSize (int w, int h, boolean fs) {
+    public static void setCanvasSize (int w, int h, boolean fs) {
  
         fullscreen = fs;
  
@@ -932,6 +939,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
  
         aspectRatio = (double)width / (double)height;
         initialize();
+        
     }
  
     /**
@@ -1121,7 +1129,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
     public static void fullscreen () {
  
         frame.setResizable(true);
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        //frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         int w = frame.getSize().width;
         int h = frame.getSize().height;
  
@@ -1132,7 +1140,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         int borderX = frame.getInsets().left + frame.getInsets().right;
  
         setCanvasSize(w - borderX, h - borderY - menuBar.getHeight(), true);
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+     //   frame.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
  
     /**
@@ -1633,7 +1641,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
     /* ***************************************************************
      *             Action Listener Methods                           *
      *****************************************************************/
- 
+ /*
     private static void save3DAction () {
  
         FileDialog chooser = new FileDialog(StdDraw3D.frame, "Save as a 3D file for loading later.", FileDialog.SAVE);
@@ -1647,7 +1655,8 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         keysDown.remove(KeyEvent.VK_CONTROL);
         keysDown.remove(KeyEvent.VK_E);
     }   
- 
+    */
+ /*
     private static void loadAction () {
  
         FileDialog chooser = new FileDialog(frame, "Pick a .obj or .ply file to load.", FileDialog.LOAD);
@@ -1673,7 +1682,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         keysDown.remove(KeyEvent.VK_META);
         keysDown.remove(KeyEvent.VK_CONTROL);
         keysDown.remove(KeyEvent.VK_S);
-    }   
+    }  
  
     private static void quitAction () {
  
@@ -1684,6 +1693,7 @@ KeyListener, ActionListener, ChangeListener, ComponentListener, WindowFocusListe
         keysDown.remove(KeyEvent.VK_CONTROL);
         keysDown.remove(KeyEvent.VK_Q);
     }
+    */ 
  
     /* ***************************************************************
      *             Light and Background Methods                      *

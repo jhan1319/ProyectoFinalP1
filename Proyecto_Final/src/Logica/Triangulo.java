@@ -69,7 +69,7 @@ public class Triangulo extends Prismas {
 
 
 	@Override
-	public float perimetro() {
+	public double perimetro() {
 		
 		
 		

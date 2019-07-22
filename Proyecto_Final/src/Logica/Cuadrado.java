@@ -2,20 +2,20 @@ package Logica;
 
 public class Cuadrado extends Prismas {
 	
-	private float x1;
-	private float x2;
-	private float y1;
-	private float y2;
+	private double x1;
+	private double x2;
+	private double y1;
+	private double y2;
 	
-	public Cuadrado(float altura, String nombre, float x1, float x2, float y1, float y2) {
+	public Cuadrado(double altura, String nombre, double x12, double x22, double y12, double y22) {
 		super(altura, nombre);
-		this.x1 = x1;
-		this.x2 = x2;
-		this.y1 = y1;
-		this.y2 = y2;
+		this.x1 = x12;
+		this.x2 = x22;
+		this.y1 = y12;
+		this.y2 = y22;
 	}
 
-	public float getX1() {
+	public double getX1() {
 		return x1;
 	}
 
@@ -23,7 +23,7 @@ public class Cuadrado extends Prismas {
 		this.x1 = x1;
 	}
 
-	public float getX2() {
+	public double getX2() {
 		return x2;
 	}
 
@@ -31,7 +31,7 @@ public class Cuadrado extends Prismas {
 		this.x2 = x2;
 	}
 
-	public float getY1() {
+	public double getY1() {
 		return y1;
 	}
 
@@ -39,7 +39,7 @@ public class Cuadrado extends Prismas {
 		this.y1 = y1;
 	}
 
-	public float getY2() {
+	public double getY2() {
 		return y2;
 	}
 
@@ -47,9 +47,9 @@ public class Cuadrado extends Prismas {
 		this.y2 = y2;
 	}
 
-	public float perimetro() {
+	public double perimetro() {
 		
-		float lado = Math.abs(x2 - x1);
+		double lado = Math.abs(x2 - x1);
 		
 		if (lado == 0) {
 			
@@ -57,7 +57,7 @@ public class Cuadrado extends Prismas {
 			
 		}
 				
-		return (float) Math.pow(lado, 2) ;
+		return (double) Math.pow(lado, 2) ;
 	}
 
 }
