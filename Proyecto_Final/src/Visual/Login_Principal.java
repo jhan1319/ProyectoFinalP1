@@ -36,6 +36,8 @@ import javax.swing.border.LineBorder;
 import Logica.PrismasLab;
 import Logica.Usuarios;
 import javax.swing.JPasswordField;
+import java.awt.Label;
+import java.awt.SystemColor;
 
 
 
@@ -45,6 +47,7 @@ public class Login_Principal extends JDialog {
 	private JTextField txtUsuario;
 	private JTextField txtContrasena;
 	private JTextField txtUsuarioNoEncontrdo;
+	ImageIcon imagenIcon;
 
 	/**
 	 * Launch the application.
@@ -102,7 +105,7 @@ public class Login_Principal extends JDialog {
 	public Login_Principal() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
-		setBounds(100, 100, 449, 382);
+		setBounds(100, 100, 923, 709);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(51, 51, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -117,34 +120,17 @@ public class Login_Principal extends JDialog {
 			{
 				JPanel panel_titulo = new JPanel();
 				panel_titulo.setBorder(new LineBorder(new Color(0, 0, 0)));
-				panel_titulo.setBounds(10, 11, 419, 128);
+				panel_titulo.setBounds(10, 11, 893, 149);
 				panel_general.add(panel_titulo);
 				panel_titulo.setLayout(null);
 				{
-					JTextPane txtpnPrismassLab = new JTextPane();
-					txtpnPrismassLab.setBackground(new Color(248, 248, 255));
-					txtpnPrismassLab.setEditable(false);
-					txtpnPrismassLab.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 19));
-					txtpnPrismassLab.setText("\r\n       PRISMAS'S LAB");
-					txtpnPrismassLab.setBounds(120, 0, 190, 74);
-					panel_titulo.add(txtpnPrismassLab);
-				}
-
-
-				{
-					JLabel lblTema = new JLabel("");
-					lblTema.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/Idea_Portada.png")));
-					lblTema.setBounds(112, 0, 307, 128);
-					panel_titulo.add(lblTema);
-				}
-				{
-					JLabel lblGif = new JLabel();
 					ImageIcon imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
-					lblGif.setIcon(imagenIcon);
-					imagenIcon.setImageObserver(lblGif);
-					lblGif.setBounds(10, 11, 100, 106);
-					panel_titulo.add(lblGif);
 				}
+				
+				JLabel label_1 = new JLabel("");
+				label_1.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\Titulo.PNG"));
+				label_1.setBounds(82, 29, 754, 95);
+				panel_titulo.add(label_1);
 				{
 
 
@@ -154,7 +140,7 @@ public class Login_Principal extends JDialog {
 				JPanel panel_ingresar = new JPanel();
 				panel_ingresar.setBackground(new Color(51,153,255));
 				panel_ingresar.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
-				panel_ingresar.setBounds(80, 144, 278, 155);
+				panel_ingresar.setBounds(226, 194, 422, 325);
 				panel_general.add(panel_ingresar);
 				panel_ingresar.setLayout(null);
 
@@ -162,14 +148,14 @@ public class Login_Principal extends JDialog {
 				txtpnUsuario.setEnabled(false);
 				txtpnUsuario.setEditable(false);
 				txtpnUsuario.setBackground(new Color(51, 153, 255));
-				txtpnUsuario.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
-				txtpnUsuario.setText("USUARIO: ");
-				txtpnUsuario.setBounds(102, 11, 68, 20);
+				txtpnUsuario.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
+				txtpnUsuario.setText("Usuario: ");
+				txtpnUsuario.setBounds(163, 11, 112, 30);
 				panel_ingresar.add(txtpnUsuario);
 
 				txtUsuario = new JTextField();
 				txtUsuario.setBackground(Color.ORANGE);
-				txtUsuario.setBounds(10, 42, 253, 20);
+				txtUsuario.setBounds(10, 42, 402, 20);
 				panel_ingresar.add(txtUsuario);
 				txtUsuario.setColumns(10);
 
@@ -177,35 +163,46 @@ public class Login_Principal extends JDialog {
 				txtpnContrase.setEnabled(false);
 				txtpnContrase.setEditable(false);
 				txtpnContrase.setBackground(new Color(51, 153, 255));
-				txtpnContrase.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
-				txtpnContrase.setText("CONTRASE\u00D1A: ");
-				txtpnContrase.setBounds(88, 73, 97, 20);
+				txtpnContrase.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
+				txtpnContrase.setText("Contrase\u00F1a: ");
+				txtpnContrase.setBounds(142, 97, 154, 30);
 				panel_ingresar.add(txtpnContrase);
 
 				txtContrasena = new JPasswordField();
 				txtContrasena.setColumns(10);
 				txtContrasena.setBackground(Color.ORANGE);
-				txtContrasena.setBounds(10, 98, 253, 20);
+				txtContrasena.setBounds(10, 133, 402, 20);
 				panel_ingresar.add(txtContrasena);
 				
 				txtUsuarioNoEncontrdo = new JTextField();
+				txtUsuarioNoEncontrdo.setFont(new Font("Broadway", Font.PLAIN, 17));
 				txtUsuarioNoEncontrdo.setEnabled(false);
 				txtUsuarioNoEncontrdo.setEditable(false);
 				txtUsuarioNoEncontrdo.setVisible(false);
 				txtUsuarioNoEncontrdo.setBackground(Color.RED);
-				txtUsuarioNoEncontrdo.setText("USUARIO NO ENCONTRDO!");
-				txtUsuarioNoEncontrdo.setBounds(54, 127, 165, 20);
+				txtUsuarioNoEncontrdo.setText("Usuario no encontrado");
+				txtUsuarioNoEncontrdo.setBounds(108, 176, 223, 20);
 				panel_ingresar.add(txtUsuarioNoEncontrdo);
 				txtUsuarioNoEncontrdo.setColumns(10);
+				
+				JLabel lblGif = new JLabel();
+				imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
+				lblGif.setBounds(180, 224, 100, 90);
+				panel_ingresar.add(lblGif);
+				lblGif.setIcon(imagenIcon);
+				imagenIcon.setImageObserver(lblGif);
 			}
 			{
 				JPanel buttonPane = new JPanel();
-				buttonPane.setBounds(0, 300, 439, 72);
+				buttonPane.setBounds(10, 550, 913, 149);
 				panel_general.add(buttonPane);
-				buttonPane.setBackground(new Color(255, 255, 51));
+				buttonPane.setBackground(new Color(102, 255, 102));
 				buttonPane.setLayout(null);
 				{
 					JButton login_Button = new JButton("");
+					login_Button.setBorderPainted(false);
+					login_Button.setFocusable(false);
+					login_Button.setContentAreaFilled(false);
 					login_Button.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) { ///// true= existe un usuario con ese nombre
 							
@@ -241,11 +238,8 @@ public class Login_Principal extends JDialog {
 
 						}
 					});
-
-					login_Button.setContentAreaFilled(false);
-					login_Button.setFocusable(false);
-					login_Button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/agregar_user.png")));
-					login_Button.setBounds(313, 11, 53, 52);
+					login_Button.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\user_check_128.png"));
+					login_Button.setBounds(668, 11, 122, 127);
 					login_Button.setActionCommand("OK");
 					buttonPane.add(login_Button);
 					getRootPane().setDefaultButton(login_Button);
@@ -255,8 +249,8 @@ public class Login_Principal extends JDialog {
 					cancel_Button.setContentAreaFilled(false);
 					cancel_Button.setFocusable(false);
 					//	cancelButton.setBackground(Color.ORANGE);
-					cancel_Button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
-					cancel_Button.setBounds(376, 11, 53, 52);
+					cancel_Button.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cancel_login_96.png"));
+					cancel_Button.setBounds(800, 23, 103, 118);
 					cancel_Button.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							dispose();
@@ -266,6 +260,7 @@ public class Login_Principal extends JDialog {
 					buttonPane.add(cancel_Button);
 				}
 			}
+			ImageIcon imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
 		}
 	}
 }

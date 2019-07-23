@@ -27,12 +27,12 @@ import java.awt.event.ActionEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.border.TitledBorder;
+import javax.swing.JRadioButton;
 
 public class Crear_Figuras extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txt_altura;
-	private JComboBox cbxTipo;
 	private JPanel panel_triangulo;
 	private JPanel panel_cuadrado;
 	private JPanel panel_trapecio;
@@ -98,6 +98,11 @@ public class Crear_Figuras extends JDialog {
 	private JFormattedTextField frmtdtxtfldY_3_rectangulo;
 	private JPanel panel_vista_previa;
 
+	private JButton btnCuadrado;
+	private JButton btnTrapecio;
+	private JButton btnTriangulo;
+    private JButton btnRombo ;
+	private JButton btnRetngulo;
 	/**
 	 * Launch the application.
 	 */
@@ -119,7 +124,7 @@ public class Crear_Figuras extends JDialog {
 		PrismasLab controladora = PrismasLab.getInstance();
 
 		setUndecorated(true);
-		setBounds(100, 100, 981, 888);
+		setBounds(100, 100, 971, 888);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -128,7 +133,8 @@ public class Crear_Figuras extends JDialog {
 
 		{
 			JPanel panel_windows = new JPanel();
-			panel_windows.setBounds(0, 0, 981, 35);
+			panel_windows.setBackground(new Color(153, 0, 255));
+			panel_windows.setBounds(0, 0, 971, 64);
 			contentPanel.add(panel_windows);
 			panel_windows.setLayout(null);
 			{
@@ -139,14 +145,14 @@ public class Crear_Figuras extends JDialog {
 						dispose();
 					}
 				});
-				lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
-				lblCerrar.setBounds(940, 5, 32, 24);
+				lblCerrar.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cancel_login_48.png"));
+				lblCerrar.setBounds(913, 11, 48, 40);
 				panel_windows.add(lblCerrar);
 			}
 		}
 		{
 			JPanel panel_datos = new JPanel();
-			panel_datos.setBounds(10, 43, 325, 145);
+			panel_datos.setBounds(22, 58, 315, 583);
 			contentPanel.add(panel_datos);
 			panel_datos.setLayout(null);
 			{
@@ -158,88 +164,15 @@ public class Crear_Figuras extends JDialog {
 				panel_datos.add(frmtdtxtfldTipo);
 			}
 			{
-				cbxTipo = new JComboBox();
-				cbxTipo.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						
-						PrismasLab.pantallaVacia();
-						
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Triangulo")) {
-							panel_triangulo.setVisible(true);
-							panel_cuadrado.setVisible(false);
-							panel_rectangulo.setVisible(false);
-							panel_trapecio.setVisible(false);
-							panel_rombo.setVisible(false);
-							panel_vacio.setVisible(false);
-							PrismasLab.pantallaVacia();
-
-						}
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
-							panel_triangulo.setVisible(false);
-							panel_cuadrado.setVisible(true);
-							panel_rectangulo.setVisible(false);
-							panel_trapecio.setVisible(false);
-							panel_rombo.setVisible(false);
-							panel_vacio.setVisible(false);
-							PrismasLab.pantallaVacia();
-						}
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Trapecio")) {
-							panel_triangulo.setVisible(false);
-							panel_cuadrado.setVisible(false);
-							panel_rectangulo.setVisible(false);
-							panel_trapecio.setVisible(true);
-							panel_rombo.setVisible(false);
-							panel_vacio.setVisible(false);
-							PrismasLab.pantallaVacia();
-						}
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rombo")) {
-							panel_triangulo.setVisible(false);
-							panel_cuadrado.setVisible(false);
-							panel_rectangulo.setVisible(false);
-							panel_trapecio.setVisible(false);
-							panel_rombo.setVisible(true);
-							panel_vacio.setVisible(false);
-							PrismasLab.pantallaVacia();
-						}
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rectangulo")) {
-							panel_triangulo.setVisible(false);
-							panel_cuadrado.setVisible(false);
-							panel_rectangulo.setVisible(true);
-							panel_trapecio.setVisible(false);
-							panel_rombo.setVisible(false);
-							panel_vacio.setVisible(false);
-							PrismasLab.pantallaVacia();
-						}
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("<Seleccione>")){
-							panel_triangulo.setVisible(false);
-							panel_cuadrado.setVisible(false);
-							panel_rectangulo.setVisible(false);
-							panel_trapecio.setVisible(false);
-							panel_rombo.setVisible(false);
-							panel_vacio.setVisible(true);
-							PrismasLab.pantallaVacia();
-						}
-
-
-					}
-				});
-				cbxTipo.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Triangulo", "Cuadrado", "Trapecio", "Rombo", "Rectangulo"}));
-				cbxTipo.setBounds(110, 83, 102, 20);
-				panel_datos.add(cbxTipo);
-
-
-
-			}
-			{
 				JFormattedTextField frmtdtxtfldAltura = new JFormattedTextField();
 				frmtdtxtfldAltura.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 				frmtdtxtfldAltura.setText("Altura:");
-				frmtdtxtfldAltura.setBounds(9, 114, 67, 20);
+				frmtdtxtfldAltura.setBounds(10, 552, 67, 20);
 				panel_datos.add(frmtdtxtfldAltura);
 			}
 			{
 				txt_altura = new JTextField();
-				txt_altura.setBounds(108, 114, 86, 20);
+				txt_altura.setBounds(87, 553, 163, 20);
 				panel_datos.add(txt_altura);
 				txt_altura.setColumns(10);
 			}
@@ -252,18 +185,94 @@ public class Crear_Figuras extends JDialog {
 
 			JFormattedTextField frmtdtxtfldNombre = new JFormattedTextField();
 			frmtdtxtfldNombre.setText("Nombre:");
-			frmtdtxtfldNombre.setBounds(224, 80, 67, 22);
+			frmtdtxtfldNombre.setBounds(9, 522, 67, 22);
 			panel_datos.add(frmtdtxtfldNombre);
 
 			txt_nombre = new JTextField();
-			txt_nombre.setBounds(224, 113, 79, 22);
+			txt_nombre.setBounds(87, 520, 163, 22);
 			panel_datos.add(txt_nombre);
 			txt_nombre.setColumns(10);
+			
+			btnCuadrado = new JButton("Cuadrado");
+			btnCuadrado.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panel_triangulo.setVisible(false);
+					panel_cuadrado.setVisible(true);
+					panel_rectangulo.setVisible(false);
+					panel_trapecio.setVisible(false);
+					panel_rombo.setVisible(false);
+					panel_vacio.setVisible(false);
+					PrismasLab.pantallaVacia();
+				
+				}
+			});
+			btnCuadrado.setBounds(30, 160, 89, 23);
+			panel_datos.add(btnCuadrado);
+			
+			btnTrapecio = new JButton("Trapecio");
+			btnTrapecio.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panel_triangulo.setVisible(false);
+					panel_cuadrado.setVisible(false);
+					panel_rectangulo.setVisible(false);
+					panel_trapecio.setVisible(true);
+					panel_rombo.setVisible(false);
+					panel_vacio.setVisible(false);
+					PrismasLab.pantallaVacia();
+				}
+			});
+			btnTrapecio.setBounds(30, 210, 89, 23);
+			panel_datos.add(btnTrapecio);
+			
+			btnTriangulo = new JButton("Triangulo");
+			btnTriangulo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panel_triangulo.setVisible(true);
+					panel_cuadrado.setVisible(false);
+					panel_rectangulo.setVisible(false);
+					panel_trapecio.setVisible(false);
+					panel_rombo.setVisible(false);
+					panel_vacio.setVisible(false);
+					PrismasLab.pantallaVacia();
+				}
+			});
+			btnTriangulo.setBounds(30, 270, 89, 23);
+			panel_datos.add(btnTriangulo);
+			
+			btnRombo = new JButton("Rombo");
+			btnRombo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panel_triangulo.setVisible(false);
+					panel_cuadrado.setVisible(false);
+					panel_rectangulo.setVisible(false);
+					panel_trapecio.setVisible(false);
+					panel_rombo.setVisible(true);
+					panel_vacio.setVisible(false);
+					PrismasLab.pantallaVacia();
+				}
+			});
+			btnRombo.setBounds(30, 322, 89, 23);
+			panel_datos.add(btnRombo);
+			
+			btnRetngulo = new JButton("Retangulo");
+			btnRetngulo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panel_triangulo.setVisible(false);
+					panel_cuadrado.setVisible(false);
+					panel_rectangulo.setVisible(true);
+					panel_trapecio.setVisible(false);
+					panel_rombo.setVisible(false);
+					panel_vacio.setVisible(false);
+					PrismasLab.pantallaVacia();
+				}
+			});
+			btnRetngulo.setBounds(30, 369, 89, 23);
+			panel_datos.add(btnRetngulo);
 		}
 		{
 			panel_vista_previa = new JPanel();
-			panel_vista_previa.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel_vista_previa.setBounds(347, 48, 610, 610);
+			panel_vista_previa.setBorder(null);
+			panel_vista_previa.setBounds(347, 75, 610, 583);
 			contentPanel.add(panel_vista_previa);
 			panel_vista_previa.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			
@@ -273,7 +282,7 @@ public class Crear_Figuras extends JDialog {
 		}
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBounds(12, 818, 945, 57);
+			buttonPane.setBounds(12, 800, 945, 75);
 			contentPanel.add(buttonPane);
 			buttonPane.setLayout(null);
 			{
@@ -431,7 +440,7 @@ public class Crear_Figuras extends JDialog {
 		}
 		{
 			JPanel CARD = new JPanel();
-			CARD.setBounds(10, 191, 222, 249);
+			CARD.setBounds(10, 669, 947, 120);
 			contentPanel.add(CARD);
 			CARD.setLayout(new CardLayout(0, 0));
 			{
@@ -443,7 +452,7 @@ public class Crear_Figuras extends JDialog {
 					JFormattedTextField frmtdtxtfldSeleccioneElTipo = new JFormattedTextField();
 					frmtdtxtfldSeleccioneElTipo.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 14));
 					frmtdtxtfldSeleccioneElTipo.setText("Seleccione el tipo de figura");
-					frmtdtxtfldSeleccioneElTipo.setBounds(10, 51, 184, 23);
+					frmtdtxtfldSeleccioneElTipo.setBounds(290, 48, 184, 23);
 					panel_vacio.add(frmtdtxtfldSeleccioneElTipo);
 				}
 			}

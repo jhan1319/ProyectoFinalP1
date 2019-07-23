@@ -30,6 +30,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.JFormattedTextField;
 import java.awt.Font;
+import java.awt.SystemColor;
 
 public class Administrador_Principal extends JDialog {
 
@@ -40,7 +41,7 @@ public class Administrador_Principal extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	/*
+	
 	public static void main(String[] args) {
 		try {
 			Administrador_Principal dialog = new Administrador_Principal();
@@ -50,17 +51,18 @@ public class Administrador_Principal extends JDialog {
 			e.printStackTrace();
 		}
 	}
-*/
+
 	/**
 	 * Create the dialog.
 	 */
 	public Administrador_Principal() {
+		getContentPane().setBackground(new Color(255, 250, 205));
 		
 		setUndecorated(true);
-		setBounds(100, 100, 484, 472);
+		setBounds(100, 100, 855, 763);
 		getContentPane().setLayout(null);
 		contentPanel.setBackground(Color.CYAN);
-		contentPanel.setBounds(0, 0, 484, 384);
+		contentPanel.setBounds(0, 0, 855, 633);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
 		
@@ -71,7 +73,7 @@ public class Administrador_Principal extends JDialog {
 		{
 			JPanel panel_windows = new JPanel();
 			panel_windows.setBorder(new LineBorder(Color.BLACK));
-			panel_windows.setBounds(0, 0, 484, 43);
+			panel_windows.setBounds(0, 0, 855, 64);
 			contentPanel.add(panel_windows);
 			panel_windows.setLayout(null);
 			{
@@ -98,8 +100,8 @@ public class Administrador_Principal extends JDialog {
 					}
 				
 				});
-				lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
-				lblCerrar.setBounds(443, 11, 32, 25);
+				lblCerrar.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cancel_login_48.png"));
+				lblCerrar.setBounds(797, 11, 48, 40);
 				panel_windows.add(lblCerrar);
 			}
 			
@@ -107,13 +109,14 @@ public class Administrador_Principal extends JDialog {
 		
 		{
 			JPanel panel_registrar_estu = new JPanel();
-			panel_registrar_estu.setBorder(new LineBorder(Color.BLACK));
-			panel_registrar_estu.setBounds(10, 49, 203, 335);
+			panel_registrar_estu.setBorder(null);
+			panel_registrar_estu.setBounds(32, 100, 300, 494);
 			contentPanel.add(panel_registrar_estu);
 			panel_registrar_estu.setLayout(null);
 			
 			JButton btnRegistrarEstudiante = new JButton("");
-			btnRegistrarEstudiante.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/+usuario.png")));
+			btnRegistrarEstudiante.setContentAreaFilled(false);
+			btnRegistrarEstudiante.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\login_+_128.png"));
 			btnRegistrarEstudiante.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Registrar_Usuario user = new Registrar_Usuario();
@@ -121,10 +124,11 @@ public class Administrador_Principal extends JDialog {
 					user.setVisible(true);
 				}
 			});
-			btnRegistrarEstudiante.setBounds(22, 13, 124, 107);
+			btnRegistrarEstudiante.setBounds(80, 41, 131, 137);
 			panel_registrar_estu.add(btnRegistrarEstudiante);
 			
 			JButton button = new JButton("");
+			button.setContentAreaFilled(false);
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Lista_Admin_User lista = new Lista_Admin_User();
@@ -133,26 +137,33 @@ public class Administrador_Principal extends JDialog {
 
 				}
 			});
-			button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/lista_user_admin.png")));
-			button.setBounds(22, 152, 124, 73);
+			button.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\list_adm_128.png"));
+			button.setBounds(65, 266, 161, 137);
 			panel_registrar_estu.add(button);
 			
 			JFormattedTextField frmtdtxtfldR = new JFormattedTextField();
-			frmtdtxtfldR.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			frmtdtxtfldR.setEditable(false);
+			frmtdtxtfldR.setBorder(null);
+			frmtdtxtfldR.setFont(new Font("Broadway", Font.PLAIN, 20));
 			frmtdtxtfldR.setText("Registrar ");
-			frmtdtxtfldR.setBounds(50, 120, 61, 20);
+			frmtdtxtfldR.setBackground(panel_registrar_estu.getBackground());
+			frmtdtxtfldR.setBounds(90, 186, 111, 24);
 			panel_registrar_estu.add(frmtdtxtfldR);
 			
 			JFormattedTextField frmtdtxtfldLista = new JFormattedTextField();
-			frmtdtxtfldLista.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			frmtdtxtfldLista.setEditable(false);
+			frmtdtxtfldLista.setBorder(null);
+			//frmtdtxtfldLista.setBackground(SystemColor.controlShadow);
+			frmtdtxtfldLista.setFont(new Font("Broadway", Font.PLAIN, 18));
 			frmtdtxtfldLista.setText("Lista");
-			frmtdtxtfldLista.setBounds(62, 223, 45, 20);
+			frmtdtxtfldLista.setBackground(panel_registrar_estu.getBackground());
+			frmtdtxtfldLista.setBounds(116, 402, 59, 20);
 			panel_registrar_estu.add(frmtdtxtfldLista);
 		}
 		
 		JPanel panel_informacion = new JPanel();
 		panel_informacion.setBorder(new LineBorder(Color.BLACK));
-		panel_informacion.setBounds(241, 49, 233, 335);
+		panel_informacion.setBounds(398, 100, 419, 494);
 		contentPanel.add(panel_informacion);
 		panel_informacion.setLayout(null);
 		
@@ -182,11 +193,12 @@ public class Administrador_Principal extends JDialog {
 		panel_informacion.add(label_3);
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBounds(0, 384, 484, 88);
+			buttonPane.setBounds(0, 632, 855, 131);
 			getContentPane().add(buttonPane);
 			buttonPane.setLayout(null);
 			{
 				JButton okButton = new JButton("");
+				okButton.setContentAreaFilled(false);
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
@@ -211,8 +223,8 @@ public class Administrador_Principal extends JDialog {
 						
 					}
 				});
-				okButton.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/log_out.png")));
-				okButton.setBounds(394, 11, 80, 68);
+				okButton.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\logout_96.png"));
+				okButton.setBounds(748, 11, 97, 105);
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
