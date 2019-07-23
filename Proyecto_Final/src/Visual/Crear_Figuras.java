@@ -97,12 +97,13 @@ public class Crear_Figuras extends JDialog {
 	private JFormattedTextField frmtdtxtfldX_3_rectangulo;
 	private JFormattedTextField frmtdtxtfldY_3_rectangulo;
 	private JPanel panel_vista_previa;
-
+	private JComboBox<String> cbx_colores;
 	private JButton btnCuadrado;
 	private JButton btnTrapecio;
 	private JButton btnTriangulo;
-    private JButton btnRombo ;
+	private JButton btnRombo ;
 	private JButton btnRetangulo;
+	private JLabel lblColor;
 	/**
 	 * Launch the application.
 	 */
@@ -143,6 +144,9 @@ public class Crear_Figuras extends JDialog {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						dispose();
+						
+						Estudiante_Principal aux = new Estudiante_Principal();
+						aux.setVisible(true);
 					}
 				});
 				lblCerrar.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cancel_login_48.png"));
@@ -152,6 +156,7 @@ public class Crear_Figuras extends JDialog {
 		}
 		{
 			JPanel panel_datos = new JPanel();
+			panel_datos.setAutoscrolls(true);
 			panel_datos.setBounds(22, 58, 315, 583);
 			contentPanel.add(panel_datos);
 			panel_datos.setLayout(null);
@@ -167,12 +172,12 @@ public class Crear_Figuras extends JDialog {
 				JFormattedTextField frmtdtxtfldAltura = new JFormattedTextField();
 				frmtdtxtfldAltura.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 				frmtdtxtfldAltura.setText("Altura:");
-				frmtdtxtfldAltura.setBounds(10, 552, 67, 20);
+				frmtdtxtfldAltura.setBounds(11, 497, 67, 20);
 				panel_datos.add(frmtdtxtfldAltura);
 			}
 			{
 				txt_altura = new JTextField();
-				txt_altura.setBounds(87, 553, 163, 20);
+				txt_altura.setBounds(88, 498, 163, 20);
 				panel_datos.add(txt_altura);
 				txt_altura.setColumns(10);
 			}
@@ -184,15 +189,18 @@ public class Crear_Figuras extends JDialog {
 			}
 
 			JFormattedTextField frmtdtxtfldNombre = new JFormattedTextField();
+			frmtdtxtfldNombre.setAutoscrolls(false);
+			frmtdtxtfldNombre.setBorder(null);
+			frmtdtxtfldNombre.setVisible(false);
 			frmtdtxtfldNombre.setText("Nombre:");
-			frmtdtxtfldNombre.setBounds(9, 522, 67, 22);
+			frmtdtxtfldNombre.setBounds(10, 467, 67, 22);
 			panel_datos.add(frmtdtxtfldNombre);
 
 			txt_nombre = new JTextField();
-			txt_nombre.setBounds(87, 520, 163, 22);
+			txt_nombre.setBounds(88, 465, 163, 22);
 			panel_datos.add(txt_nombre);
 			txt_nombre.setColumns(10);
-			
+
 			btnCuadrado = new JButton("Cuadrado");
 			btnCuadrado.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -203,12 +211,12 @@ public class Crear_Figuras extends JDialog {
 					panel_rombo.setVisible(false);
 					panel_vacio.setVisible(false);
 					PrismasLab.pantallaVacia();
-				
+
 				}
 			});
 			btnCuadrado.setBounds(30, 160, 89, 23);
 			panel_datos.add(btnCuadrado);
-			
+
 			btnTrapecio = new JButton("Trapecio");
 			btnTrapecio.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -223,7 +231,7 @@ public class Crear_Figuras extends JDialog {
 			});
 			btnTrapecio.setBounds(30, 210, 89, 23);
 			panel_datos.add(btnTrapecio);
-			
+
 			btnTriangulo = new JButton("Triangulo");
 			btnTriangulo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -238,7 +246,7 @@ public class Crear_Figuras extends JDialog {
 			});
 			btnTriangulo.setBounds(30, 270, 89, 23);
 			panel_datos.add(btnTriangulo);
-			
+
 			btnRombo = new JButton("Rombo");
 			btnRombo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -253,7 +261,7 @@ public class Crear_Figuras extends JDialog {
 			});
 			btnRombo.setBounds(30, 322, 89, 23);
 			panel_datos.add(btnRombo);
-			
+
 			btnRetangulo = new JButton("Retangulo");
 			btnRetangulo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -268,6 +276,44 @@ public class Crear_Figuras extends JDialog {
 			});
 			btnRetangulo.setBounds(30, 369, 89, 23);
 			panel_datos.add(btnRetangulo);
+			{
+				lblColor = new JLabel("Color:");
+				lblColor.setBounds(21, 528, 46, 14);
+				panel_datos.add(lblColor);
+			}
+
+			cbx_colores = new JComboBox<String>();
+			cbx_colores.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+
+					/* EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 * EL EVENTO EMPIEZA AHORA
+					 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				}
+			});
+			cbx_colores.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Negro", "Azul", "Cyan", "Gris Claro", "Gris Oscuro", "Verde", "Magenta", "Naranja", "Rosado", "Rojo", "Blanco", "Amarillo"}));
+			cbx_colores.setBounds(88, 529, 163, 20);
+			panel_datos.add(cbx_colores);
 		}
 		{
 			panel_vista_previa = new JPanel();
@@ -275,9 +321,9 @@ public class Crear_Figuras extends JDialog {
 			panel_vista_previa.setBounds(347, 75, 610, 583);
 			contentPanel.add(panel_vista_previa);
 			panel_vista_previa.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-			
+
 			panel_vista_previa.add(StdDraw3D.frame);
-			
+
 			//StdDraw3D.frame.setVisible(true);
 		}
 		{
@@ -290,9 +336,9 @@ public class Crear_Figuras extends JDialog {
 				btnCancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
-						
+
 						Estudiante_Principal estu = new Estudiante_Principal();
-						
+
 						estu.setVisible(true);
 					}
 				});
@@ -304,7 +350,7 @@ public class Crear_Figuras extends JDialog {
 				btnCrear.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
-						if (btnCuadrado.isSelected()) {
+						if (panel_cuadrado.isVisible()) {
 							double x1 = Double.valueOf(txtX_1_cuadrado.getText());
 							double y1 = Double.valueOf(txtY_1_cuadrado.getText());
 							double x2 = Double.valueOf(txtX_2_cuadrado.getText());
@@ -313,16 +359,16 @@ public class Crear_Figuras extends JDialog {
 							String nombre = txt_nombre.getText();
 
 							Cuadrado figura = new Cuadrado(altura, nombre, x1, x2, y1, y2);
-							
+
 							PrismasLab.getLogin().getMisFiguras().add(figura);
-							
+
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
-							
+
 							Estudiante_Principal.cargarFiguras();
-						
+
 						}
-							
-							
+
+
 					}
 				});
 				btnCrear.setBounds(439, 21, 89, 23);
@@ -333,9 +379,23 @@ public class Crear_Figuras extends JDialog {
 				btnVistaPrevia.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
+						Color negro = StdDraw3D.BLACK;
+						Color azul = StdDraw3D.BLUE;
+						Color cyan = StdDraw3D.CYAN;
+						Color gris = StdDraw3D.GRAY;
+						Color gris_claro = StdDraw3D.LIGHT_GRAY;
+						Color gris_oscuro = StdDraw3D.DARK_GRAY;
+						Color verde = StdDraw3D.GREEN;
+						Color magenta = StdDraw3D.MAGENTA;
+						Color naranja = StdDraw3D.ORANGE;
+						Color rosado = StdDraw3D.PINK;
+						Color rojo = StdDraw3D.RED;
+						Color blanco = StdDraw3D.WHITE;
+						Color amarillo = StdDraw3D.YELLOW;
 
 
-						if (btnTriangulo.isSelected()) {
+
+						if (panel_triangulo.isVisible()) {
 
 							double tx1 = Double.valueOf(txtX_1_triangulo.getText());
 							double ty1 = Double.valueOf(txtY_1_triangulo.getText());
@@ -346,14 +406,90 @@ public class Crear_Figuras extends JDialog {
 							double taltura = Double.valueOf(txt_altura.getText());
 							String tnombre = txt_nombre.getText();
 
-							PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre);
-							
-							 	
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Negro")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, negro);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("azul")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, azul);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("cyan")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, cyan);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("gris")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, gris);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Claro")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, gris_claro);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Oscuro")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, gris_oscuro);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("verde")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, verde);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Magenta")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, magenta);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Naranja")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, naranja);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rosado")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, rosado);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rojo")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, rojo);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("blanco")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, blanco);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("amarillo")) {
+
+								PrismasLab.graficarTriangulo(tx1, ty1, tx2, ty2, tx3, ty3, taltura, tnombre, amarillo);
+
+							}
+
+
 						}
 
 
 
-						if (btnCuadrado.isSelected()) {
+						if (panel_cuadrado.isVisible()) {
 
 							double x1c = Double.valueOf(txtX_1_cuadrado.getText());
 							double y1c = Double.valueOf(txtY_1_cuadrado.getText());
@@ -362,11 +498,79 @@ public class Crear_Figuras extends JDialog {
 							double alturac = Double.valueOf(txt_altura.getText());
 							String nombrec = txt_nombre.getText();
 
-							PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec);
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Negro")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, negro);
+
+							}
+
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Azul")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, azul);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Cyan")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, cyan);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, gris);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Claro")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, gris_claro);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Oscuro")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, gris_oscuro);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Verde")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, verde);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Magenta")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, magenta);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Naranja")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, naranja);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Rosado")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, rosado);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Rojo")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, rojo);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Blanco")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, blanco);
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Amarillo")) {
+
+								PrismasLab.graficarCuadrado(x1c, y1c, x2c, y2c, alturac, nombrec, amarillo);
+
+							}
+
+
+
 
 						}
 
-						if (btnTrapecio.isSelected()) {
+						if (panel_trapecio.isVisible()) {
 
 							double x1t = Double.valueOf(txtX_1_trapecio.getText());
 							double y1t = Double.valueOf(txtY_1_trapecio.getText());
@@ -379,11 +583,89 @@ public class Crear_Figuras extends JDialog {
 							double alturat = Double.valueOf(txt_altura.getText());
 							String nombret = txt_nombre.getText();
 
-							PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret);
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Negro")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, negro);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Azul")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, azul);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Cyan")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, cyan);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, gris);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Claro")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, gris_claro);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Oscuro")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, gris_oscuro);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Verde")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, verde);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Magenta")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, magenta);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Naranja")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, naranja);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Rosado")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, rosado);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Rojo")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, rojo);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Blanco")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, blanco);
+
+
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Amarillo")) {
+
+								PrismasLab.graficarTrapecio(x1t, y1t, x2t, y2t, x3t, y3t, x4t, y4t, alturat, alturat, nombret, amarillo);
+
+
+							}
+
 
 						}
 
-						if (btnRombo.isSelected()) {
+						if (panel_rombo.isVisible()) {
 
 							double x1 = Double.valueOf(txtX_1_rombo.getText());
 							double y1 = Double.valueOf(txtY_1_rombo.getText());
@@ -391,12 +673,78 @@ public class Crear_Figuras extends JDialog {
 							double d = Double.valueOf(txt_d_horizontal.getText());
 							double altura = Double.valueOf(txt_altura.getText());
 							String nombre = txt_nombre.getText();
+							
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Amarillo")) {
 
-							PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre);
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, amarillo);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("blanco")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, blanco);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rojo")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, rojo);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rosado")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, rosado);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("naranja")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, naranja);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("magenta")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, magenta);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("verde")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, verde);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Oscuro")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, gris_oscuro);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Claro")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, gris_claro);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("gris")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, gris);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Cyan")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, cyan);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Azul")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, azul);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("negro")) {
+
+								PrismasLab.graficarRombo(x1, y1, altura, D, d, nombre, negro);
+								
+							}
+								
 
 						}
 
-						if (btnRetangulo.isSelected()) {
+						if (panel_rectangulo.isVisible()) {
+
 
 							double x1 = Double.valueOf(txtX_1_rectangulo.getText());
 							double y1 = Double.valueOf(txtY_1_rectangulo.getText());
@@ -406,10 +754,62 @@ public class Crear_Figuras extends JDialog {
 							double y3 = Double.valueOf(txtY_3_rectangulo.getText());
 							double altura = Double.valueOf(txt_altura.getText());
 							String nombre = txt_nombre.getText();
+							
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Amarillo")) {
 
-							PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre);
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, amarillo);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("blanco")) {
 
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, blanco);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rojo")) {
 
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, rojo);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("rosado")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, rosado);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("naranja")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, naranja);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("magenta")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, magenta);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("verde")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, verde);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Oscuro")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, gris_oscuro);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Gris Claro")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, gris_claro);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("gris")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, gris);								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Cyan")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, cyan);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("Azul")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, azul);
+								
+							}
+							if (cbx_colores.getSelectedItem().toString().equalsIgnoreCase("negro")) {
+
+								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, negro);
+								
+							}
 
 						}
 

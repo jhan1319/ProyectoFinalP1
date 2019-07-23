@@ -48,6 +48,7 @@ public class Login_Principal extends JDialog {
 	private JTextField txtContrasena;
 	private JTextField txtUsuarioNoEncontrdo;
 	ImageIcon imagenIcon;
+	private JTextField txt_wrong_pass;
 
 	/**
 	 * Launch the application.
@@ -119,6 +120,7 @@ public class Login_Principal extends JDialog {
 			panel_general.setLayout(null);
 			{
 				JPanel panel_titulo = new JPanel();
+				panel_titulo.setBackground(new Color(255, 255, 0));
 				panel_titulo.setBorder(new LineBorder(new Color(0, 0, 0)));
 				panel_titulo.setBounds(10, 11, 893, 149);
 				panel_general.add(panel_titulo);
@@ -191,6 +193,14 @@ public class Login_Principal extends JDialog {
 				panel_ingresar.add(lblGif);
 				lblGif.setIcon(imagenIcon);
 				imagenIcon.setImageObserver(lblGif);
+				
+				txt_wrong_pass = new JTextField();
+				txt_wrong_pass.setVisible(false);
+				txt_wrong_pass.setBounds(108, 176, 223, 20);
+				txt_wrong_pass.setBackground(Color.RED);
+				txt_wrong_pass.setFont(new Font("Broadway", Font.PLAIN, 17));
+				panel_ingresar.add(txt_wrong_pass);
+				txt_wrong_pass.setColumns(10);
 			}
 			{
 				JPanel buttonPane = new JPanel();
@@ -207,7 +217,7 @@ public class Login_Principal extends JDialog {
 						public void actionPerformed(ActionEvent e) { ///// true= existe un usuario con ese nombre
 							
 							PrismasLab.getInstance();
-							if ((PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) &&(PrismasLab.getLogin().getTipo().equalsIgnoreCase("Administrador")))
+							if ((PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) && (PrismasLab.getLogin().getTipo().equalsIgnoreCase("Administrador")))
 							{
 								Administrador_Principal adm = new Administrador_Principal();
 								adm.setVisible(true);
@@ -223,7 +233,11 @@ public class Login_Principal extends JDialog {
 								estu.setVisible(true);
 								
 								dispose();
-							} 
+							}
+							
+							if (PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) {
+								
+							}
 
 							else {
 								txtUsuario.setText("");

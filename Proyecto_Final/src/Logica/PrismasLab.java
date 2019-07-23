@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import com.sun.javafx.font.LogicalFont;
 
+import Visual.Crear_Figuras;
+
 
 
 public class PrismasLab implements Serializable {
@@ -107,9 +109,8 @@ public class PrismasLab implements Serializable {
 	
 	
 
-	public static void graficarCuadrado( double x1, double y1, double x2, double y2, double altura, String name) {
-
-
+	public static void graficarCuadrado( double x1, double y1, double x2, double y2, double altura, String name, Color color) {
+		
 		double lados = x2 - x1;
 
 		if (lados < 0) {
@@ -172,17 +173,17 @@ public class PrismasLab implements Serializable {
 		double vertices5Z [] = new double [] {0, altura, altura, 0};
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(Color.BLUE);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
 		//grafica la cara trasera
-		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).setColor(Color.BLUE);
+		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).setColor(color);
 		//grafica la pared izquierda
-		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).setColor(Color.BLUE);
+		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).setColor(color);
 		//grafica la pared derecha
-		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).setColor(Color.BLUE);
+		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).setColor(color);
 		//grafica la pared superior
-		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(Color.BLUE);
+		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(color);
 		//grafica la pared inferior
-		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(Color.BLUE);
+		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(color);
 		
 		
 		
@@ -195,7 +196,7 @@ public class PrismasLab implements Serializable {
 
 	}
 
-	public static void graficarRectangulo(double x1, double y1, double x2, double y2, double x3, double y3, double altura, String nombre) {
+	public static void graficarRectangulo(double x1, double y1, double x2, double y2, double x3, double y3, double altura, String nombre, Color color) {
 
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
@@ -267,17 +268,17 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
 		//grafica la cara trasera
-		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z);
+		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).setColor(color);
 		//grafica la pared izquierda
-		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z);
+		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).setColor(color);
 		//grafica la pared derecha
-		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z);
+		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).setColor(color);
 		//grafica la pared superior
-		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z);
+		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(color);
 		//grafica la pared inferior
-		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z);
+		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(color);
 
 		// Renders to the drawing window
 		StdDraw3D.show();
@@ -286,8 +287,10 @@ public class PrismasLab implements Serializable {
 
 	}
 
-	public static void graficarTrapecio(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double altura, double h, String nombre) {
+	public static void graficarTrapecio(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double altura, double h, String nombre, Color color) {
 
+		
+		
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
 		StdDraw3D.clear(StdDraw3D.PINK);
@@ -345,29 +348,29 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
 
 		//grafica la cara trasera
-		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1);
+		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).setColor(color);
 
 		//grafica la cara izquiera
-		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2);
+		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).setColor(color);
 
 		//grafica la cara derecha
-		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3);
+		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).setColor(color);
 
 		//grafica la cara superior
-		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4);
+		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).setColor(color);
 
 		//grafica la cara inferior
-		StdDraw3D.polygon(verticesX5, verticesY5, verticesZ5);
+		StdDraw3D.polygon(verticesX5, verticesY5, verticesZ5).setColor(color);
 
 
 		// Renders to the drawing window
 		StdDraw3D.show();
 	}
 
-	public static void graficarTriangulo(double x1, double y1, double x2, double y2, double x3, double y3, double h, String nombre) {
+	public static void graficarTriangulo(double x1, double y1, double x2, double y2, double x3, double y3, double h, String nombre, Color color) {
 
 		// Sets the scale of the drawing window
 		StdDraw3D.setCameraOrientation(0, 0, 0);
@@ -405,19 +408,19 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
 
 		//grafica la cara trasera
-		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1);
+		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).setColor(color);
 
 		//grafica la cara izquierda
-		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2);
+		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).setColor(color);
 
 		//grafica de la cara derecha
-		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3);
+		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).setColor(color);
 
 		//grafica de la cara inferior
-		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4);
+		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).setColor(color);
 
 
 		// Renders to the drawing window
@@ -427,7 +430,7 @@ public class PrismasLab implements Serializable {
 	}
 
 
-	public static void  graficarRombo(double x1, double y1, double altura, double d, double d2, String nombre) {
+	public static void  graficarRombo(double x1, double y1, double altura, double d, double d2, String nombre, Color color) {
 		
 		StdDraw3D.clearOverlay();
 		StdDraw3D.clear(StdDraw3D.RED);
@@ -448,27 +451,27 @@ public class PrismasLab implements Serializable {
 		double xb1[] = new double[]{x1,x2,x3,x4};
 		double yb1[] = new double[]{y1,y2,y3,y4};
 		double zb1[] = new double[]{0,0,0,0};
-		StdDraw3D.polygon(xb1,yb1,zb1);
+		StdDraw3D.polygon(xb1,yb1,zb1).setColor(color);
 		double xb2[] = new double[]{x1,x2,x3,x4};
 		double yb2[] = new double[]{y1,y2,y3,y4};
 		double zb2[] = new double[]{altura,altura,altura,altura};
-		StdDraw3D.polygon(xb2,yb2,zb2);
+		StdDraw3D.polygon(xb2,yb2,zb2).setColor(color);
 		double xl1[] = new double[]{x1,x2,x2,x1};
 		double yl1[] = new double[]{y1,y2,y2,y1};
 		double zl1[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl1,yl1,zl1);
+		StdDraw3D.polygon(xl1,yl1,zl1).setColor(color);
 		double xl2[] = new double[]{x2,x3,x3,x2};
 		double yl2[] = new double[]{y2,y3,y3,y2};
 		double zl2[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl2,yl2,zl2);
+		StdDraw3D.polygon(xl2,yl2,zl2).setColor(color);
 		double xl3[] = new double[]{x3,x4,x4,x3};
 		double yl3[] = new double[]{y3,y4,y4,y3};
 		double zl3[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl3,yl3,zl3);
+		StdDraw3D.polygon(xl3,yl3,zl3).setColor(color);
 		double xl4[] = new double[]{x4,x1,x1,x4};
 		double yl4[] = new double[]{y4,y1,y1,y4};
 		double zl4[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl4,yl4,zl4);
+		StdDraw3D.polygon(xl4,yl4,zl4).setColor(color);
 		//    StdDraw3D.setOrbitCenter(((x1+x3)/2),((y1+y3)/2),alt/2);
 
 		StdDraw3D.show();
