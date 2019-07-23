@@ -102,7 +102,7 @@ public class Crear_Figuras extends JDialog {
 	private JButton btnTrapecio;
 	private JButton btnTriangulo;
     private JButton btnRombo ;
-	private JButton btnRetngulo;
+	private JButton btnRetangulo;
 	/**
 	 * Launch the application.
 	 */
@@ -254,8 +254,8 @@ public class Crear_Figuras extends JDialog {
 			btnRombo.setBounds(30, 322, 89, 23);
 			panel_datos.add(btnRombo);
 			
-			btnRetngulo = new JButton("Retangulo");
-			btnRetngulo.addActionListener(new ActionListener() {
+			btnRetangulo = new JButton("Retangulo");
+			btnRetangulo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					panel_triangulo.setVisible(false);
 					panel_cuadrado.setVisible(false);
@@ -266,8 +266,8 @@ public class Crear_Figuras extends JDialog {
 					PrismasLab.pantallaVacia();
 				}
 			});
-			btnRetngulo.setBounds(30, 369, 89, 23);
-			panel_datos.add(btnRetngulo);
+			btnRetangulo.setBounds(30, 369, 89, 23);
+			panel_datos.add(btnRetangulo);
 		}
 		{
 			panel_vista_previa = new JPanel();
@@ -304,9 +304,7 @@ public class Crear_Figuras extends JDialog {
 				btnCrear.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
-				
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
-
+						if (btnCuadrado.isSelected()) {
 							double x1 = Double.valueOf(txtX_1_cuadrado.getText());
 							double y1 = Double.valueOf(txtY_1_cuadrado.getText());
 							double x2 = Double.valueOf(txtX_2_cuadrado.getText());
@@ -321,15 +319,9 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 							
 							Estudiante_Principal.cargarFiguras();
-							
+						
 						}
-						
-						
-						
 							
-						
-							
-						
 							
 					}
 				});
@@ -343,7 +335,7 @@ public class Crear_Figuras extends JDialog {
 
 
 
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Triangulo")) {
+						if (btnTriangulo.isSelected()) {
 
 							double tx1 = Double.valueOf(txtX_1_triangulo.getText());
 							double ty1 = Double.valueOf(txtY_1_triangulo.getText());
@@ -361,7 +353,7 @@ public class Crear_Figuras extends JDialog {
 
 
 
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Cuadrado")) {
+						if (btnCuadrado.isSelected()) {
 
 							double x1c = Double.valueOf(txtX_1_cuadrado.getText());
 							double y1c = Double.valueOf(txtY_1_cuadrado.getText());
@@ -374,7 +366,7 @@ public class Crear_Figuras extends JDialog {
 
 						}
 
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Trapecio")) {
+						if (btnTrapecio.isSelected()) {
 
 							double x1t = Double.valueOf(txtX_1_trapecio.getText());
 							double y1t = Double.valueOf(txtY_1_trapecio.getText());
@@ -391,7 +383,7 @@ public class Crear_Figuras extends JDialog {
 
 						}
 
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rombo")) {
+						if (btnRombo.isSelected()) {
 
 							double x1 = Double.valueOf(txtX_1_rombo.getText());
 							double y1 = Double.valueOf(txtY_1_rombo.getText());
@@ -404,7 +396,7 @@ public class Crear_Figuras extends JDialog {
 
 						}
 
-						if (cbxTipo.getSelectedItem().toString().equalsIgnoreCase("Rectangulo")) {
+						if (btnRetangulo.isSelected()) {
 
 							double x1 = Double.valueOf(txtX_1_rectangulo.getText());
 							double y1 = Double.valueOf(txtY_1_rectangulo.getText());
