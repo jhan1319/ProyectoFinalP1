@@ -52,7 +52,28 @@ public class Rombo extends Prismas {
 	}
 	
 	
-	
+	public  double perimetro() {
+		
+		float ladoD1=0;
+		float ladoD2=0;
+		float lado=0;
+		
+			ladoD1=d1/2;
+			ladoD2=d2/2;
+			lado= (float) Math.sqrt((Math.pow(ladoD1, 2)+ (Math.pow(ladoD2, 2))));
+			
+		return (4*lado);
+		
+	}
+
+	@Override
+	public double areaDeLaBase() {
+		double area=0;
+		
+		area= ((d1*d2)/2);
+		
+		return area ;
+	}
 	
 	
 

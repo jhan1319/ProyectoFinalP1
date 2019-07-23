@@ -1,14 +1,14 @@
 package Logica;
 
 public class Triangulo extends Prismas {
-	
+
 	private float x1;
 	private float x2;
 	private float x3;
 	private float y1;
 	private float y2;
 	private float y3;
-	
+
 	public Triangulo(float altura, String nombre, float x1, float x2, float x3, float y1, float y2, float y3) {
 		super(altura, nombre);
 		this.x1 = x1;
@@ -70,21 +70,30 @@ public class Triangulo extends Prismas {
 
 	@Override
 	public double perimetro() {
-		
-		
-		
-		
-		
+
 		float lado1 = (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
-		
+
 		float lado2 = (float) Math.sqrt(Math.pow(x3-x2, 2) + Math.pow(y3-y2, 2));
-		
+
 		float lado3 = (float) Math.sqrt(Math.pow(x1-x3, 2) + Math.pow(y1-y3, 2));
-		
+
 		return lado1 + lado2 + lado3;
 	}
-	
-	
-	
+
+	@Override
+	public double areaDeLaBase() {
+		double altu=0;
+		
+		float lado1 = (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+		float lado2 = (float) Math.sqrt(Math.pow(x3-x2, 2) + Math.pow(y3-y2, 2));
+		float lado3 = (float) Math.sqrt(Math.pow(x1-x3, 2) + Math.pow(y1-y3, 2));
+
+		altu= Math.sqrt( (Math.pow( lado2, 2)) - (Math.pow(lado3 /2 , 2))  ) ;
+		
+		return (( lado3* altu)/2);
+	}
+
+
+
 
 }

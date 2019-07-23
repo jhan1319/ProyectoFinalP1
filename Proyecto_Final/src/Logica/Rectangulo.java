@@ -105,6 +105,31 @@ public class Rectangulo extends Prismas {
 
 		return (2*lado1) + (2*lado2);
 	}
+
+
+	@Override
+	public double areaDeLaBase() {
+		float lado1 = 0;
+		float lado2 = 0;
+		
+		lado1 = Math.abs(x1 - x2);
+		
+		if (lado1 == 0) {
+			
+			lado1 = Math.abs(y1 - y2);
+			
+		}
+		
+		lado2 = Math.abs(x1 - x3);
+		
+		if (lado2 == 0) {
+			
+			lado2 = y1 - y3;
+			
+		}
+		
+		return  (lado1 * lado2);
+	}
 	
 	
 	

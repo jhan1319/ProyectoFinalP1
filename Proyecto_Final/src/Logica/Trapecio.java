@@ -87,6 +87,30 @@ public class Trapecio extends Prismas {
 	public void setY4(float y4) {
 		this.y4 = y4;
 	}
+
+	@Override
+	public double perimetro() {
+
+		double lado1=0;
+		double lado2=0;
+		double lado3=0;
+		double lado4=0;
+		
+		////PARA Y2=Y3 ^ Y1=Y4/////
+		lado1 = Math.sqrt( (Math.pow(x2-x1, 2)) + (Math.pow(y2-y1,2)) );
+		lado2=x3-x2;
+		lado3= Math.sqrt( (Math.pow(x4-x3, 2)) + (Math.pow(y4-y3, 2)) );
+		lado4=x4-x1 ;
+		
+		return (lado1 + lado2 + lado3 + lado4);
+	}
+
+	@Override
+	public double areaDeLaBase() {
+
+		
+		return 0;
+	}
 	
 	
 	
