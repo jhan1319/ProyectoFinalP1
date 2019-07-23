@@ -109,6 +109,9 @@ public class Trapecio extends Prismas {
 	public double areaDeLaBase() {
 
 		
+		///FALTA
+		
+		
 		return 0;
 	}
 	
