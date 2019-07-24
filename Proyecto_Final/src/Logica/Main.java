@@ -23,7 +23,7 @@ public class Main {
 
 		System.out.println("original:" + original);
 		System.out.println("digested(hex):" + sb.toString());
-	/////////////////////	
+
 		
 	
 		PrismasLab controladora =  PrismasLab.getInstance();
