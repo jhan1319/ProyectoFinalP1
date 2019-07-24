@@ -38,18 +38,42 @@ public class Main {
 		Usuarios usuarioPrueba = new Usuarios("usuario 1", "contra", "Estudiante");
 		
 		usuarioPrueba.insertarFiguras(cuadradoPrueba);
-		
-		
-		
-		
-		//System.out.println("Area lateral cuadrado: " +cuadradoPrueba.areaLateral());
-		//System.out.println("Area lateral triangulo: " +trianguloPrueba.areaLateral());
-		//System.out.println("Area lateral cuadrado: " +rectanguloPrueba.areaLateral());
-		//System.out.println("Area lateral rombo: "+romboPrueba.areaLateral());
-		//System.out.println("Area lateral trapecio: " +trapecioPrueba.areaLateral());
 
+		/*
+		System.out.println("Area lateral cuadrado: " +cuadradoPrueba.areaLateral());
+		System.out.println("Area lateral triangulo: " +trianguloPrueba.areaLateral());
+		System.out.println("Area lateral rectangulo: " +rectanguloPrueba.areaLateral());
+		System.out.println("Area lateral rombo: "+romboPrueba.areaLateral());
+		System.out.println("Area lateral trapecio: " +trapecioPrueba.areaLateral());
+
+		System.out.println("----------------------------------------");
+		
+		System.out.println("Area total de cuadrado: " +cuadradoPrueba.areaTotal());
+		System.out.println("Area total de triangulo: " +trianguloPrueba.areaTotal());
+		System.out.println("Area total de rectangulo: " +rectanguloPrueba.areaTotal());
+		System.out.println("Area total de rombo: " +romboPrueba.areaTotal());
+		System.out.println("Area total de trapecio: " +trapecioPrueba.areaTotal());
+		*/
+		
+		System.out.println("cuadrado: " +cuadradoPrueba.areaDeLaBase());
+		System.out.println("triangulo: " +trianguloPrueba.areaDeLaBase());
+		System.out.println("rectangulo: " +rectanguloPrueba.areaDeLaBase());
+		System.out.println("rombo: " +romboPrueba.areaDeLaBase());
+		System.out.println("trapecio: " +trapecioPrueba.areaDeLaBase());
+
+		 
+		System.out.println("----------------------------------------");
+
+		System.out.println("Volumen cuadrado: " +cuadradoPrueba.volumen());
+		System.out.println("Volumen triangulo: " +trianguloPrueba.volumen());
+		System.out.println("Volumen rectangulo: " +rectanguloPrueba.volumen());
+		System.out.println("Volumen rombo: " +romboPrueba.volumen());
+		System.out.println("Volumen trapecio: " +trapecioPrueba.volumen());
+
+	
 		
 		//controladora.graficarCuadrado(0,0, 2, 2, 4, "", pink);
+		
 		
 		
 	}

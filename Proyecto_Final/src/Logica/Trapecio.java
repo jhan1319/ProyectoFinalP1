@@ -108,11 +108,20 @@ public class Trapecio extends Prismas {
 	@Override
 	public double areaDeLaBase() {
 
+		double lado1=0;
+		double lado2=0;
+		double lado3=0;
+		double lado4=0;
+		double area=0;
+		double altu =0;
+
+					////PARA Y2=Y3 ^ Y1=Y4/////
+		lado2=x3-x2;
+		lado4=x4-x1 ;
+		altu= y2 -y1;
+		area = ((lado4 + lado2 ) * altu) /2 ;
 		
-		///FALTA
-		
-		
-		return 0;
+		return area;
 	}
 	
 	

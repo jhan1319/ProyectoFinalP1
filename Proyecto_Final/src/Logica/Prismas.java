@@ -44,14 +44,20 @@ public abstract class Prismas  implements Serializable{
 	////AREA TOTAL = AL + AB
 	public abstract double areaDeLaBase();
 
-	
+
 	public  double areaTotal() {
 		double area=0;
 		area= (2* areaDeLaBase() + areaLateral()); 
-		
+
 		return area;
 	}
 
+	public double volumen() {
+		double vol=0;
+		vol = areaDeLaBase() * altura;
+
+		return vol;
+	}
 
 
 }
