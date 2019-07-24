@@ -130,7 +130,7 @@ public class PrismasLab implements Serializable {
 
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
-		StdDraw3D.clear(StdDraw3D.CYAN);
+		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 		StdDraw3D.setScale(-10,10);
@@ -200,7 +200,7 @@ public class PrismasLab implements Serializable {
 
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
-		StdDraw3D.clear(StdDraw3D.DARK_GRAY);
+		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
@@ -293,7 +293,7 @@ public class PrismasLab implements Serializable {
 		
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
-		StdDraw3D.clear(StdDraw3D.PINK);
+		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
@@ -375,7 +375,7 @@ public class PrismasLab implements Serializable {
 		// Sets the scale of the drawing window
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 		StdDraw3D.clearOverlay();
-		StdDraw3D.clear(StdDraw3D.ORANGE);
+		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
 
@@ -433,7 +433,7 @@ public class PrismasLab implements Serializable {
 	public static void  graficarRombo(double x1, double y1, double altura, double d, double d2, String nombre, Color color) {
 		
 		StdDraw3D.clearOverlay();
-		StdDraw3D.clear(StdDraw3D.RED);
+		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 
