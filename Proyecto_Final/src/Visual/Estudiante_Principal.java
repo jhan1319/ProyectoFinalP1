@@ -92,7 +92,7 @@ public class Estudiante_Principal extends JDialog {
 				Crear_Figuras figura= new Crear_Figuras();
 				figura.setVisible(true);
 				figura.setModal(true);
-				
+				dispose();
 				PrismasLab.pantallaVacia();
 				
 				
@@ -125,7 +125,7 @@ public class Estudiante_Principal extends JDialog {
 		cbxMisFormas = new JComboBox<String>();
 		cbxMisFormas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
 				cargarFiguras();
 				
 	
@@ -200,9 +200,9 @@ public class Estudiante_Principal extends JDialog {
 		JButton btnCerrar = new JButton("");
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				Login_Principal login = new Login_Principal();
 				login.setVisible(true);
+				dispose();
 				
 			}
 		});

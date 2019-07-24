@@ -104,25 +104,27 @@ public class Login_Principal extends JDialog {
 	 * Create the dialog.
 	 */
 	public Login_Principal() {
+		setBackground(new Color(176, 196, 222));
+		getContentPane().setBackground(new Color(176, 196, 222));
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 		setBounds(100, 100, 923, 709);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(new Color(51, 51, 255));
+		contentPanel.setBackground(new Color(176, 196, 222));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		setLocationRelativeTo(null);/////CENTRADO
 		{
 			JPanel panel_general = new JPanel();
-			panel_general.setBackground(new Color(102, 153, 255));
+			panel_general.setBackground(new Color(176,196,222));
 			contentPanel.add(panel_general, BorderLayout.CENTER);
 			panel_general.setLayout(null);
 			{
 				JPanel panel_titulo = new JPanel();
-				panel_titulo.setBackground(new Color(255, 255, 0));
+				panel_titulo.setBackground(new Color(176, 224,230));
 				panel_titulo.setBorder(new LineBorder(new Color(0, 0, 0)));
-				panel_titulo.setBounds(10, 11, 893, 149);
+				panel_titulo.setBounds(0, 11, 923, 149);
 				panel_general.add(panel_titulo);
 				panel_titulo.setLayout(null);
 				{
@@ -140,39 +142,38 @@ public class Login_Principal extends JDialog {
 			}
 			{
 				JPanel panel_ingresar = new JPanel();
-				panel_ingresar.setBackground(new Color(51,153,255));
+				panel_ingresar.setBackground(new Color(240,248,255));
 				panel_ingresar.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
 				panel_ingresar.setBounds(226, 194, 422, 325);
 				panel_general.add(panel_ingresar);
 				panel_ingresar.setLayout(null);
 
 				JTextPane txtpnUsuario = new JTextPane();
-				txtpnUsuario.setEnabled(false);
+				txtpnUsuario.setBackground(new Color(176, 224,230));
 				txtpnUsuario.setEditable(false);
-				txtpnUsuario.setBackground(new Color(51, 153, 255));
 				txtpnUsuario.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
 				txtpnUsuario.setText("Usuario: ");
 				txtpnUsuario.setBounds(163, 11, 112, 30);
 				panel_ingresar.add(txtpnUsuario);
-
 				txtUsuario = new JTextField();
-				txtUsuario.setBackground(Color.ORANGE);
+				txtUsuario.setBackground(new Color(176, 196, 222));
 				txtUsuario.setBounds(10, 42, 402, 20);
 				panel_ingresar.add(txtUsuario);
 				txtUsuario.setColumns(10);
 
 				JTextPane txtpnContrase = new JTextPane();
-				txtpnContrase.setEnabled(false);
+				txtpnContrase.setBackground(new Color(176, 224,230));
 				txtpnContrase.setEditable(false);
-				txtpnContrase.setBackground(new Color(51, 153, 255));
 				txtpnContrase.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
 				txtpnContrase.setText("Contrase\u00F1a: ");
 				txtpnContrase.setBounds(142, 97, 154, 30);
 				panel_ingresar.add(txtpnContrase);
 
 				txtContrasena = new JPasswordField();
+				txtContrasena.setBackground(new Color(176, 196, 222));
+				txtContrasena.setDisabledTextColor(new Color(176, 196, 222));
 				txtContrasena.setColumns(10);
-				txtContrasena.setBackground(Color.ORANGE);
+
 				txtContrasena.setBounds(10, 133, 402, 20);
 				panel_ingresar.add(txtContrasena);
 				
@@ -189,7 +190,7 @@ public class Login_Principal extends JDialog {
 				
 				JLabel lblGif = new JLabel();
 				imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
-				lblGif.setBounds(180, 224, 100, 90);
+				lblGif.setBounds(163, 224, 100, 90);
 				panel_ingresar.add(lblGif);
 				lblGif.setIcon(imagenIcon);
 				imagenIcon.setImageObserver(lblGif);
@@ -204,9 +205,9 @@ public class Login_Principal extends JDialog {
 			}
 			{
 				JPanel buttonPane = new JPanel();
-				buttonPane.setBounds(10, 550, 913, 149);
+				buttonPane.setBounds(0, 561, 923, 149);
 				panel_general.add(buttonPane);
-				buttonPane.setBackground(new Color(102, 255, 102));
+				buttonPane.setBackground(new Color(176, 224,230));
 				buttonPane.setLayout(null);
 				{
 					JButton login_Button = new JButton("");

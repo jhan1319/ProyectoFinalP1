@@ -59,10 +59,10 @@ public class Administrador_Principal extends JDialog {
 		getContentPane().setBackground(new Color(255, 250, 205));
 		
 		setUndecorated(true);
-		setBounds(100, 100, 855, 763);
+		setBounds(100, 100, 855, 775);
 		getContentPane().setLayout(null);
-		contentPanel.setBackground(Color.CYAN);
-		contentPanel.setBounds(0, 0, 855, 633);
+		contentPanel.setBackground(new Color(176, 196, 222));
+		contentPanel.setBounds(0, 0, 855, 881);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
 		
@@ -72,6 +72,7 @@ public class Administrador_Principal extends JDialog {
 
 		{
 			JPanel panel_windows = new JPanel();
+			panel_windows.setBackground(new Color(176, 224,230));
 			panel_windows.setBorder(new LineBorder(Color.BLACK));
 			panel_windows.setBounds(0, 0, 855, 64);
 			contentPanel.add(panel_windows);
@@ -110,8 +111,9 @@ public class Administrador_Principal extends JDialog {
 		{
 			JPanel panel_registrar_estu = new JPanel();
 			panel_registrar_estu.setBorder(null);
-			panel_registrar_estu.setBounds(32, 100, 300, 494);
+			panel_registrar_estu.setBounds(32, 75, 300, 550);
 			contentPanel.add(panel_registrar_estu);
+			panel_registrar_estu.setBackground(new Color(240,248,255));
 			panel_registrar_estu.setLayout(null);
 			
 			JButton btnRegistrarEstudiante = new JButton("");
@@ -124,7 +126,7 @@ public class Administrador_Principal extends JDialog {
 					user.setVisible(true);
 				}
 			});
-			btnRegistrarEstudiante.setBounds(80, 41, 131, 137);
+			btnRegistrarEstudiante.setBounds(80, 66, 131, 137);
 			panel_registrar_estu.add(btnRegistrarEstudiante);
 			
 			JButton button = new JButton("");
@@ -138,7 +140,7 @@ public class Administrador_Principal extends JDialog {
 				}
 			});
 			button.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\list_adm_128.png"));
-			button.setBounds(65, 266, 161, 137);
+			button.setBounds(65, 329, 161, 137);
 			panel_registrar_estu.add(button);
 			
 			JFormattedTextField frmtdtxtfldR = new JFormattedTextField();
@@ -147,7 +149,7 @@ public class Administrador_Principal extends JDialog {
 			frmtdtxtfldR.setFont(new Font("Broadway", Font.PLAIN, 20));
 			frmtdtxtfldR.setText("Registrar ");
 			frmtdtxtfldR.setBackground(panel_registrar_estu.getBackground());
-			frmtdtxtfldR.setBounds(90, 186, 111, 24);
+			frmtdtxtfldR.setBounds(90, 211, 111, 24);
 			panel_registrar_estu.add(frmtdtxtfldR);
 			
 			JFormattedTextField frmtdtxtfldLista = new JFormattedTextField();
@@ -157,44 +159,51 @@ public class Administrador_Principal extends JDialog {
 			frmtdtxtfldLista.setFont(new Font("Broadway", Font.PLAIN, 18));
 			frmtdtxtfldLista.setText("Lista");
 			frmtdtxtfldLista.setBackground(panel_registrar_estu.getBackground());
-			frmtdtxtfldLista.setBounds(116, 402, 59, 20);
+			frmtdtxtfldLista.setBounds(116, 465, 59, 20);
 			panel_registrar_estu.add(frmtdtxtfldLista);
 		}
 		
 		JPanel panel_informacion = new JPanel();
 		panel_informacion.setBorder(new LineBorder(Color.BLACK));
-		panel_informacion.setBounds(398, 100, 419, 494);
+		panel_informacion.setBounds(397, 75, 419, 550);
+		panel_informacion.setBackground(new Color(240,248,255));
 		contentPanel.add(panel_informacion);
 		panel_informacion.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/triangulo.png")));
-		label.setBounds(10, 5, 64, 64);
+		label.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cuadrado.png"));
+		label.setBounds(20, 66, 103, 108);
 		panel_informacion.add(label);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cuadrado.png")));
-		label_1.setBounds(10, 75, 64, 64);
+		label_1.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\rombo1.png"));
+		label_1.setBounds(21, 185, 100, 108);
 		panel_informacion.add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/trapecio.png")));
-		label_2.setBounds(10, 196, 64, 76);
+		label_2.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\trapezio9.png"));
+		label_2.setBounds(21, 304, 93, 59);
 		panel_informacion.add(label_2);
 		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\triangulo.png"));
+		label_3.setBounds(21, 362, 93, 81);
+		panel_informacion.add(label_3);
+		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/rombo.png")));
-		lblNewLabel.setBounds(10, 139, 64, 64);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\rectangulo.png"));
+		lblNewLabel.setBounds(21, 465, 102, 54);
 		panel_informacion.add(lblNewLabel);
 		
-		JLabel label_3 = new JLabel("");
-		label_3.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/rectangulo.png")));
-		label_3.setBounds(10, 265, 70, 55);
-		panel_informacion.add(label_3);
+		JLabel lblNewLabel_1 = new JLabel("Cantidad total de prismas");
+		lblNewLabel_1.setFont(new Font("Broadway", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(24, 11, 365, 40);
+		panel_informacion.add(lblNewLabel_1);
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBounds(0, 632, 855, 131);
-			getContentPane().add(buttonPane);
+			buttonPane.setBackground(new Color(176, 224,230));
+			buttonPane.setBounds(0, 661, 855, 119);
+			contentPanel.add(buttonPane);
 			buttonPane.setLayout(null);
 			{
 				JButton okButton = new JButton("");
@@ -224,7 +233,7 @@ public class Administrador_Principal extends JDialog {
 					}
 				});
 				okButton.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\logout_96.png"));
-				okButton.setBounds(748, 11, 97, 105);
+				okButton.setBounds(748, 5, 97, 105);
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);

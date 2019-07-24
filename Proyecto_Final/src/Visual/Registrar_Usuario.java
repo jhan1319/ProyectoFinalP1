@@ -50,9 +50,9 @@ public class Registrar_Usuario extends JDialog {
 	 */
 	public Registrar_Usuario() {
 		setUndecorated(true);
-		setBounds(100, 100, 364, 363);
+		setBounds(100, 100, 396, 382);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(Color.CYAN);
+		contentPanel.setBackground(new Color(176,196,222));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		setLocationRelativeTo(null);
@@ -61,53 +61,52 @@ public class Registrar_Usuario extends JDialog {
 
 		
 		JPanel panel_reg_usuario = new JPanel();
-		panel_reg_usuario.setBounds(10, 151, 344, 123);
+		panel_reg_usuario.setBounds(10, 151, 376, 133);
 		contentPanel.add(panel_reg_usuario);
+		panel_reg_usuario.setBackground(new Color(240,248,255));
 		panel_reg_usuario.setLayout(null);
 		
-		JFormattedTextField frmtdtxtfldUsuario = new JFormattedTextField();
-		frmtdtxtfldUsuario.setEditable(false);
-		frmtdtxtfldUsuario.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		frmtdtxtfldUsuario.setText("USUARIO:");
-		frmtdtxtfldUsuario.setBounds(10, 11, 73, 20);
-		panel_reg_usuario.add(frmtdtxtfldUsuario);
-		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(127, 11, 188, 20);
+		txtUsuario.setBackground(new Color(176, 196, 222));
+		txtUsuario.setBounds(139, 11, 188, 20);
 		panel_reg_usuario.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
-		JFormattedTextField frmtdtxtfldContrase = new JFormattedTextField();
-		frmtdtxtfldContrase.setEditable(false);
-		frmtdtxtfldContrase.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		frmtdtxtfldContrase.setText("CONTRASE\u00D1A: ");
-		frmtdtxtfldContrase.setBounds(10, 42, 94, 20);
-		panel_reg_usuario.add(frmtdtxtfldContrase);
-		
 		txtContrasena = new JTextField();
-		txtContrasena.setBounds(127, 42, 188, 20);
+		txtContrasena.setBackground(new Color(176, 196, 222));
+		txtContrasena.setBounds(139, 42, 188, 20);
 		panel_reg_usuario.add(txtContrasena);
 		txtContrasena.setColumns(10);
 		
-		JFormattedTextField frmtdtxtfldConfirmar = new JFormattedTextField();
-		frmtdtxtfldConfirmar.setEditable(false);
-		frmtdtxtfldConfirmar.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		frmtdtxtfldConfirmar.setText("CONFIRMAR:");
-		frmtdtxtfldConfirmar.setBounds(10, 79, 90, 20);
-		panel_reg_usuario.add(frmtdtxtfldConfirmar);
-		
 		txtConfirmar = new JTextField();
-		txtConfirmar.setBounds(127, 79, 188, 20);
+		txtConfirmar.setBackground(new Color(176, 196, 222));
+		txtConfirmar.setBounds(139, 79, 188, 20);
 		panel_reg_usuario.add(txtConfirmar);
 		txtConfirmar.setColumns(10);
 		
+		JLabel lblUsuario = new JLabel("Usuario:");
+		lblUsuario.setFont(new Font("Broadway", Font.PLAIN, 18));
+		lblUsuario.setBounds(6, 14, 94, 17);
+		panel_reg_usuario.add(lblUsuario);
+		
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		lblContrasea.setFont(new Font("Broadway", Font.PLAIN, 18));
+		lblContrasea.setBounds(6, 45, 123, 17);
+		panel_reg_usuario.add(lblContrasea);
+		
+		JLabel lblConfirmar = new JLabel("Confirmar:\r\n");
+		lblConfirmar.setFont(new Font("Broadway", Font.PLAIN, 18));
+		lblConfirmar.setBounds(6, 82, 123, 17);
+		panel_reg_usuario.add(lblConfirmar);
+		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/registrar_user.png")));
-		label.setBounds(107, 11, 151, 129);
+		label.setBounds(136, 11, 151, 129);
 		contentPanel.add(label);
 		
 		JPanel buttonPane = new JPanel();
-		buttonPane.setBounds(0, 295, 364, 68);
+		buttonPane.setBounds(0, 314, 396, 68);
+		buttonPane.setBackground(new Color(176, 224,230));
 		contentPanel.add(buttonPane);
 		buttonPane.setLayout(null);
 		
@@ -119,7 +118,7 @@ public class Registrar_Usuario extends JDialog {
 		});
 		btnCancelar.setContentAreaFilled(false);
 		btnCancelar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_the_application.png")));
-		btnCancelar.setBounds(305, 11, 49, 52);
+		btnCancelar.setBounds(325, 14, 49, 52);
 		buttonPane.add(btnCancelar);
 		
 		JButton btnRegistrar = new JButton("");
@@ -143,7 +142,7 @@ public class Registrar_Usuario extends JDialog {
 		});
 		btnRegistrar.setContentAreaFilled(false);
 		btnRegistrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/agregar_user.png")));
-		btnRegistrar.setBounds(229, 14, 66, 49);
+		btnRegistrar.setBounds(233, 14, 66, 49);
 		buttonPane.add(btnRegistrar);
 	}
 	private void clean() {
