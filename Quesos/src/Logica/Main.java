@@ -67,10 +67,7 @@ public class Main {
 
 		System.out.println(empresa.totalQuesos().get(0));
 		System.out.println(empresa.totalQuesos().get(1));
-		System.out.println(empresa.totalQuesos().get(2));
-
-
-
+		 System.out.println(empresa.totalQuesos().get(2));
 
 
 
