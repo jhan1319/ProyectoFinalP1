@@ -171,27 +171,27 @@ public class Administrador_Principal extends JDialog {
 		panel_informacion.setLayout(null);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cuadrado.png"));
+		label.setIcon(new ImageIcon(Administrador_Principal.class.getResource("/Imagen/cuadrado_azul.png")));
 		label.setBounds(20, 66, 103, 108);
 		panel_informacion.add(label);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\rombo1.png"));
+		label_1.setIcon(new ImageIcon(Administrador_Principal.class.getResource("/Imagen/rombo1.png")));
 		label_1.setBounds(21, 185, 100, 108);
 		panel_informacion.add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\trapezio9.png"));
+		label_2.setIcon(new ImageIcon(Administrador_Principal.class.getResource("/Imagen/trapezio9.png")));
 		label_2.setBounds(21, 304, 93, 59);
 		panel_informacion.add(label_2);
 		
 		JLabel label_3 = new JLabel("");
-		label_3.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\triangulo.png"));
+		label_3.setIcon(new ImageIcon(Administrador_Principal.class.getResource("/Imagen/triangulo_azul.png")));
 		label_3.setBounds(21, 362, 93, 81);
 		panel_informacion.add(label_3);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\rectangulo.png"));
+		lblNewLabel.setIcon(new ImageIcon(Administrador_Principal.class.getResource("/Imagen/rectangulo_azul.png")));
 		lblNewLabel.setBounds(21, 465, 102, 54);
 		panel_informacion.add(lblNewLabel);
 		

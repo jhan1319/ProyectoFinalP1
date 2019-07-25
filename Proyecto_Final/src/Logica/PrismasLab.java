@@ -1,6 +1,7 @@
 package Logica;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -476,6 +477,17 @@ public class PrismasLab implements Serializable {
 
 		StdDraw3D.show();
 
+	}
+	
+	public static void textoEspera() {
+		
+		
+            
+        
+		
+
+		
+		
 	}
 
 

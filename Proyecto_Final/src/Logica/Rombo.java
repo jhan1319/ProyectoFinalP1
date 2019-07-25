@@ -2,65 +2,65 @@ package Logica;
 
 public class Rombo extends Prismas {
 	
-	private float x1;
-	private float y1;
-	private float d1;
-	private float d2;
+	private double x1;
+	private double y1;
+	private double d1;
+	private double d2;
 	
 	/*
 	 * D1 es la chiquita y D2 es la grande
 	 */
 	
-	public Rombo(float altura, String nombre, float x1, float y1, float d1, float d2) {
+	public Rombo(double altura, String nombre, double x12, double y12, double d12, double d22) {
 		super(altura, nombre);
-		this.x1 = x1;
-		this.y1 = y1;
-		this.d1 = d1;
-		this.d2 = d2;
+		this.x1 = x12;
+		this.y1 = y12;
+		this.d1 = d12;
+		this.d2 = d22;
 	}
 
-	public float getX1() {
+	public double getX1() {
 		return x1;
 	}
 
-	public void setX1(float x1) {
+	public void setX1(double x1) {
 		this.x1 = x1;
 	}
 
-	public float getY1() {
+	public double getY1() {
 		return y1;
 	}
 
-	public void setY1(float y1) {
+	public void setY1(double y1) {
 		this.y1 = y1;
 	}
 
-	public float getD1() {
+	public double getD1() {
 		return d1;
 	}
 
-	public void setD1(float d1) {
+	public void setD1(double d1) {
 		this.d1 = d1;
 	}
 
-	public float getD2() {
+	public double getD2() {
 		return d2;
 	}
 
-	public void setD2(float d2) {
+	public void setD2(double d2) {
 		this.d2 = d2;
 	}
 	
 	
 	public  double perimetro() {
 		
-		float ladoD1=0;
-		float ladoD2=0;
-		float lado=0;
+		double ladoD1=0;
+		double ladoD2=0;
+		double lado=0;
 		
 			ladoD1=d1/2;
 			ladoD2=d2/2;
-			lado= (float) Math.sqrt((Math.pow(ladoD1, 2)+ (Math.pow(ladoD2, 2))));
+			lado= (double) Math.sqrt((Math.pow(ladoD1, 2)+ (Math.pow(ladoD2, 2))));
 			
 		return (4*lado);
 		
