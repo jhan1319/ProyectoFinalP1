@@ -74,7 +74,7 @@ public class Crear_Figuras extends JDialog {
 	private JTextField txtY_2_rectangulo;
 	private JTextField txtY_3_rectangulo;
 	private JTextField txt_nombre;
-	private JPanel panel_vista_previa;
+	public JPanel panel_vista_previa;
 	private JComboBox<String> cbx_colores;
 	private JButton btnCuadrado;
 	private JButton btnTrapecio;
@@ -364,9 +364,9 @@ public class Crear_Figuras extends JDialog {
 			panel_vista_previa.setBounds(351, 75, 610, 583);
 			contentPanel.add(panel_vista_previa);
 			panel_vista_previa.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
-			panel_vista_previa.add(StdDraw3D.frame);
-			StdDraw3D.frame.setTitle(null);
+			PrismasLab.textoEspera();
+			//panel_vista_previa.add(StdDraw3D.frame);
+			
 			
 
 
@@ -387,8 +387,7 @@ public class Crear_Figuras extends JDialog {
 				btnCancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
-						StdDraw3D.clear();
-						StdDraw3D.clear3D();
+						PrismasLab.textoEspera();
 
 						dispose();
 

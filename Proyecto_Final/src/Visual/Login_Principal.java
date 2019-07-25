@@ -232,7 +232,7 @@ public class Login_Principal extends JDialog {
 							{
 								Estudiante_Principal estu = new Estudiante_Principal();
 								estu.setVisible(true);
-								//PrismasLab.textoEspera();
+								PrismasLab.textoEspera();
 								dispose();
 							}
 							

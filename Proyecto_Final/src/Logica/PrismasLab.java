@@ -98,10 +98,10 @@ public class PrismasLab implements Serializable {
 	
 	public static void pantallaVacia() {
 		
-		StdDraw3D.setScale(-10,10);
-		//StdDraw3D.clear3D();
-		//StdDraw3D.clear();
-		StdDraw3D.show();
+		//StdDraw3D.setScale(-10,10);
+		StdDraw3D.clear3D();
+		StdDraw3D.clear();
+		//StdDraw3D.show();
 		
 		
 	}
@@ -482,11 +482,33 @@ public class PrismasLab implements Serializable {
 	public static void textoEspera() {
 		
 		
-            
+		   // Sets the scale
+        StdDraw3D.setScale(-1, 1);
+         
+        // Turns off the default info HUD display.
+        StdDraw3D.setInfoDisplay(false);
         
-		
-
-		
+        // Draws the two red circles.
+        StdDraw3D.setPenRadius(0.06);
+        StdDraw3D.setPenColor(StdDraw3D.RED, 220);
+        StdDraw3D.overlayCircle(0, 0, 0.8);
+        StdDraw3D.setPenColor(StdDraw3D.RED, 220);
+        StdDraw3D.overlayCircle(0, 0, 0.6);
+ 
+        // Draws the information text.
+        //StdDraw3D.setPenColor(StdDraw3D.WHITE);
+       // StdDraw3D.overlayText(0, 0.91, "Standard Draw 3D - Test Program");
+        //StdDraw3D.overlayText(0, -0.95, "You should see rotating text. Drag the mouse to orbit.");
+ 
+        // Creates the 3D text object and centers it.
+        StdDraw3D.setPenColor(StdDraw3D.YELLOW);
+        StdDraw3D.setFont(new Font("Arial", Font.BOLD, 16));
+        StdDraw3D.Shape text = StdDraw3D.text3D(0, 0, 0, "Prisma's Lab");
+        text.scale(3.5);
+        text.move(-0.7, -0.1, 0);
+        text = StdDraw3D.combine(text);
+ 
+            StdDraw3D.show();
 		
 	}
 

@@ -106,10 +106,17 @@ public class Estudiante_Principal extends JDialog {
 		btnCrearFigura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Crear_Figuras figura= new Crear_Figuras();
+				
+				
+				
+				figura.panel_vista_previa.add(StdDraw3D.frame);
+				PrismasLab.textoEspera();
+				StdDraw3D.frame.setTitle(null);
+				
 				figura.setVisible(true);
 				figura.setModal(true);
 				dispose();
-				
+
 
 
 
@@ -174,22 +181,23 @@ public class Estudiante_Principal extends JDialog {
 		panel_crear_figuras.add(lblNewLabel);
 
 		JPanel panel_grafias_formas = new JPanel();
+		PrismasLab.textoEspera();
 		panel_grafias_formas.setBackground(new Color(176, 196, 222));
 		panel_grafias_formas.add(StdDraw3D.frame);
-		
+
 		JButton btnMostrar = new JButton("Mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				DecimalFormat decimalFormat = new DecimalFormat("#.00");
-				
+
 				Color color = null;
-				
+
 				if (!cbxMisFormas.getSelectedItem().toString().equalsIgnoreCase("<Seleccione>") && (!cbxcolor.getSelectedItem().toString().equalsIgnoreCase("<Seleccione>"))) {
-					
+
 					StdDraw3D.frame.setVisible(true);
 					StdDraw3D.frame.setTitle(null);
-					
+
 					for (Prismas figura : PrismasLab.getLogin().getMisFiguras()) {
 
 						if (figura.getNombre().contentEquals(cbxMisFormas.getSelectedItem().toString())) {
@@ -206,21 +214,21 @@ public class Estudiante_Principal extends JDialog {
 								color = elegirColor(cbxcolor.getSelectedItem().toString());
 
 								PrismasLab.graficarCuadrado(x1, y1, x2, y2, altura, name, color);
-								
+
 								txtbase.setText("Cuadrado");
 								txtareaLateral.setText(String.valueOf(decimalFormat.format(figura.areaLateral())));
 								txtVolumen.setText(String.valueOf(decimalFormat.format(figura.volumen())));
 								txtareaTotal.setText(String.valueOf(decimalFormat.format(figura.areaTotal())));
-								
-								
-								
-								
-								
-								
-								
+
+
+
+
+
+
+
 
 							}
-							
+
 							if (figura instanceof Rectangulo) {
 
 								double x1 = ((Rectangulo) figura).getX1();
@@ -236,14 +244,14 @@ public class Estudiante_Principal extends JDialog {
 
 
 								PrismasLab.graficarRectangulo(x1, y1, x2, y2, x3, y3, altura, nombre, color);
-								
+
 								txtbase.setText("Rectangulo");
 								txtareaLateral.setText(String.valueOf(figura.areaLateral()));
 								txtVolumen.setText(String.valueOf(figura.volumen()));
 								txtareaTotal.setText(String.valueOf(figura.areaTotal()));
 
 							}
-							
+
 							if (figura instanceof Triangulo) {
 
 								double x1 = ((Triangulo) figura).getX1();
@@ -259,14 +267,14 @@ public class Estudiante_Principal extends JDialog {
 
 
 								PrismasLab.graficarTriangulo(x1, y1, x2, y2, x3, y3, h, nombre, color);
-								
+
 								txtbase.setText("Triangulo");
 								txtareaLateral.setText(String.valueOf(decimalFormat.format(figura.areaLateral())));
 								txtVolumen.setText(String.valueOf(decimalFormat.format(figura.volumen())));
 								txtareaTotal.setText(String.valueOf(decimalFormat.format(figura.areaTotal())));
 
 							}
-							
+
 							if (figura instanceof Trapecio) {
 
 								double x1 = ((Trapecio) figura).getX1();
@@ -285,14 +293,14 @@ public class Estudiante_Principal extends JDialog {
 
 
 								PrismasLab.graficarTrapecio(x1, y1, x2, y2, x3, y3, x4, y4, altura, h, nombre, color);
-								
+
 								txtbase.setText("Trapecio");
 								txtareaLateral.setText(String.valueOf(decimalFormat.format(figura.areaLateral())));
 								txtVolumen.setText(String.valueOf(decimalFormat.format(figura.volumen())));
 								txtareaTotal.setText(String.valueOf(decimalFormat.format(figura.areaTotal())));
 
 							}
-							
+
 							if (figura instanceof Rombo) {
 
 								double x1 = ((Rombo) figura).getX1();
@@ -306,29 +314,29 @@ public class Estudiante_Principal extends JDialog {
 
 
 								PrismasLab.graficarRombo(x1, y1, altura, d, d2, nombre, color);
-								
+
 								txtbase.setText("Rombo");
 								txtareaLateral.setText(String.valueOf(decimalFormat.format(figura.areaLateral())));
 								txtVolumen.setText(String.valueOf(decimalFormat.format(figura.volumen())));
 								txtareaTotal.setText(String.valueOf(decimalFormat.format(figura.areaTotal())));
 
 							}
-					
-					
-					
-				}
+
+
+
+						}
 
 
 
 					}
 
 				} else {
-					
+
 					JOptionPane.showMessageDialog(null, "Por favor complete los parametros!", "Advertencia", JOptionPane.WARNING_MESSAGE);
-					
+
 				}
-					
-				
+
+
 			}
 		});
 		btnMostrar.setBounds(238, 445, 89, 23);
@@ -353,32 +361,32 @@ public class Estudiante_Principal extends JDialog {
 		txtVolumen.setBounds(422, 12, 86, 20);
 		panel_detalle.add(txtVolumen);
 		txtVolumen.setColumns(10);
-		
+
 		JLabel lblArea = new JLabel("Area Lateral");
 		lblArea.setFont(new Font("Broadway", Font.PLAIN, 16));
 		lblArea.setBounds(10, 15, 116, 14);
 		panel_detalle.add(lblArea);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Volumen\r\n");
 		lblNewLabel_1.setFont(new Font("Broadway", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(311, 15, 86, 14);
 		panel_detalle.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Base");
 		lblNewLabel_2.setFont(new Font("Broadway", Font.PLAIN, 16));
 		lblNewLabel_2.setBounds(69, 62, 46, 14);
 		panel_detalle.add(lblNewLabel_2);
-		
+
 		txtbase = new JTextField();
 		txtbase.setBounds(125, 61, 86, 20);
 		panel_detalle.add(txtbase);
 		txtbase.setColumns(10);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Area Total");
 		lblNewLabel_3.setFont(new Font("Broadway", Font.PLAIN, 16));
 		lblNewLabel_3.setBounds(308, 68, 97, 16);
 		panel_detalle.add(lblNewLabel_3);
-		
+
 		txtareaTotal = new JTextField();
 		txtareaTotal.setBounds(411, 67, 86, 20);
 		panel_detalle.add(txtareaTotal);
@@ -395,6 +403,7 @@ public class Estudiante_Principal extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				Login_Principal login = new Login_Principal();
 				login.setVisible(true);
+				PrismasLab.pantallaVacia();
 				dispose();
 
 			}
@@ -418,11 +427,11 @@ public class Estudiante_Principal extends JDialog {
 		cbxMisFormas.insertItemAt(new String("<Seleccionar>"), 0);
 		cbxMisFormas.setSelectedIndex(0);
 	}
-	
+
 	public Color elegirColor(String eleccion) {
-		
+
 		Color color = null;
-		
+
 		if (eleccion.equalsIgnoreCase("azul")) {
 
 			color = StdDraw3D.BLUE;
@@ -471,7 +480,7 @@ public class Estudiante_Principal extends JDialog {
 
 
 		}
-		if (eleccion.equalsIgnoreCase("Red")) {
+		if (eleccion.equalsIgnoreCase("Rojo")) {
 
 			color = StdDraw3D.RED;
 
@@ -489,10 +498,10 @@ public class Estudiante_Principal extends JDialog {
 
 
 		}
-		
+
 		return color;
-		
-		
-		
+
+
+
 	}
 }
