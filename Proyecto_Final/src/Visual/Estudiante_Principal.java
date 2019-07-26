@@ -51,7 +51,11 @@ public class Estudiante_Principal extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
+		
+		PrismasLab.getInstance().cargarDatos(PrismasLab.getInstance());
+		PrismasLab.pantallaVacia();
+		
 		try {
 			Estudiante_Principal dialog = new Estudiante_Principal();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -60,13 +64,16 @@ public class Estudiante_Principal extends JDialog {
 			e.printStackTrace();
 		}
 	}
-	 */
+	 
 	/**
 	 * Create the dialog.
 	 */
 	public Estudiante_Principal() {
-
-		PrismasLab controladora = PrismasLab.getInstance();
+		
+		
+		
+		
+	
 
 		setUndecorated(true);
 		setBounds(100, 100, 1080, 848);
@@ -89,6 +96,9 @@ public class Estudiante_Principal extends JDialog {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
+				
+				PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
+				
 			}
 		});
 		lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
@@ -110,7 +120,7 @@ public class Estudiante_Principal extends JDialog {
 				
 				
 				figura.panel_vista_previa.add(StdDraw3D.frame);
-				PrismasLab.textoEspera();
+				PrismasLab.pantallaVacia();
 				StdDraw3D.frame.setTitle(null);
 				
 				figura.setVisible(true);

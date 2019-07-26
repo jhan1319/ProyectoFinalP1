@@ -35,9 +35,9 @@ public class Main {
 		Trapecio trapecioPrueba = new Trapecio(5, "Trapecio", 0, 2, 4, 6,      0, 2, 2, 0);
 		
 		
-		Usuarios usuarioPrueba = new Usuarios("usuario 1", "contra", "Estudiante");
+		//Usuarios usuarioPrueba = new Usuarios("usuario 1", "contra", "Estudiante");
 		
-		usuarioPrueba.insertarFiguras(cuadradoPrueba);
+		//usuarioPrueba.insertarFiguras(cuadradoPrueba);
 
 		/*
 		System.out.println("Area lateral cuadrado: " +cuadradoPrueba.areaLateral());

@@ -2,6 +2,13 @@ package Logica;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -101,10 +108,66 @@ public class PrismasLab implements Serializable {
 		//StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
 		StdDraw3D.clear();
-		//StdDraw3D.show();
+		StdDraw3D.show();
 		
 		
 	}
+	
+	// Para cargar los datos de la clase controladora.
+    public void cargarDatos(PrismasLab controladora) {
+
+        File archivo = new File("Empresa.dat");
+        FileInputStream fileInput;
+        ObjectInputStream fileObjectInput;
+
+        try {
+            fileInput = new FileInputStream (archivo);
+            fileObjectInput = new ObjectInputStream(fileInput);
+
+            PrismasLab control = (PrismasLab) fileObjectInput.readObject();
+            PrismasLab.setPrisma(control);
+            fileInput.close();
+            fileObjectInput.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    // para guardar los datos de la clase controladora
+    public void salvarDatos(PrismasLab controladora) {
+    	
+        File file = new File("Empresa.dat");
+        FileOutputStream fileOutput;
+        ObjectOutputStream fileObjectOutput = null;
+
+        try {
+            fileOutput = new FileOutputStream(file);
+            fileObjectOutput = new ObjectOutputStream(fileOutput);
+            fileObjectOutput.writeObject(controladora);
+
+            fileOutput.close();
+            fileObjectOutput.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fileObjectOutput.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 	
 	
 	

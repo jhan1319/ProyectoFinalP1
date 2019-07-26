@@ -1,6 +1,7 @@
 package Visual;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -41,7 +42,7 @@ import java.awt.SystemColor;
 
 
 
-public class Login_Principal extends JDialog {
+public class Login_Principal extends JDialog { 
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUsuario;
@@ -70,7 +71,7 @@ public class Login_Principal extends JDialog {
 					try {
 						empresa2 = new  FileOutputStream("empresa.dat");
 						empresaWrite = new ObjectOutputStream(empresa2);
-						Usuarios aux = new Usuarios("hola", "hola", "Administrador");
+						Usuarios aux = new Usuarios("hola", "hola", "Administrador", null);
 						PrismasLab.getInstance().regUser(aux);
 						empresaWrite.writeObject(PrismasLab.getInstance());
 					} catch (FileNotFoundException e1) {

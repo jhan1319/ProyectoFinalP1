@@ -125,7 +125,7 @@ public class Registrar_Usuario extends JDialog {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtContrasena.getText().equalsIgnoreCase(txtConfirmar.getText()) ) {
-					Usuarios user = new Usuarios(txtUsuario.getText(), txtContrasena.getText(), "Estudiante");
+					Usuarios user = new Usuarios(txtUsuario.getText(), txtContrasena.getText(), "Estudiante", null);
 					PrismasLab.getInstance().regUser(user);
 					JOptionPane.showMessageDialog(null, "Proceso Satisfactorio", "Validación", JOptionPane.INFORMATION_MESSAGE);
 					clean();

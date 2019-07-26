@@ -123,6 +123,9 @@ public class Crear_Figuras extends JDialog {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		
+		PrismasLab.pantallaVacia();
 		try {
 			Crear_Figuras dialog = new Crear_Figuras();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -137,7 +140,7 @@ public class Crear_Figuras extends JDialog {
 	 */
 	public Crear_Figuras() {
 
-		PrismasLab controladora = PrismasLab.getInstance();
+		
 
 		setUndecorated(true);
 		setBounds(100, 100, 971, 991);
@@ -390,6 +393,8 @@ public class Crear_Figuras extends JDialog {
 						PrismasLab.textoEspera();
 
 						dispose();
+						
+						PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
 
 						try {
 							StdDraw3D.frame.setClosed(true);
@@ -434,6 +439,8 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 
 							Estudiante_Principal.cargarFiguras();
+							
+							PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
 
 						}
 
@@ -457,6 +464,9 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 
 							Estudiante_Principal.cargarFiguras();
+							
+							PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
+							
 
 						}
 
@@ -480,6 +490,7 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 
 							Estudiante_Principal.cargarFiguras();
+							PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
 
 						}
 						
@@ -505,6 +516,7 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 
 							Estudiante_Principal.cargarFiguras();
+							PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
 
 						}
 						
@@ -524,6 +536,7 @@ public class Crear_Figuras extends JDialog {
 							JOptionPane.showMessageDialog(null, "Figura Creada con Exito!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
 
 							Estudiante_Principal.cargarFiguras();
+							PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
 
 						}
 
