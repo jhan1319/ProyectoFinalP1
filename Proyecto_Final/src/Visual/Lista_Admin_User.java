@@ -1,22 +1,36 @@
 package Visual;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import Logica.Prismas;
+import Logica.PrismasLab;
+import Logica.Usuarios;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JInternalFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class Lista_Admin_User extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private JTable table;
+	private String nombre;
+	private static DefaultTableModel model;
+	private static Object[] fila;
 
 	/**
 	 * Launch the application.
@@ -36,32 +50,24 @@ public class Lista_Admin_User extends JDialog {
 	 */
 	public Lista_Admin_User() {
 		setUndecorated(true);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 646, 503);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(176, 196, 222));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(null);
 		setLocationRelativeTo(null);/////CENTRADO
+		contentPanel.setLayout(null);
 
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 450, 37);
+		panel.setBounds(0, 0, 646, 37);
 		contentPanel.add(panel);
+		panel.setBackground(new Color(176,224,230));
 		panel.setLayout(null);
 		
-		JLabel label = new JLabel("");
-		label.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				dispose();
-			}
-		});
-		label.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
-		label.setBounds(400, 11, 40, 25);
-		panel.add(label);
-		
 		JPanel buttonPane = new JPanel();
-		buttonPane.setBounds(0, 229, 450, 71);
+		buttonPane.setBounds(0, 432, 646, 71);
+		buttonPane.setBackground(new Color(176,224,230));
 		contentPanel.add(buttonPane);
 		buttonPane.setLayout(null);
 		
@@ -72,8 +78,81 @@ public class Lista_Admin_User extends JDialog {
 			}
 		});
 		button.setContentAreaFilled(false);
-		button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_the_application.png")));
-		button.setBounds(380, 11, 60, 49);
+		button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_login_48.png")));
+		button.setBounds(582, 10, 60, 49);
 		buttonPane.add(button);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				/*
+				 * 
+				 * 
+				 * 
+				 */
+				
+				if (table.getSelectedRow() >= 0) {
+					int index = table.getSelectedRow();
+					nombre = (String) table.getValueAt(index, 0); ////TOMA EL INDEX 0 __ EL NOMBRE DEL SUM
+				
+				
+				
+				
+				
+				
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+		});
+		scrollPane.setBounds(10, 50, 624, 364);
+		contentPanel.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		{
+			model = new DefaultTableModel();
+			
+			String[] header = {"Nombre","Cuadrados","Rectangulos", "Triangulos" ,"Trapecios", "Rombos"}; //////TITULO DE LAS COLUMNAS
+			model.setColumnIdentifiers(header); /////IDENTIFICAR LAS COLUMNAS CON EL ARREGLO DE STRING
+
+			table = new JTable();
+			
+			
+		}
+		table = new JTable();
+		table.setModel(model);
+		scrollPane.setViewportView(table);
+		
+		loadTable();
+	}
+
+	private void loadTable() {
+		// TODO Auto-generated method stub
+		
+		model.setRowCount(0);
+		fila = new Object[model.getColumnCount()];
+		
+		for (Usuarios estudiante : PrismasLab.getInstance().getMisUsuarios()) {
+			fila[0] = estudiante.getUser();
+			fila[1] = estudiante.cantidadCuadrados();
+			fila[2] = estudiante.cantidadRectangulos();
+			fila[3] = estudiante.cantidadTriangulos();
+			fila[4] = estudiante.cantidadTrapecios();
+			fila[5] = estudiante.cantidadRombos();
+			model.addRow(fila);
+		}
+		
 	}
 }

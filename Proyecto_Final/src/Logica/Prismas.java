@@ -59,5 +59,38 @@ public abstract class Prismas  implements Serializable{
 		return vol;
 	}
 
+	public String tipoFigura() {
+
+		String tipo = null;
+
+		if (this instanceof Cuadrado) {
+
+			tipo = "Cuadrado";
+
+		}
+		if (this instanceof Triangulo) {
+
+			tipo = "Triangulo";
+
+		}
+		if (this instanceof Trapecio) {
+
+			tipo = "Trapecio";
+
+		}
+		if (this instanceof Rombo) {
+
+			tipo = "Rombo";
+
+		}
+		if (this instanceof Rectangulo) {
+
+			tipo = "Rectangulo";
+
+		}
+
+		return tipo;
+	}
+
 
 }
