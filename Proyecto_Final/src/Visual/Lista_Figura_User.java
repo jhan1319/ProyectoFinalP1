@@ -21,11 +21,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.Font;
 
 public class Lista_Figura_User extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
+	private JTable table_1;
 	private static DefaultTableModel model;
 	private static Object[] fila;
 	private String nombre;
@@ -84,6 +86,8 @@ public class Lista_Figura_User extends JDialog {
 		}
 		{
 			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setFont(new Font("Broadway", Font.PLAIN, 16));
+			scrollPane.setBackground(new Color(240,248,255 ));
 		
 			
 			table = new JTable();
@@ -126,10 +130,11 @@ public class Lista_Figura_User extends JDialog {
 				
 				
 			}
-			table = new JTable();
-			table.setModel(model);
-			scrollPane.setViewportView(table);
-			
+			table_1 = new JTable();
+			table_1.setBackground(new Color(176, 224, 230));
+			table_1.setFont(new Font("Eras Demi ITC", Font.PLAIN, 16));
+			table_1.setModel(model);
+			scrollPane.setViewportView(table_1);
 			loadTable();
 			
 		}
