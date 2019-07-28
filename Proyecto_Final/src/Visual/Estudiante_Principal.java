@@ -22,6 +22,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
+import javax.swing.JInternalFrame;
+
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -36,6 +38,9 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.CardLayout;
 
 public class Estudiante_Principal extends JDialog {
 
@@ -47,15 +52,18 @@ public class Estudiante_Principal extends JDialog {
 	private JComboBox cbxcolor;
 	private JTextField txtbase;
 	private JTextField txtareaTotal;
+	public static JPanel panel_grafica_formas;
+	private JPanel panel_crear_figuras;
+	public JPanel panel_real ;
 
 	/**
 	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
-		
-		PrismasLab.getInstance().cargarDatos(PrismasLab.getInstance());
-		PrismasLab.pantallaVacia();
-		
+
+		//PrismasLab.getInstance().cargarDatos(PrismasLab.getInstance());
+		//PrismasLab.pantallaVacia();
+
 		try {
 			Estudiante_Principal dialog = new Estudiante_Principal();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -64,16 +72,12 @@ public class Estudiante_Principal extends JDialog {
 			e.printStackTrace();
 		}
 	}
-	 
+
 	/**
 	 * Create the dialog.
 	 */
 	public Estudiante_Principal() {
 		
-		
-		
-		
-	
 
 		setUndecorated(true);
 		setBounds(100, 100, 1080, 848);
@@ -82,7 +86,8 @@ public class Estudiante_Principal extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		setLocationRelativeTo(null);/////CENTRADO
+		setLocationRelativeTo(null);
+		/////CENTRADO
 
 
 		JPanel panel_windows = new JPanel();
@@ -96,16 +101,16 @@ public class Estudiante_Principal extends JDialog {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
-				
-				PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
-				
+
+				//PrismasLab.getInstance().salvarDatos(PrismasLab.getInstance());
+
 			}
 		});
 		lblCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_button.png")));
 		lblCerrar.setBounds(1043, 8, 32, 25);
 		panel_windows.add(lblCerrar);
 
-		JPanel panel_crear_figuras = new JPanel();
+		panel_crear_figuras = new JPanel();
 		panel_crear_figuras.setBackground(new Color(240,248,255));
 		panel_crear_figuras.setBorder(new LineBorder(Color.BLACK));
 		panel_crear_figuras.setBounds(10, 62, 337, 590);
@@ -115,14 +120,15 @@ public class Estudiante_Principal extends JDialog {
 		JButton btnCrearFigura = new JButton("");
 		btnCrearFigura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Crear_Figuras figura= new Crear_Figuras();
 				
-				
-				
 				figura.panel_vista_previa.add(StdDraw3D.frame);
-				PrismasLab.pantallaVacia();
-				StdDraw3D.frame.setTitle(null);
-				
+				PrismasLab.pantallaVacia(StdDraw3D.frame);
+				//figura.c
+				//PrismasLab.pantallaVacia(StdDraw3D.frame);
+				//StdDraw3D.frame.setTitle(null);
+
 				figura.setVisible(true);
 				figura.setModal(true);
 				dispose();
@@ -190,10 +196,11 @@ public class Estudiante_Principal extends JDialog {
 		lblNewLabel.setBounds(10, 491, 50, 32);
 		panel_crear_figuras.add(lblNewLabel);
 
-		JPanel panel_grafias_formas = new JPanel();
-		PrismasLab.textoEspera();
-		panel_grafias_formas.setBackground(new Color(176, 196, 222));
-		panel_grafias_formas.add(StdDraw3D.frame);
+		panel_grafica_formas = new JPanel();
+
+		panel_grafica_formas.setBackground(Color.YELLOW);
+		panel_grafica_formas.add(StdDraw3D.frame);
+		//PrismasLab.textoEspera();
 
 		JButton btnMostrar = new JButton("Mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
@@ -351,10 +358,14 @@ public class Estudiante_Principal extends JDialog {
 		});
 		btnMostrar.setBounds(238, 445, 89, 23);
 		panel_crear_figuras.add(btnMostrar);
-		panel_grafias_formas.setBorder(null);
-		panel_grafias_formas.setBounds(470, 53, 600, 600);
-		contentPanel.add(panel_grafias_formas);
-		panel_grafias_formas.setLayout(null);
+		panel_grafica_formas.setBorder(null);
+		panel_grafica_formas.setBounds(470, 53, 600, 600);
+		contentPanel.add(panel_grafica_formas);
+		panel_grafica_formas.setLayout(new CardLayout(0, 0));
+		
+		panel_real = new JPanel();
+		panel_real.setBackground(new Color(176, 196, 222));
+		panel_grafica_formas.add(panel_real, "name_144011590535900");
 
 		JPanel panel_detalle = new JPanel();
 		panel_detalle.setBackground(new Color(240,248,255));
@@ -413,7 +424,7 @@ public class Estudiante_Principal extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				Login_Principal login = new Login_Principal();
 				login.setVisible(true);
-				PrismasLab.pantallaVacia();
+
 				dispose();
 
 			}

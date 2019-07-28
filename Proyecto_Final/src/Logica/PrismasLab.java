@@ -2,6 +2,7 @@ package Logica;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.beans.PropertyVetoException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +12,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import javax.swing.JInternalFrame;
 
 import com.sun.javafx.font.LogicalFont;
 
@@ -103,11 +106,13 @@ public class PrismasLab implements Serializable {
 
 	/////////////////////GRAPHIC'S RENDERS 3D/////////////////////////////////////
 	
-	public static void pantallaVacia() {
+	public static void pantallaVacia( JInternalFrame panel) {
 		
-		//StdDraw3D.setScale(-10,10);
+		
+		StdDraw3D.clearOverlay();
 		StdDraw3D.clear3D();
-		StdDraw3D.clear();
+		StdDraw3D.clear(StdDraw3D.BLACK);
+		
 		StdDraw3D.show();
 		
 		
@@ -252,6 +257,12 @@ public class PrismasLab implements Serializable {
 		
 		
 		// Renders to the drawing window
+		
+		 // Draws the information text.
+        StdDraw3D.setPenColor(StdDraw3D.WHITE);
+        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+        
+		
 		StdDraw3D.show();
 
 		
@@ -343,6 +354,11 @@ public class PrismasLab implements Serializable {
 		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(color);
 		//grafica la pared inferior
 		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(color);
+		
+		 // Draws the information text.
+        StdDraw3D.setPenColor(StdDraw3D.WHITE);
+        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+		
 
 		// Renders to the drawing window
 		StdDraw3D.show();
@@ -428,6 +444,11 @@ public class PrismasLab implements Serializable {
 
 		//grafica la cara inferior
 		StdDraw3D.polygon(verticesX5, verticesY5, verticesZ5).setColor(color);
+		
+		 // Draws the information text.
+        StdDraw3D.setPenColor(StdDraw3D.WHITE);
+        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+		
 
 
 		// Renders to the drawing window
@@ -485,6 +506,12 @@ public class PrismasLab implements Serializable {
 
 		//grafica de la cara inferior
 		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).setColor(color);
+		
+		 // Draws the information text.
+        StdDraw3D.setPenColor(StdDraw3D.WHITE);
+
+        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+		
 
 
 		// Renders to the drawing window
@@ -536,17 +563,22 @@ public class PrismasLab implements Serializable {
 		double yl4[] = new double[]{y4,y1,y1,y4};
 		double zl4[] = new double[]{0,0,altura,altura};
 		StdDraw3D.polygon(xl4,yl4,zl4).setColor(color);
+		
+		 // Draws the information text.
+        StdDraw3D.setPenColor(StdDraw3D.WHITE);
+        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+		
 		//    StdDraw3D.setOrbitCenter(((x1+x3)/2),((y1+y3)/2),alt/2);
 
 		StdDraw3D.show();
 
 	}
-	
+	/*
 	public static void textoEspera() {
 		
 		
 		   // Sets the scale
-        StdDraw3D.setScale(-1, 1);
+        StdDraw3D.setScale(-10, 10);
          
         // Turns off the default info HUD display.
         StdDraw3D.setInfoDisplay(false);
@@ -573,7 +605,7 @@ public class PrismasLab implements Serializable {
  
             StdDraw3D.show();
 		
-	}
+	}*/
 
 
 }

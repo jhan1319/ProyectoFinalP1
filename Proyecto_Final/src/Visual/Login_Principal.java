@@ -26,6 +26,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JEditorPane;
+import javax.swing.JInternalFrame;
 import javax.swing.JTree;
 import java.awt.Checkbox;
 import javax.swing.JSeparator;
@@ -34,11 +35,15 @@ import javax.swing.ImageIcon;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
+import Logica.Prismas;
 import Logica.PrismasLab;
+import Logica.StdDraw3D;
 import Logica.Usuarios;
 import javax.swing.JPasswordField;
 import java.awt.Label;
 import java.awt.SystemColor;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 
 
@@ -51,10 +56,13 @@ public class Login_Principal extends JDialog {
 	ImageIcon imagenIcon;
 	private JTextField txt_wrong_pass;
 
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+
+
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -105,6 +113,11 @@ public class Login_Principal extends JDialog {
 	 * Create the dialog.
 	 */
 	public Login_Principal() {
+
+
+
+
+
 		setBackground(new Color(176, 196, 222));
 		getContentPane().setBackground(new Color(176, 196, 222));
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -131,7 +144,7 @@ public class Login_Principal extends JDialog {
 				{
 					ImageIcon imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
 				}
-				
+
 				JLabel label_1 = new JLabel("");
 				label_1.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\Titulo.PNG"));
 				label_1.setBounds(82, 29, 754, 95);
@@ -177,7 +190,7 @@ public class Login_Principal extends JDialog {
 
 				txtContrasena.setBounds(10, 133, 402, 20);
 				panel_ingresar.add(txtContrasena);
-				
+
 				txtUsuarioNoEncontrdo = new JTextField();
 				txtUsuarioNoEncontrdo.setFont(new Font("Broadway", Font.PLAIN, 17));
 				txtUsuarioNoEncontrdo.setEnabled(false);
@@ -188,14 +201,14 @@ public class Login_Principal extends JDialog {
 				txtUsuarioNoEncontrdo.setBounds(108, 176, 223, 20);
 				panel_ingresar.add(txtUsuarioNoEncontrdo);
 				txtUsuarioNoEncontrdo.setColumns(10);
-				
+
 				JLabel lblGif = new JLabel();
 				imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
 				lblGif.setBounds(163, 224, 100, 90);
 				panel_ingresar.add(lblGif);
 				lblGif.setIcon(imagenIcon);
 				imagenIcon.setImageObserver(lblGif);
-				
+
 				txt_wrong_pass = new JTextField();
 				txt_wrong_pass.setVisible(false);
 				txt_wrong_pass.setBounds(108, 176, 223, 20);
@@ -217,36 +230,48 @@ public class Login_Principal extends JDialog {
 					login_Button.setContentAreaFilled(false);
 					login_Button.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) { ///// true= existe un usuario con ese nombre
-							
+
 							PrismasLab.getInstance();
+
+
+
 							if ((PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) && (PrismasLab.getLogin().getTipo().equalsIgnoreCase("Administrador")))
 							{
 								Administrador_Principal adm = new Administrador_Principal();
 								adm.setVisible(true);
-								
+
 								dispose();
 
 							}
 
 							// PrismasLab.getInstance();
-							if ((PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) &&(PrismasLab.getLogin().getTipo().equalsIgnoreCase("Estudiante")) )
+							if ((PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) && (PrismasLab.getLogin().getTipo().equalsIgnoreCase("Estudiante")) )
 							{
-								Estudiante_Principal estu = new Estudiante_Principal();
-								estu.setVisible(true);
-								PrismasLab.textoEspera();
-								dispose();
-							}
-							
-							if (PrismasLab.getInstance().login(txtUsuario.getText(), txtContrasena.getText())) {
+
+								Estudiante_Principal estud = new Estudiante_Principal();
+								estud.setVisible(true);
+								estud.panel_real.add(StdDraw3D.frame);
 								
+								
+								
+								PrismasLab.pantallaVacia(StdDraw3D.frame);
+
+
+
+								dispose();
+
+								/////////////
+
+								////////////
+
 							}
 
 							else {
 								txtUsuario.setText("");
 								txtContrasena.setText("");
-								
+
 								txtUsuarioNoEncontrdo.setVisible(true);
-								
+
 								//	JOptionPane.showMessageDialog(null, "Usuario no encontrado", "Validación", JOptionPane.WARNING_MESSAGE);
 
 							}
@@ -278,5 +303,8 @@ public class Login_Principal extends JDialog {
 			}
 			ImageIcon imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
 		}
+		
+
+
 	}
 }
