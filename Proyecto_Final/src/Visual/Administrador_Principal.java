@@ -100,19 +100,6 @@ public class Administrador_Principal extends JDialog {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 
-						FileOutputStream empresa2;
-						ObjectOutputStream empresaWrite;
-						try {
-							empresa2 = new  FileOutputStream("empresa.dat");
-							empresaWrite = new ObjectOutputStream(empresa2);
-							empresaWrite.writeObject(PrismasLab.getInstance());
-						} catch (FileNotFoundException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
 						dispose();
 					}
 

@@ -632,6 +632,8 @@ public class PrismasLab implements Serializable {
 	
 	public static Usuarios buscarUsuario(String nombre) {
 		
+		System.out.println("KLK ETA E LA PRUEBA");
+		
 		Usuarios aux = null;
 		
 		for (Usuarios estudiante : PrismasLab.getInstance().misUsuarios) {
@@ -644,6 +646,10 @@ public class PrismasLab implements Serializable {
 			
 		}
 		
+		
+		
+		System.out.println("El objeto es: " + aux.getUser().toString() );
+		
 		return aux;
 		
 	}
@@ -651,6 +657,30 @@ public class PrismasLab implements Serializable {
 	public void eliminarUsuario(Usuarios user) {
 		
 		misUsuarios.remove(user);
+		
+		System.out.println("USUARIO FUERA PAPA");
+		
+		
+		
+	}
+	
+	public Prismas encontrarFigura(String nombre) {
+		
+		Prismas fig = null;
+		
+		for (Prismas figura : getLogin().getMisFiguras()) {
+			
+			if (figura.getNombre().contentEquals(nombre)) {
+				
+				fig = figura;
+				
+			}
+			
+		}
+		
+		System.out.println("TENGO EL CUBITO");
+		
+		return fig;
 		
 		
 		

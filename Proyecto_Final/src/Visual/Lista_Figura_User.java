@@ -84,6 +84,10 @@ public class Lista_Figura_User extends JDialog {
 				button.setBounds(670, 8, 53, 50);
 				buttonPane.add(button);
 			}
+			
+			JButton btn_delete = new JButton("New button");
+			btn_delete.setBounds(507, 13, 97, 25);
+			buttonPane.add(btn_delete);
 		}
 		{
 			JScrollPane scrollPane = new JScrollPane();
@@ -133,7 +137,25 @@ public class Lista_Figura_User extends JDialog {
 				
 			}
 			table_1 = new JTable();
-			table_1.setEnabled(false);
+			table_1.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					
+					int i = 0;
+					 
+					
+					if (table_1.getSelectedRow() >= 0) {
+						
+						String name = (String) table_1.getModel().getValueAt(i, 0);
+						
+						PrismasLab.getInstance().encontrarFigura(name);
+						
+					}
+					
+					
+					
+				}
+			});
 			table_1.setBackground(new Color(176, 224, 230));
 			table_1.setFont(new Font("Eras Demi ITC", Font.PLAIN, 16));
 			table_1.setModel(model);

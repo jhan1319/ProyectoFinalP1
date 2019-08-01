@@ -86,6 +86,7 @@ public class Lista_Admin_User extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
+				
 			}
 		});
 		button.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/cancel_login_48.png")));
@@ -95,22 +96,16 @@ public class Lista_Admin_User extends JDialog {
 		btn_delete = new JButton("");
 		btn_delete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 
+				Usuarios aux = PrismasLab.buscarUsuario(nombre);
 
-				int x = JOptionPane.showConfirmDialog(null, "¿Desea eliminar este usuario?", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+				System.out.println("KLK ETA E LA PRUEBA");
 
-				if ( x == 0 ) {
-					Usuarios aux = PrismasLab.buscarUsuario(nombre);			
-					
-					PrismasLab.getInstance().eliminarUsuario(aux);
+				//PrismasLab.getInstance().eliminarUsuario(aux);
 
-					loadTable();
-				}
-				
-				
-				System.out.println("LA VUELTA ES: "+x);
+				System.out.println("KLK ETA E LA PRUEBA" + aux.getUser());
 
+				loadTable();
 
 
 
@@ -148,36 +143,22 @@ public class Lista_Admin_User extends JDialog {
 		table_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				/*
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 */
-				
+
 				int index = 0;
-				
+
 				if (table_1.getSelectedRow() >= 0) {
+
 					index = table_1.getSelectedRow();
+
 					nombre = (String) table_1.getValueAt(index, 0); ////TOMA EL INDEX 0 __ EL NOMBRE DEL SUM
 
-				btn_delete.setEnabled(true);
-				
-				
-				
-				
-				
-
-			}
-
-				;
-
+					btn_delete.setEnabled(true);
+				}
 				System.out.println("EL NOMBRE ES: "+nombre);
 
-				
 			}
 		});
+
 		table_1.setBackground(new Color(176, 224, 230));
 		table_1.setFont(new Font("Eras Demi ITC", Font.PLAIN, 16));
 		table_1.setModel(model);
