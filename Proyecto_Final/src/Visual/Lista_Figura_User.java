@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DecimalFormat;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
@@ -124,6 +125,7 @@ public class Lista_Figura_User extends JDialog {
 				model = new DefaultTableModel();
 				
 				String[] header = {"Nombre","Base","Area Lateral", "Area Total" ,"Volumen"}; //////TITULO DE LAS COLUMNAS
+			
 				model.setColumnIdentifiers(header); /////IDENTIFICAR LAS COLUMNAS CON EL ARREGLO DE STRING
 
 				table = new JTable();
@@ -131,9 +133,11 @@ public class Lista_Figura_User extends JDialog {
 				
 			}
 			table_1 = new JTable();
+			table_1.setEnabled(false);
 			table_1.setBackground(new Color(176, 224, 230));
 			table_1.setFont(new Font("Eras Demi ITC", Font.PLAIN, 16));
 			table_1.setModel(model);
+			table_1.getTableHeader().setFont(new Font("Eras Demi ITC", Font.PLAIN, 18));
 			scrollPane.setViewportView(table_1);
 			loadTable();
 			
@@ -143,15 +147,17 @@ public class Lista_Figura_User extends JDialog {
 	private void loadTable() {
 		// TODO Auto-generated method stub
 		
+		DecimalFormat decimalFormat = new DecimalFormat("#.00");
+	//	
 		model.setRowCount(0);
 		fila = new Object[model.getColumnCount()];
 		
 		for (Prismas figuras: PrismasLab.getLogin().getMisFiguras()) {
 			fila[0] = figuras.getNombre();
 			fila[1] = figuras.tipoFigura();
-			fila[2] = figuras.areaLateral();
-			fila[3] = figuras.areaTotal();
-			fila[4] = figuras.volumen();
+			fila[2] = decimalFormat.format(figuras.areaLateral());
+			fila[3] = decimalFormat.format(figuras.areaTotal());
+			fila[4] = decimalFormat.format(figuras.volumen());
 			model.addRow(fila);
 		}
 		

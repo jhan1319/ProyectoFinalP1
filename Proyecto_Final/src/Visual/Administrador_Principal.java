@@ -225,7 +225,7 @@ public class Administrador_Principal extends JDialog {
 
 		cant_Cuadrado = new JLabel("New label");
 		cant_Cuadrado.setFont(new Font("Broadway", Font.PLAIN, 20));
-		cant_Cuadrado.setBounds(197, 104, 125, 29);
+		cant_Cuadrado.setBounds(241, 106, 117, 29);
 		panel_informacion.add(cant_Cuadrado);
 		{
 			JPanel buttonPane = new JPanel();
@@ -272,22 +272,22 @@ public class Administrador_Principal extends JDialog {
 		
 		cant_rombo = new JLabel("New label");
 		cant_rombo.setFont(new Font("Broadway", Font.PLAIN, 20));
-		cant_rombo.setBounds(197, 211, 131, 16);
+		cant_rombo.setBounds(241, 225, 117, 29);
 		panel_informacion.add(cant_rombo);
 		
 		cant_trapecio = new JLabel("New label");
 		cant_trapecio.setFont(new Font("Broadway", Font.PLAIN, 20));
-		cant_trapecio.setBounds(197, 320, 131, 16);
+		cant_trapecio.setBounds(241, 319, 117, 29);
 		panel_informacion.add(cant_trapecio);
 		
 		cant_triangulo = new JLabel("New label");
 		cant_triangulo.setFont(new Font("Broadway", Font.PLAIN, 20));
-		cant_triangulo.setBounds(197, 403, 131, 16);
+		cant_triangulo.setBounds(241, 388, 131, 29);
 		panel_informacion.add(cant_triangulo);
 		
 		cant_rectangulo = new JLabel("New label");
 		cant_rectangulo.setFont(new Font("Broadway", Font.PLAIN, 20));
-		cant_rectangulo.setBounds(197, 490, 125, 16);
+		cant_rectangulo.setBounds(241, 478, 125, 29);
 		panel_informacion.add(cant_rectangulo);
 		
 		cant_Cuadrado.setText(cantidadCuadrado());

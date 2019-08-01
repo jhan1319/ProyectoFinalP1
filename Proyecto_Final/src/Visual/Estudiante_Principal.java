@@ -56,13 +56,10 @@ public class Estudiante_Principal extends JDialog {
 	private JPanel panel_crear_figuras;
 	public JPanel panel_real ;
 
-	/**
-	 * Launch the application.
+	
+	// * Launch the application.
 
 	public static void main(String[] args) {
-
-		//PrismasLab.getInstance().cargarDatos(PrismasLab.getInstance());
-		//PrismasLab.pantallaVacia();
 
 		try {
 			Estudiante_Principal dialog = new Estudiante_Principal();
@@ -113,7 +110,7 @@ public class Estudiante_Principal extends JDialog {
 		panel_crear_figuras = new JPanel();
 		panel_crear_figuras.setBackground(new Color(240,248,255));
 		panel_crear_figuras.setBorder(new LineBorder(Color.BLACK));
-		panel_crear_figuras.setBounds(10, 62, 337, 590);
+		panel_crear_figuras.setBounds(10, 62, 387, 590);
 		contentPanel.add(panel_crear_figuras);
 		panel_crear_figuras.setLayout(null);
 
@@ -156,24 +153,26 @@ public class Estudiante_Principal extends JDialog {
 		panel_crear_figuras.add(btnLista);
 
 		cbxMisFormas = new JComboBox<String>();
+		cbxMisFormas.setFont(new Font("Broadway", Font.PLAIN, 13));
 
 		cbxMisFormas.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>"}));
-		cbxMisFormas.setBounds(121, 446, 113, 20);
+		cbxMisFormas.setBounds(121, 441, 123, 27);
 		panel_crear_figuras.add(cbxMisFormas);
 
 		txtUser = new JTextField();
 		txtUser.setBorder(null);
 		txtUser.setBackground(new Color(240,248,255));
-		txtUser.setFont(new Font("Britannic Bold", Font.BOLD | Font.ITALIC, 18));
+		txtUser.setFont(new Font("Britannic Bold", Font.ITALIC, 18));
 		txtUser.setEditable(false);
-		txtUser.setBounds(10, 11, 102, 39);
+		txtUser.setBounds(85, 4, 102, 39);
 		panel_crear_figuras.add(txtUser);
 		txtUser.setColumns(10);
 		txtUser.setText(PrismasLab.getLogin().getUser());
 
 		JComboBox cbxcolor = new JComboBox();
+		cbxcolor.setFont(new Font("Broadway", Font.PLAIN, 13));
 		cbxcolor.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Amarillo", "Azul", "Cyan", "Gris Claro", "Gris Oscuro", "Verde", "Magenta", "Naranja", "Rosado", "Rojo", "Blanco", "Amarillo"}));
-		cbxcolor.setBounds(121, 499, 113, 20);
+		cbxcolor.setBounds(121, 494, 123, 27);
 		panel_crear_figuras.add(cbxcolor);
 
 		JLabel lblCrearFigura = new JLabel("Crear figura");
@@ -202,7 +201,11 @@ public class Estudiante_Principal extends JDialog {
 		panel_grafica_formas.add(StdDraw3D.frame);
 		//PrismasLab.textoEspera();
 
-		JButton btnMostrar = new JButton("Mostrar");
+		JButton btnMostrar = new JButton("");
+		btnMostrar.setContentAreaFilled(false);
+		btnMostrar.setBorderPainted(false);
+		btnMostrar.setBorder(null);
+		btnMostrar.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\3\\ver_figura.png"));
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -356,8 +359,18 @@ public class Estudiante_Principal extends JDialog {
 
 			}
 		});
-		btnMostrar.setBounds(238, 445, 89, 23);
+		btnMostrar.setBounds(272, 445, 89, 83);
 		panel_crear_figuras.add(btnMostrar);
+		
+		JLabel lblNewLabel_5 = new JLabel("Logged:");
+		lblNewLabel_5.setFont(new Font("Broadway", Font.PLAIN, 17));
+		lblNewLabel_5.setBounds(12, 9, 89, 28);
+		panel_crear_figuras.add(lblNewLabel_5);
+		
+		JLabel lblMostrar = new JLabel("Mostrar");
+		lblMostrar.setFont(new Font("Broadway", Font.PLAIN, 14));
+		lblMostrar.setBounds(282, 526, 66, 16);
+		panel_crear_figuras.add(lblMostrar);
 		panel_grafica_formas.setBorder(null);
 		panel_grafica_formas.setBounds(470, 53, 600, 600);
 		contentPanel.add(panel_grafica_formas);
@@ -369,49 +382,65 @@ public class Estudiante_Principal extends JDialog {
 
 		JPanel panel_detalle = new JPanel();
 		panel_detalle.setBackground(new Color(240,248,255));
-		panel_detalle.setBounds(470, 664, 600, 92);
+		panel_detalle.setBounds(470, 654, 600, 119);
 		contentPanel.add(panel_detalle);
 		panel_detalle.setLayout(null);
 
-		txtareaLateral = new JTextField();
-		txtareaLateral.setBounds(136, 12, 86, 20);
-		panel_detalle.add(txtareaLateral);
-		txtareaLateral.setColumns(10);
-
 		txtVolumen = new JTextField();
-		txtVolumen.setBounds(422, 12, 86, 20);
+		txtVolumen.setBackground(new Color(240,248,255));
+		txtVolumen.setEditable(false);
+		txtVolumen.setBorder(null);
+		txtVolumen.setFont(new Font("Broadway", Font.PLAIN, 14));
+		txtVolumen.setBounds(417, 8, 86, 24);
 		panel_detalle.add(txtVolumen);
 		txtVolumen.setColumns(10);
 
-		JLabel lblArea = new JLabel("Area Lateral");
-		lblArea.setFont(new Font("Broadway", Font.PLAIN, 16));
-		lblArea.setBounds(10, 15, 116, 14);
-		panel_detalle.add(lblArea);
-
 		JLabel lblNewLabel_1 = new JLabel("Volumen\r\n");
 		lblNewLabel_1.setFont(new Font("Broadway", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(311, 15, 86, 14);
+		lblNewLabel_1.setBounds(311, 13, 86, 14);
 		panel_detalle.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("Base");
 		lblNewLabel_2.setFont(new Font("Broadway", Font.PLAIN, 16));
-		lblNewLabel_2.setBounds(69, 62, 46, 14);
+		lblNewLabel_2.setBounds(12, 13, 46, 14);
 		panel_detalle.add(lblNewLabel_2);
 
 		txtbase = new JTextField();
-		txtbase.setBounds(125, 61, 86, 20);
+		txtbase.setEditable(false);
+		txtbase.setBackground(new Color(240,248,255));
+		txtbase.setFont(new Font("Broadway", Font.PLAIN, 14));
+		txtbase.setBorder(null);
+		txtbase.setBounds(138, 8, 86, 24);
 		panel_detalle.add(txtbase);
 		txtbase.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("Area Total");
 		lblNewLabel_3.setFont(new Font("Broadway", Font.PLAIN, 16));
-		lblNewLabel_3.setBounds(308, 68, 97, 16);
+		lblNewLabel_3.setBounds(308, 72, 97, 16);
 		panel_detalle.add(lblNewLabel_3);
 
 		txtareaTotal = new JTextField();
-		txtareaTotal.setBounds(411, 67, 86, 20);
+		txtareaTotal.setBorder(null);
+		txtareaTotal.setFont(new Font("Broadway", Font.PLAIN, 14));
+		txtareaTotal.setBackground(new Color(240,248,255));
+		txtareaTotal.setEditable(false);
+		txtareaTotal.setBounds(417, 68, 86, 24);
 		panel_detalle.add(txtareaTotal);
 		txtareaTotal.setColumns(10);
+		
+				JLabel lblArea = new JLabel("Area Lateral");
+				lblArea.setBounds(12, 73, 116, 14);
+				panel_detalle.add(lblArea);
+				lblArea.setFont(new Font("Broadway", Font.PLAIN, 16));
+				
+						txtareaLateral = new JTextField();
+						txtareaLateral.setEditable(false);
+						txtareaLateral.setBackground(new Color(240,248,255));
+						txtareaLateral.setFont(new Font("Broadway", Font.PLAIN, 14));
+						txtareaLateral.setBorder(null);
+						txtareaLateral.setBounds(138, 68, 86, 24);
+						panel_detalle.add(txtareaLateral);
+						txtareaLateral.setColumns(10);
 
 		JPanel buttonPane = new JPanel();
 		buttonPane.setBackground(new Color(176, 224,230));
@@ -433,6 +462,11 @@ public class Estudiante_Principal extends JDialog {
 		btnCerrar.setIcon(new ImageIcon(Login_Principal.class.getResource("/Imagen/log_out.png")));
 		btnCerrar.setBounds(1006, 8, 64, 64);
 		buttonPane.add(btnCerrar);
+		
+		JLabel lblNewLabel_4 = new JLabel("Cerrar Sesion");
+		lblNewLabel_4.setFont(new Font("Broadway", Font.PLAIN, 16));
+		lblNewLabel_4.setBounds(862, 49, 132, 23);
+		buttonPane.add(lblNewLabel_4);
 		cargarFiguras();
 	}
 

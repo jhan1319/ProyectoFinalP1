@@ -24,7 +24,7 @@ import Visual.Crear_Figuras;
 public class PrismasLab implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Usuarios> misUsuarios;
+	private  ArrayList<Usuarios> misUsuarios;
 	private static Usuarios login;
 	private static PrismasLab prisma;
 	private static boolean firstTime; ////////
@@ -194,15 +194,24 @@ public class PrismasLab implements Serializable {
 		 * valores que no correspondan a un cuadrado se le notifique al estudiante
 		 * 
 		 */
-
+		
+		
+		
+		
 
 
 		// Sets the scale of the drawing window
 		StdDraw3D.clearOverlay();
 		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.clear3D();
+		//StdDraw3D.setCameraPosition(0, 10, 0);
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 		StdDraw3D.setScale(-10,10);
+		
+		StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+		
+	//	StdDraw3D.overlayText(0, -8, );
+		StdDraw3D.setPenColor(color);
 
 		//vertices para la cara delantera
 
@@ -242,25 +251,25 @@ public class PrismasLab implements Serializable {
 		double vertices5Z [] = new double [] {0, altura, altura, 0};
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
+		
+		
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).rotate(15, 15, 0);
 		//grafica la cara trasera
-		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).setColor(color);
+		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).rotate(15, 15, 0);
 		//grafica la pared izquierda
-		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).setColor(color);
+		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).rotate(15, 15, 0);
 		//grafica la pared derecha
-		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).setColor(color);
+		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).rotate(15, 15, 0);
 		//grafica la pared superior
-		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(color);
+		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).rotate(15, 15, 0);
 		//grafica la pared inferior
-		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(color);
+		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).rotate(15, 15, 0);
 		
 		
 		
-		// Renders to the drawing window
 		
 		 // Draws the information text.
-        StdDraw3D.setPenColor(StdDraw3D.WHITE);
-        StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
+     
         
 		
 		StdDraw3D.show();
@@ -279,6 +288,9 @@ public class PrismasLab implements Serializable {
 		StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
+		
+		StdDraw3D.setPenColor(color);
+		StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
 
 
 		double ancho = 0;
@@ -343,17 +355,17 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).rotate(15, 15, 0);
 		//grafica la cara trasera
-		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).setColor(color);
+		StdDraw3D.polygon(vertices1X, vertices1Y, vertices1Z).rotate(15, 15, 0);
 		//grafica la pared izquierda
-		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).setColor(color);
+		StdDraw3D.polygon(vertices2X, vertices2Y, vertices2Z).rotate(15, 15, 0);
 		//grafica la pared derecha
-		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).setColor(color);
+		StdDraw3D.polygon(vertices3X, vertices3Y, vertices3Z).rotate(15, 15, 0);
 		//grafica la pared superior
-		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).setColor(color);
+		StdDraw3D.polygon(vertices4X, vertices4Y, vertices4Z).rotate(15, 15, 0);
 		//grafica la pared inferior
-		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).setColor(color);
+		StdDraw3D.polygon(vertices5X, vertices5Y, vertices5Z).rotate(15, 15, 0);
 		
 		 // Draws the information text.
         StdDraw3D.setPenColor(StdDraw3D.WHITE);
@@ -378,6 +390,9 @@ public class PrismasLab implements Serializable {
 		StdDraw3D.clear3D();
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 		//	StdDraw3D.loadScene3D(filename);
+		
+		StdDraw3D.setPenColor(color);
+		StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
 
 		double Y14 = y1;
 		double Y23 = y2;
@@ -428,22 +443,22 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).rotate(15, 15, 0);
 
 		//grafica la cara trasera
-		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).setColor(color);
+		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).rotate(15, 15, 0);
 
 		//grafica la cara izquiera
-		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).setColor(color);
+		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).rotate(15, 15, 0);
 
 		//grafica la cara derecha
-		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).setColor(color);
+		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).rotate(15, 15, 0);
 
 		//grafica la cara superior
-		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).setColor(color);
+		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).rotate(15, 15, 0);
 
 		//grafica la cara inferior
-		StdDraw3D.polygon(verticesX5, verticesY5, verticesZ5).setColor(color);
+		StdDraw3D.polygon(verticesX5, verticesY5, verticesZ5).rotate(15, 15, 0);
 		
 		 // Draws the information text.
         StdDraw3D.setPenColor(StdDraw3D.WHITE);
@@ -463,6 +478,9 @@ public class PrismasLab implements Serializable {
 		StdDraw3D.clear(StdDraw3D.BLACK);
 		StdDraw3D.setScale(-10,10);
 		StdDraw3D.clear3D();
+		
+		StdDraw3D.setPenColor(color);
+		StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
 
 		//vertices de la cara delantera
 		double verticesX [] = new double [] {x1, x2, x3};
@@ -493,19 +511,19 @@ public class PrismasLab implements Serializable {
 
 
 		//grafica la cara delantera
-		StdDraw3D.polygon(verticesX, verticesY, verticesZ).setColor(color);
+		StdDraw3D.polygon(verticesX, verticesY, verticesZ).rotate(15, 15, 0);
 
 		//grafica la cara trasera
-		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).setColor(color);
+		StdDraw3D.polygon(verticesX1, verticesY1, verticesZ1).rotate(15, 15, 0);
 
 		//grafica la cara izquierda
-		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).setColor(color);
+		StdDraw3D.polygon(verticesX2, verticesY2, verticesZ2).rotate(15, 15, 0);
 
 		//grafica de la cara derecha
-		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).setColor(color);
+		StdDraw3D.polygon(verticesX3, verticesY3, verticesZ3).rotate(15, 15, 0);
 
 		//grafica de la cara inferior
-		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).setColor(color);
+		StdDraw3D.polygon(verticesX4, verticesY4, verticesZ4).rotate(15, 15, 0);
 		
 		 // Draws the information text.
         StdDraw3D.setPenColor(StdDraw3D.WHITE);
@@ -529,6 +547,9 @@ public class PrismasLab implements Serializable {
 		StdDraw3D.setCameraOrientation(0, 0, 0);
 
 		StdDraw3D.setScale(-10, 10);
+		
+		StdDraw3D.setPenColor(color);
+		StdDraw3D.overlayText(0, -8, "Utilice su Mouse para mover el prisma Tridimensional");
 
 		double x2 = x1 - (d2/2);
 		double y2 = y1 - (d/2);
@@ -538,31 +559,33 @@ public class PrismasLab implements Serializable {
 		double y4 = y2;
 
 
+		
+		
 
 		double xb1[] = new double[]{x1,x2,x3,x4};
 		double yb1[] = new double[]{y1,y2,y3,y4};
 		double zb1[] = new double[]{0,0,0,0};
-		StdDraw3D.polygon(xb1,yb1,zb1).setColor(color);
+		StdDraw3D.polygon(xb1,yb1,zb1).rotate(15, 15, 0);
 		double xb2[] = new double[]{x1,x2,x3,x4};
 		double yb2[] = new double[]{y1,y2,y3,y4};
 		double zb2[] = new double[]{altura,altura,altura,altura};
-		StdDraw3D.polygon(xb2,yb2,zb2).setColor(color);
+		StdDraw3D.polygon(xb2,yb2,zb2).rotate(15, 15, 0);
 		double xl1[] = new double[]{x1,x2,x2,x1};
 		double yl1[] = new double[]{y1,y2,y2,y1};
 		double zl1[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl1,yl1,zl1).setColor(color);
+		StdDraw3D.polygon(xl1,yl1,zl1).rotate(15, 15, 0);
 		double xl2[] = new double[]{x2,x3,x3,x2};
 		double yl2[] = new double[]{y2,y3,y3,y2};
 		double zl2[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl2,yl2,zl2).setColor(color);
+		StdDraw3D.polygon(xl2,yl2,zl2).rotate(15, 15, 0);
 		double xl3[] = new double[]{x3,x4,x4,x3};
 		double yl3[] = new double[]{y3,y4,y4,y3};
 		double zl3[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl3,yl3,zl3).setColor(color);
+		StdDraw3D.polygon(xl3,yl3,zl3).rotate(15, 15, 0);
 		double xl4[] = new double[]{x4,x1,x1,x4};
 		double yl4[] = new double[]{y4,y1,y1,y4};
 		double zl4[] = new double[]{0,0,altura,altura};
-		StdDraw3D.polygon(xl4,yl4,zl4).setColor(color);
+		StdDraw3D.polygon(xl4,yl4,zl4).rotate(15, 15, 0);
 		
 		 // Draws the information text.
         StdDraw3D.setPenColor(StdDraw3D.WHITE);
@@ -606,6 +629,34 @@ public class PrismasLab implements Serializable {
             StdDraw3D.show();
 		
 	}*/
+	
+	public static Usuarios buscarUsuario(String nombre) {
+		
+		Usuarios aux = null;
+		
+		for (Usuarios estudiante : PrismasLab.getInstance().misUsuarios) {
+			
+			if (estudiante.getUser().equalsIgnoreCase(nombre)) {
+				
+				aux = estudiante;
+				
+			}
+			
+		}
+		
+		return aux;
+		
+	}
+	
+	public void eliminarUsuario(Usuarios user) {
+		
+		misUsuarios.remove(user);
+		
+		
+		
+	}
+	
+	
 
 
 }

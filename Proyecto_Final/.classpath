@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Java3DLib"/>
+	<classpathentry kind="src" path="bin3d"/>
+	<classpathentry kind="lib" path="C:/Users/Jhan/git/ProyectoFinalP1/Proyecto_Final/src/libs/j3dcore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jhan/git/ProyectoFinalP1/Proyecto_Final/src/libs/j3dutils.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jhan/git/ProyectoFinalP1/Proyecto_Final/src/libs/vecmath.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

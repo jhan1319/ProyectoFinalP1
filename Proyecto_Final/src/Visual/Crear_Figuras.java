@@ -183,7 +183,7 @@ public class Crear_Figuras extends JDialog {
 			panel_datos = new JPanel();
 			panel_datos.setBackground(new Color(240, 248, 255));
 			panel_datos.setAutoscrolls(true);
-			panel_datos.setBounds(10, 80, 315, 578);
+			panel_datos.setBounds(10, 80, 342, 578);
 			contentPanel.add(panel_datos);
 			panel_datos.setLayout(null);
 			{
@@ -353,12 +353,12 @@ public class Crear_Figuras extends JDialog {
 
 			txt_nombre = new JTextField();
 			txt_nombre.setBackground(new Color(176, 196, 222));
-			txt_nombre.setBounds(112, 460, 163, 22);
+			txt_nombre.setBounds(112, 456, 163, 27);
 			panel_datos.add(txt_nombre);
 			txt_nombre.setColumns(10);
 			{
 				JFormattedTextField frmtdtxtfldAltura = new JFormattedTextField();
-				frmtdtxtfldAltura.setBounds(10, 488, 79, 20);
+				frmtdtxtfldAltura.setBounds(10, 500, 79, 20);
 				panel_datos.add(frmtdtxtfldAltura);
 				frmtdtxtfldAltura.setBackground(panel_datos.getBackground());
 				frmtdtxtfldAltura.setBorder(null);
@@ -369,13 +369,13 @@ public class Crear_Figuras extends JDialog {
 			{
 				txt_altura = new JTextField();
 				txt_altura.setBackground(new Color(176, 196, 222));
-				txt_altura.setBounds(112, 491, 163, 20);
+				txt_altura.setBounds(112, 497, 163, 27);
 				panel_datos.add(txt_altura);
 				txt_altura.setColumns(10);
 			}
 
 			JFormattedTextField frmtdtxtfldColor = new JFormattedTextField();
-			frmtdtxtfldColor.setBounds(10, 520, 66, 20);
+			frmtdtxtfldColor.setBounds(10, 543, 66, 20);
 			panel_datos.add(frmtdtxtfldColor);
 			frmtdtxtfldColor.setFont(new Font("Broadway", Font.PLAIN, 18));
 			frmtdtxtfldColor.setEditable(false);
@@ -384,8 +384,9 @@ public class Crear_Figuras extends JDialog {
 			frmtdtxtfldColor.setText("Color:");
 
 			cbx_colores = new JComboBox<String>();
+			cbx_colores.setFont(new Font("Broadway", Font.PLAIN, 14));
 			cbx_colores.setBackground(new Color(176, 196, 222));
-			cbx_colores.setBounds(112, 522, 163, 20);
+			cbx_colores.setBounds(112, 540, 163, 27);
 			panel_datos.add(cbx_colores);
 			cbx_colores.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -806,9 +807,9 @@ public class Crear_Figuras extends JDialog {
 					eltipo.setEditable(false);
 					eltipo.setBackground(panel_vacio.getBackground());
 					eltipo.setBorder(null);
-					eltipo.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
+					eltipo.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 28));
 					eltipo.setText("Seleccione el tipo de figura");
-					eltipo.setBounds(333, 84, 320, 47);
+					eltipo.setBounds(260, 64, 472, 68);
 					panel_vacio.add(eltipo);
 				}
 			}
@@ -820,37 +821,37 @@ public class Crear_Figuras extends JDialog {
 				panel_triangulo.setLayout(null);
 				{
 					txtX_1_triangulo = new JTextField();
-					txtX_1_triangulo.setBounds(51, 71, 40, 20);
+					txtX_1_triangulo.setBounds(51, 66, 40, 25);
 					panel_triangulo.add(txtX_1_triangulo);
 					txtX_1_triangulo.setColumns(10);
 				}
 				{
 					txtY_1_triangulo = new JTextField();
-					txtY_1_triangulo.setBounds(165, 71, 40, 20);
+					txtY_1_triangulo.setBounds(165, 67, 40, 23);
 					panel_triangulo.add(txtY_1_triangulo);
 					txtY_1_triangulo.setColumns(10);
 				}
 				{
 					txtX_2_triangulo = new JTextField();
-					txtX_2_triangulo.setBounds(51, 102, 40, 20);
+					txtX_2_triangulo.setBounds(51, 104, 40, 23);
 					panel_triangulo.add(txtX_2_triangulo);
 					txtX_2_triangulo.setColumns(10);
 				}
 				{
 					txtY_2_triangulo = new JTextField();
-					txtY_2_triangulo.setBounds(165, 102, 40, 20);
+					txtY_2_triangulo.setBounds(165, 104, 40, 23);
 					panel_triangulo.add(txtY_2_triangulo);
 					txtY_2_triangulo.setColumns(10);
 				}
 				{
 					txtX_3_triangulo = new JTextField();
-					txtX_3_triangulo.setBounds(51, 133, 40, 20);
+					txtX_3_triangulo.setBounds(51, 142, 40, 23);
 					panel_triangulo.add(txtX_3_triangulo);
 					txtX_3_triangulo.setColumns(10);
 				}
 				{
 					txtY_3_triangulo = new JTextField();
-					txtY_3_triangulo.setBounds(165, 133, 40, 20);
+					txtY_3_triangulo.setBounds(165, 142, 40, 23);
 					panel_triangulo.add(txtY_3_triangulo);
 					txtY_3_triangulo.setColumns(10);
 				}
@@ -863,31 +864,31 @@ public class Crear_Figuras extends JDialog {
 				{
 					label_5 = new JLabel("X2:");
 					label_5.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_5.setBounds(10, 101, 46, 14);
+					label_5.setBounds(10, 108, 46, 14);
 					panel_triangulo.add(label_5);
 				}
 				{
 					label_6 = new JLabel("X3:");
 					label_6.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_6.setBounds(10, 132, 46, 14);
+					label_6.setBounds(10, 146, 46, 14);
 					panel_triangulo.add(label_6);
 				}
 				{
 					label_7 = new JLabel("Y1:");
 					label_7.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_7.setBounds(123, 67, 46, 14);
+					label_7.setBounds(123, 71, 46, 14);
 					panel_triangulo.add(label_7);
 				}
 				{
 					label_8 = new JLabel("Y2:");
 					label_8.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_8.setBounds(123, 98, 46, 14);
+					label_8.setBounds(123, 108, 46, 14);
 					panel_triangulo.add(label_8);
 				}
 				{
 					label_9 = new JLabel("Y3:");
 					label_9.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_9.setBounds(123, 132, 46, 14);
+					label_9.setBounds(123, 146, 46, 14);
 					panel_triangulo.add(label_9);
 				}
 				{
@@ -929,25 +930,25 @@ public class Crear_Figuras extends JDialog {
 				panel_cuadrado.setLayout(null);
 				{
 					txtX_1_cuadrado = new JTextField();
-					txtX_1_cuadrado.setBounds(50, 58, 40, 20);
+					txtX_1_cuadrado.setBounds(50, 57, 40, 23);
 					panel_cuadrado.add(txtX_1_cuadrado);
 					txtX_1_cuadrado.setColumns(10);
 				}
 				{
 					txtY_1_cuadrado = new JTextField();
-					txtY_1_cuadrado.setBounds(171, 58, 40, 20);
+					txtY_1_cuadrado.setBounds(171, 57, 40, 23);
 					panel_cuadrado.add(txtY_1_cuadrado);
 					txtY_1_cuadrado.setColumns(10);
 				}
 				{
 					txtX_2_cuadrado = new JTextField();
-					txtX_2_cuadrado.setBounds(50, 89, 40, 20);
+					txtX_2_cuadrado.setBounds(50, 104, 40, 23);
 					panel_cuadrado.add(txtX_2_cuadrado);
 					txtX_2_cuadrado.setColumns(10);
 				}
 				{
 					txtY_2_cuadrado = new JTextField();
-					txtY_2_cuadrado.setBounds(171, 89, 40, 20);
+					txtY_2_cuadrado.setBounds(171, 104, 40, 23);
 					panel_cuadrado.add(txtY_2_cuadrado);
 					txtY_2_cuadrado.setColumns(10);
 				}
@@ -959,7 +960,7 @@ public class Crear_Figuras extends JDialog {
 
 				JLabel lblX_4 = new JLabel("X2:");
 				lblX_4.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblX_4.setBounds(10, 92, 46, 17);
+				lblX_4.setBounds(10, 107, 46, 17);
 				panel_cuadrado.add(lblX_4);
 
 				JLabel lblY_3 = new JLabel("Y1:");
@@ -969,7 +970,7 @@ public class Crear_Figuras extends JDialog {
 
 				JLabel lblY_4 = new JLabel("Y2:");
 				lblY_4.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblY_4.setBounds(132, 89, 46, 14);
+				lblY_4.setBounds(132, 108, 46, 14);
 				panel_cuadrado.add(lblY_4);
 				{
 					lblParametros_1 = new JLabel("Parametros");
@@ -1009,86 +1010,86 @@ public class Crear_Figuras extends JDialog {
 				panel_trapecio.setLayout(null);
 				{
 					txtX_1_trapecio = new JTextField();
-					txtX_1_trapecio.setBounds(51, 68, 40, 20);
+					txtX_1_trapecio.setBounds(51, 59, 40, 23);
 					panel_trapecio.add(txtX_1_trapecio);
 					txtX_1_trapecio.setColumns(10);
 				}
 				{
 					txtY_1_trapecio = new JTextField();
-					txtY_1_trapecio.setBounds(161, 68, 40, 20);
+					txtY_1_trapecio.setBounds(161, 59, 40, 23);
 					panel_trapecio.add(txtY_1_trapecio);
 					txtY_1_trapecio.setColumns(10);
 				}
 				{
 					txtY_2_trapecio = new JTextField();
 					txtY_2_trapecio.setColumns(10);
-					txtY_2_trapecio.setBounds(161, 98, 40, 20);
+					txtY_2_trapecio.setBounds(161, 95, 40, 23);
 					panel_trapecio.add(txtY_2_trapecio);
 				}
 				{
 					txtX_2_trapecio = new JTextField();
 					txtX_2_trapecio.setColumns(10);
-					txtX_2_trapecio.setBounds(51, 98, 40, 20);
+					txtX_2_trapecio.setBounds(51, 96, 40, 20);
 					panel_trapecio.add(txtX_2_trapecio);
 				}
 				{
 					txtX_3_trapecio = new JTextField();
 					txtX_3_trapecio.setColumns(10);
-					txtX_3_trapecio.setBounds(51, 126, 40, 20);
+					txtX_3_trapecio.setBounds(51, 126, 40, 23);
 					panel_trapecio.add(txtX_3_trapecio);
 				}
 				{
 					txtX_4_trapecio = new JTextField();
 					txtX_4_trapecio.setColumns(10);
-					txtX_4_trapecio.setBounds(51, 154, 40, 20);
+					txtX_4_trapecio.setBounds(51, 162, 40, 23);
 					panel_trapecio.add(txtX_4_trapecio);
 				}
 				{
 					txtY_3_trapecio = new JTextField();
 					txtY_3_trapecio.setColumns(10);
-					txtY_3_trapecio.setBounds(161, 126, 40, 20);
+					txtY_3_trapecio.setBounds(161, 126, 40, 23);
 					panel_trapecio.add(txtY_3_trapecio);
 				}
 				{
 					txtY_4_trapecio = new JTextField();
 					txtY_4_trapecio.setColumns(10);
-					txtY_4_trapecio.setBounds(161, 154, 40, 20);
+					txtY_4_trapecio.setBounds(161, 162, 40, 23);
 					panel_trapecio.add(txtY_4_trapecio);
 				}
 				{
 					label_17 = new JLabel("X1:");
 					label_17.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_17.setBounds(10, 71, 46, 14);
+					label_17.setBounds(10, 63, 46, 14);
 					panel_trapecio.add(label_17);
 				}
 				{
 					label_23 = new JLabel("X2:");
 					label_23.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_23.setBounds(10, 101, 46, 14);
+					label_23.setBounds(10, 99, 46, 14);
 					panel_trapecio.add(label_23);
 				}
 				{
 					label_24 = new JLabel("X3:");
 					label_24.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_24.setBounds(10, 129, 46, 14);
+					label_24.setBounds(10, 130, 46, 14);
 					panel_trapecio.add(label_24);
 				}
 				{
 					label_25 = new JLabel("Y1:");
 					label_25.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_25.setBounds(123, 71, 46, 14);
+					label_25.setBounds(123, 63, 46, 14);
 					panel_trapecio.add(label_25);
 				}
 				{
 					label_26 = new JLabel("Y2:");
 					label_26.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_26.setBounds(123, 101, 46, 14);
+					label_26.setBounds(123, 99, 46, 14);
 					panel_trapecio.add(label_26);
 				}
 				{
 					label_27 = new JLabel("Y3:");
 					label_27.setFont(new Font("Broadway", Font.PLAIN, 18));
-					label_27.setBounds(123, 129, 46, 14);
+					label_27.setBounds(123, 130, 46, 14);
 					panel_trapecio.add(label_27);
 				}
 				{
@@ -1118,13 +1119,13 @@ public class Crear_Figuras extends JDialog {
 				{
 					lblX_5 = new JLabel("X4:");
 					lblX_5.setFont(new Font("Broadway", Font.PLAIN, 18));
-					lblX_5.setBounds(10, 157, 46, 14);
+					lblX_5.setBounds(10, 166, 46, 14);
 					panel_trapecio.add(lblX_5);
 				}
 				{
 					lblY_5 = new JLabel("Y4:");
 					lblY_5.setFont(new Font("Broadway", Font.PLAIN, 18));
-					lblY_5.setBounds(123, 157, 46, 14);
+					lblY_5.setBounds(123, 166, 46, 14);
 					panel_trapecio.add(lblY_5);
 				}
 				{
@@ -1142,25 +1143,25 @@ public class Crear_Figuras extends JDialog {
 				panel_rombo.setLayout(null);
 				{
 					txtX_1_rombo = new JTextField();
-					txtX_1_rombo.setBounds(51, 71, 40, 20);
+					txtX_1_rombo.setBounds(51, 67, 40, 23);
 					panel_rombo.add(txtX_1_rombo);
 					txtX_1_rombo.setColumns(10);
 				}
 				{
 					txt_d_horizontal = new JTextField();
-					txt_d_horizontal.setBounds(154, 153, 123, 20);
+					txt_d_horizontal.setBounds(160, 149, 40, 23);
 					panel_rombo.add(txt_d_horizontal);
 					txt_d_horizontal.setColumns(10);
 				}
 				{
 					txtY_1_rombo = new JTextField();
-					txtY_1_rombo.setBounds(160, 71, 40, 20);
+					txtY_1_rombo.setBounds(160, 67, 40, 23);
 					panel_rombo.add(txtY_1_rombo);
 					txtY_1_rombo.setColumns(10);
 				}
 				{
 					txt_d_vertical = new JTextField();
-					txt_d_vertical.setBounds(154, 116, 123, 20);
+					txt_d_vertical.setBounds(160, 115, 40, 23);
 					panel_rombo.add(txt_d_vertical);
 					txt_d_vertical.setColumns(10);
 				}
@@ -1228,37 +1229,37 @@ public class Crear_Figuras extends JDialog {
 				panel_rectangulo.setLayout(null);
 				{
 					txtX_1_rectangulo = new JTextField();
-					txtX_1_rectangulo.setBounds(56, 68, 40, 20);
+					txtX_1_rectangulo.setBounds(56, 59, 40, 23);
 					panel_rectangulo.add(txtX_1_rectangulo);
 					txtX_1_rectangulo.setColumns(10);
 				}
 				{
 					txtY_1_rectangulo = new JTextField();
-					txtY_1_rectangulo.setBounds(162, 67, 40, 20);
+					txtY_1_rectangulo.setBounds(162, 59, 40, 23);
 					panel_rectangulo.add(txtY_1_rectangulo);
 					txtY_1_rectangulo.setColumns(10);
 				}
 				{
 					txtX_2_rectangulo = new JTextField();
-					txtX_2_rectangulo.setBounds(56, 99, 40, 20);
+					txtX_2_rectangulo.setBounds(56, 97, 40, 23);
 					panel_rectangulo.add(txtX_2_rectangulo);
 					txtX_2_rectangulo.setColumns(10);
 				}
 				{
 					txtX_3_rectangulo = new JTextField();
-					txtX_3_rectangulo.setBounds(56, 130, 40, 20);
+					txtX_3_rectangulo.setBounds(56, 133, 40, 23);
 					panel_rectangulo.add(txtX_3_rectangulo);
 					txtX_3_rectangulo.setColumns(10);
 				}
 				{
 					txtY_2_rectangulo = new JTextField();
-					txtY_2_rectangulo.setBounds(162, 98, 40, 20);
+					txtY_2_rectangulo.setBounds(162, 97, 40, 23);
 					panel_rectangulo.add(txtY_2_rectangulo);
 					txtY_2_rectangulo.setColumns(10);
 				}
 				{
 					txtY_3_rectangulo = new JTextField();
-					txtY_3_rectangulo.setBounds(162, 129, 40, 20);
+					txtY_3_rectangulo.setBounds(162, 133, 40, 23);
 					panel_rectangulo.add(txtY_3_rectangulo);
 					txtY_3_rectangulo.setColumns(10);
 				}
@@ -1270,7 +1271,7 @@ public class Crear_Figuras extends JDialog {
 
 				JLabel lblX = new JLabel("X1:");
 				lblX.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblX.setBounds(10, 71, 46, 14);
+				lblX.setBounds(10, 63, 46, 14);
 				panel_rectangulo.add(lblX);
 
 				JLabel lblX_1 = new JLabel("X2:");
@@ -1280,22 +1281,22 @@ public class Crear_Figuras extends JDialog {
 
 				JLabel lblX_2 = new JLabel("X3:");
 				lblX_2.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblX_2.setBounds(10, 132, 46, 14);
+				lblX_2.setBounds(10, 137, 46, 14);
 				panel_rectangulo.add(lblX_2);
 
 				JLabel lblY = new JLabel("Y1:");
 				lblY.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblY.setBounds(123, 67, 46, 14);
+				lblY.setBounds(123, 63, 46, 14);
 				panel_rectangulo.add(lblY);
 
 				JLabel lblY_1 = new JLabel("Y2:");
 				lblY_1.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblY_1.setBounds(123, 98, 46, 14);
+				lblY_1.setBounds(123, 101, 46, 14);
 				panel_rectangulo.add(lblY_1);
 
 				JLabel lblY_2 = new JLabel("Y3:");
 				lblY_2.setFont(new Font("Broadway", Font.PLAIN, 18));
-				lblY_2.setBounds(123, 132, 46, 14);
+				lblY_2.setBounds(123, 137, 46, 14);
 				panel_rectangulo.add(lblY_2);
 
 				JLabel lblParametros = new JLabel("Parametros");

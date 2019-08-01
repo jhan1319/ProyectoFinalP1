@@ -54,7 +54,6 @@ public class Login_Principal extends JDialog {
 	private JTextField txtContrasena;
 	private JTextField txtUsuarioNoEncontrdo;
 	ImageIcon imagenIcon;
-	private JTextField txt_wrong_pass;
 
 
 	/**
@@ -137,8 +136,8 @@ public class Login_Principal extends JDialog {
 			{
 				JPanel panel_titulo = new JPanel();
 				panel_titulo.setBackground(new Color(176, 224,230));
-				panel_titulo.setBorder(new LineBorder(new Color(0, 0, 0)));
-				panel_titulo.setBounds(0, 11, 923, 149);
+				panel_titulo.setBorder(null);
+				panel_titulo.setBounds(0, 0, 923, 149);
 				panel_general.add(panel_titulo);
 				panel_titulo.setLayout(null);
 				{
@@ -158,7 +157,7 @@ public class Login_Principal extends JDialog {
 				JPanel panel_ingresar = new JPanel();
 				panel_ingresar.setBackground(new Color(240,248,255));
 				panel_ingresar.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), null));
-				panel_ingresar.setBounds(226, 194, 422, 325);
+				panel_ingresar.setBounds(231, 239, 422, 255);
 				panel_general.add(panel_ingresar);
 				panel_ingresar.setLayout(null);
 
@@ -167,11 +166,12 @@ public class Login_Principal extends JDialog {
 				txtpnUsuario.setEditable(false);
 				txtpnUsuario.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
 				txtpnUsuario.setText("Usuario: ");
-				txtpnUsuario.setBounds(163, 11, 112, 30);
+				txtpnUsuario.setBounds(162, 26, 112, 30);
 				panel_ingresar.add(txtpnUsuario);
 				txtUsuario = new JTextField();
+				txtUsuario.setFont(new Font("Broadway", Font.PLAIN, 15));
 				txtUsuario.setBackground(new Color(176, 196, 222));
-				txtUsuario.setBounds(10, 42, 402, 20);
+				txtUsuario.setBounds(12, 69, 402, 27);
 				panel_ingresar.add(txtUsuario);
 				txtUsuario.setColumns(10);
 
@@ -180,42 +180,28 @@ public class Login_Principal extends JDialog {
 				txtpnContrase.setEditable(false);
 				txtpnContrase.setFont(new Font("Broadway", Font.BOLD | Font.ITALIC, 20));
 				txtpnContrase.setText("Contrase\u00F1a: ");
-				txtpnContrase.setBounds(142, 97, 154, 30);
+				txtpnContrase.setBounds(143, 109, 154, 30);
 				panel_ingresar.add(txtpnContrase);
 
 				txtContrasena = new JPasswordField();
+				txtContrasena.setFont(new Font("Broadway", Font.PLAIN, 15));
 				txtContrasena.setBackground(new Color(176, 196, 222));
 				txtContrasena.setDisabledTextColor(new Color(176, 196, 222));
 				txtContrasena.setColumns(10);
 
-				txtContrasena.setBounds(10, 133, 402, 20);
+				txtContrasena.setBounds(12, 152, 402, 27);
 				panel_ingresar.add(txtContrasena);
 
 				txtUsuarioNoEncontrdo = new JTextField();
 				txtUsuarioNoEncontrdo.setFont(new Font("Broadway", Font.PLAIN, 17));
-				txtUsuarioNoEncontrdo.setEnabled(false);
 				txtUsuarioNoEncontrdo.setEditable(false);
 				txtUsuarioNoEncontrdo.setVisible(false);
-				txtUsuarioNoEncontrdo.setBackground(Color.RED);
-				txtUsuarioNoEncontrdo.setText("Usuario no encontrado");
-				txtUsuarioNoEncontrdo.setBounds(108, 176, 223, 20);
+				txtUsuarioNoEncontrdo.setBackground(new Color(176, 196, 222));
+				txtUsuarioNoEncontrdo.setText("Usuario o Contraseña incorrecto");
+				txtUsuarioNoEncontrdo.setBounds(63, 202, 303, 20);
 				panel_ingresar.add(txtUsuarioNoEncontrdo);
 				txtUsuarioNoEncontrdo.setColumns(10);
-
-				JLabel lblGif = new JLabel();
 				imagenIcon = new ImageIcon(Login_Principal.class.getResource("/Imagen/62997.gif"));
-				lblGif.setBounds(163, 224, 100, 90);
-				panel_ingresar.add(lblGif);
-				lblGif.setIcon(imagenIcon);
-				imagenIcon.setImageObserver(lblGif);
-
-				txt_wrong_pass = new JTextField();
-				txt_wrong_pass.setVisible(false);
-				txt_wrong_pass.setBounds(108, 176, 223, 20);
-				txt_wrong_pass.setBackground(Color.RED);
-				txt_wrong_pass.setFont(new Font("Broadway", Font.PLAIN, 17));
-				panel_ingresar.add(txt_wrong_pass);
-				txt_wrong_pass.setColumns(10);
 			}
 			{
 				JPanel buttonPane = new JPanel();
@@ -225,9 +211,10 @@ public class Login_Principal extends JDialog {
 				buttonPane.setLayout(null);
 				{
 					JButton login_Button = new JButton("");
+					login_Button.setContentAreaFilled(false);
+					login_Button.setBorder(null);
 					login_Button.setBorderPainted(false);
 					login_Button.setFocusable(false);
-					login_Button.setContentAreaFilled(false);
 					login_Button.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) { ///// true= existe un usuario con ese nombre
 
@@ -288,6 +275,7 @@ public class Login_Principal extends JDialog {
 				{
 					JButton cancel_Button = new JButton("");
 					cancel_Button.setContentAreaFilled(false);
+					cancel_Button.setBorder(null);
 					cancel_Button.setFocusable(false);
 					//	cancelButton.setBackground(Color.ORANGE);
 					cancel_Button.setIcon(new ImageIcon("C:\\Users\\Jhan\\Desktop\\Imagenes_Proyecto\\cancel_login_96.png"));
